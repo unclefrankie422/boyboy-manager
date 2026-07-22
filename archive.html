@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>boyboy管家 · 档案室</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#f5f5f5;color:#333;}
+.topbar{background:linear-gradient(135deg,#10b981,#059669);color:#fff;padding:18px 16px;text-align:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.15);}
+.topbar a{color:#fff;text-decoration:none;font-size:.82rem;opacity:.8;display:inline-block;margin-top:4px;}
+.topbar h1{font-size:1.3rem;margin-bottom:2px;}
+.tabs{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;padding:12px 10px;background:#fff;position:sticky;top:76px;z-index:99;box-shadow:0 1px 4px rgba(0,0,0,.06);}
+.tab{background:#f3f4f6;border:none;padding:7px 15px;border-radius:18px;font-size:.82rem;font-weight:600;cursor:pointer;color:#6b7280;font-family:inherit;transition:all .2s;}
+.tab.active{background:#10b981;color:#fff;}
+.container{max-width:700px;margin:0 auto;padding:14px;}
+.record{background:#fff;border-radius:12px;padding:16px;margin-bottom:12px;box-shadow:0 1px 4px rgba(0,0,0,.05);}
+.record-date{font-size:.73rem;color:#9ca3af;margin-bottom:6px;}
+.record-q{font-size:.88rem;font-weight:700;color:#1f2937;margin-bottom:8px;line-height:1.5;}
+.record-a{font-size:.83rem;color:#374151;line-height:1.75;white-space:pre-wrap;margin-bottom:8px;padding:10px;background:#f9fafb;border-radius:8px;}
+.record-summary{font-size:.76rem;color:#92400e;background:#fef3c7;border-radius:6px;padding:6px 10px;}
+.dept-header{font-size:1.05rem;color:#374151;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid #10b981;}
+.empty{text-align:center;padding:40px 20px;color:#9ca3af;}
+.empty-icon{font-size:3rem;margin-bottom:10px;}
+.footer{text-align:center;color:#9ca3af;font-size:.75rem;padding:20px;}
+.profile-card{background:linear-gradient(135deg,#0f3954,#1a6b8c);border-radius:12px;padding:18px;margin-bottom:14px;box-shadow:0 3px 12px rgba(0,0,0,.15);display:flex;align-items:center;gap:14px;text-decoration:none;color:#fff;transition:transform .2s;}
+.profile-card:hover{transform:translateY(-2px);box-shadow:0 5px 18px rgba(0,0,0,.2);}
+.profile-card .pc-avatar{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,#c9a84c,#f4d06f);display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:bold;color:#0f3954;flex-shrink:0;border:2px solid rgba(255,255,255,.3);}
+.profile-card .pc-info{flex:1;}
+.profile-card .pc-name{font-size:1rem;font-weight:700;margin-bottom:3px;}
+.profile-card .pc-desc{font-size:.76rem;opacity:.85;line-height:1.4;}
+.profile-card .pc-arrow{font-size:1.2rem;opacity:.7;}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <h1>📂 档案室</h1>
+  <a href="index.html">← 🏠 返回首页</a>
+</div>
+<div class="tabs" id="tabs"></div>
+<div class="container" id="content"></div>
+<div class="footer">🏠 boyboy管家 · 档案室 · 2026-07-21</div>
+
+<script>
+var departments = [
+  {key:"psychology",icon:"💗",name:"心理咨询师"},
+  {key:"parenting",icon:"👨‍👩‍👧",name:"亲子教育顾问"},
+  {key:"philosophy",icon:"🧠",name:"哲学顾问"},
+  {key:"film",icon:"🎬",name:"电影哲学顾问"},
+  {key:"ai-tech",icon:"🤖",name:"AI技术专家"},
+  {key:"ai-solo",icon:"🚀",name:"AI一人公司导师"},
+  {key:"legal",icon:"⚖️",name:"法律顾问"},
+  {key:"health",icon:"🌿",name:"健康管家"},
+  {key:"business",icon:"🏢",name:"企业顾问"}
+];
+
+var records = {
+  "psychology": [
+    {
+      "date": "2026-07-18",
+      "question": "初二女孩的闺蜜抽烟喝酒，她知道不对但怕被排斥。我是帮别人家的孩子问的，请从心理咨询角度帮我分析。",
+      "answer": "她的痛苦是真实的——良知和归属感在打架。初二的孩子能在两股力量中守住底线，本身心理韧性已经很强。\\n\\n分层建议：\\n1. 先保安全——如果涉及暴力、威胁，必须告诉大人\\n2. 不告密，但可以\"温柔稀释\"关系——慢慢减少相处时间，用\"我妈让我早回家\"\"我要去图书馆\"等理由\\n3. 扩大社交圈——社团、兴趣班，让她知道世界不止这一个圈子\\n4. 认知重构——\"她们排斥的不是你，是你的选择让她们不舒服，因为你的存在提醒了她们在做错事\"\\n\\n本周可做的3件事：写下来（梳理情绪）、找一个安全的大人倾诉、每天给自己15分钟做喜欢的事。",
+      "summary": "初二女孩因拒绝闺蜜抽烟喝酒被边缘化，核心策略：温柔稀释关系+扩展社交圈+守住安全红线。"
+    }
+  ],
+  "parenting": [
+    {
+      "date": "2026-07-18",
+      "question": "初二女孩闺蜜抽烟喝酒，她怕被排斥不敢拒绝，该怎么告诉她怎么做？",
+      "answer": "先共情，再给方法。核心策略：\\n1. 拒绝行为+不拒绝人——教她说\"你们喝你们的，我在旁边陪你们聊天\"\\n2. 用外部理由化解尴尬——\"我妈鼻子太灵，回家会被发现\"\"体育还要考试\"\\n3. 扩大圈子——社团、兴趣班，减少对单一圈子的依赖\\n4. 如果被排斥——让她知道\"需要你做坏事才能留下来的友谊，不值得用底线去换\"\\n\\n不要做的事：不要说\"别跟她们玩了\"、不要贴\"坏孩子\"标签。",
+      "summary": "初二女孩面临同伴压力vs价值观冲突，教她\"拒绝行为不拒绝人\"的话术，帮她扩大社交圈减少依赖。"
+    }
+  ],
+  "legal": [],
+  "health": [],
+  "philosophy": [
+    {
+      "date": "2026-07-19",
+      "question": "圣经易错字生僻字汇总（66卷完整版，创世记至启示录）",
+      "answer": "Excel文件已归档。包含66卷圣经所有生僻字汇总，每卷按经文章节列出易错字及拼音注音。例如：出埃及记2:3 蒲pú草~芦荻lú dí、出埃及记15:6 摔碎shuāi suì、创世记、诗篇、以赛亚书等全部66卷。\\n\\n文件涵盖：创、出、利、民、申、书、士、得、撒上、撒下、王上、王下、代上、代下、拉、尼、斯、伯、诗、箴、传、歌、赛、耶、哀、结、但、何、珥、摩、俄、拿、弥、鸿、哈、番、该、亚、玛、太、可、路、约、徒、罗、林前、林后、加、弗、腓、西、帖前、帖后、提前、提后、多、门、来、雅、彼前、彼后、约一~犹、启。\\n\\n原始Excel文件：圣经易错字生僻字汇总2021-10-23.xlsx",
+      "summary": "圣经66卷生僻字汇总Excel文件已存档至哲学顾问部门，含创世记至启示录全部经卷的易错字及拼音注音。"
+    }
+  ],
+  "film": [],
+  "ai-tech": [],
+  "ai-solo": [
+    {
+      "date": "2026-07-19",
+      "question": "用AI系统或平台成立一家一人公司，有什么好的建议？给一个方案。",
+      "answer": "基于你的资源盘点（AI工具能力、企业管理经验、中西双语、已有boyboy管家专家系统），推荐五个方向：\\n\\n方向一：AI赋能企业管理顾问（推荐）——帮中小企业用AI提升管理效率，变现：1对1咨询500-2000元/次 + 企业培训5000-20000元/场\\n\\n方向二：AI专家系统定制服务（推荐）——帮别人搭建类似boyboy管家的AI专家系统，变现：定制搭建3000-10000元/套 + 月度维护500元/月\\n\\n方向三：中西跨境商业桥梁——帮中国企业出海西班牙/拉美，变现：咨询费+佣金+项目制\\n\\n方向四：AI+心理/教育内容创作者——用AI批量生产内容，变现：付费专栏+社群会员+1对1咨询\\n\\n方向五：AI工具培训师——教普通人用AI工具，变现：线上课99-399元+线下工作坊500-1000元/人\\n\\n最佳组合：方向一（主业）+ 方向二（副业）\\n\\n30天行动路线：第1周确定方向起名字注册公众号，第2周整理作品集发朋友圈和小红书，第3周找3个免费客户做诊断积累案例，第4周根据反馈定价正式接付费客户。\\n\\n第一步：给公司起个名字。",
+      "summary": "AI一人公司初步方案：推荐企业管理顾问+AI系统定制组合，30天行动路线已规划。"
+    },
+    {
+      "date": "2026-07-19",
+      "question": "完整业务梳理：已有有限公司9年，三大主营业务+集团化蓝图。",
+      "answer": "【集团架构（目标）】主营：教育。下属板块：企业咨询+金融保险+健康。\\n\\n【创始人核心优势】香港本土人，大陆30+年工作经验。法律专业背景。四语能力：普通话+粤语+英语+西班牙语。中港澳三地资源熟悉。有限公司注册9年多。政府合作背书+外企客户资源。\\n\\n【业务一：亲子教育讲座（副营）】服务对象：家长。获客方式：政府招标投标，长期合约。分工：学校招生，派讲师讲课。收入：政府买单。区域：深圳。现状：政府缩减，从主营降为副营。\\n\\n【业务二：企业咨询顾问（主营）】客户：西班牙公司+瑞典公司+中国公司。核心内容：企业培训+产品推广建议（模具零配件）。工作方式：提供经验+开会+跟销售员跑客户示范。覆盖区域：全中国。痛点：只有一个人做，想培养团队复制自己。转型目标：个人顾问→咨询公司。\\n\\n【业务三：中港教育顾问（新业务，进行中）】身份：大湾区中港两地企业顾问。当前项目：深圳名校×香港留学升学机构。核心：串联两地教育资源，学生双向交流。方向一：香港学生→输入中国内地。方向二：中国内地学生→输送到香港。现状：几轮讨论，进入核心地带。\\n\\n【未来板块（规划中）】金融保险板块：已有业务基础。健康板块：已有业务基础。目标：从单一公司发展成集团。\\n\\n【从个人到公司化的转型路径】第一阶段（1-2月）：经验沉淀成体系，每次咨询记录方法论，做标准流程+培训手册。第二阶段（2-3月）：培养第一批复制人，招1-2个助理跟着跑客户，从你做他看→他做你看→他做你审，用AI专家系统辅助培训新人。第三阶段（3-6月）：正式公司化运营，制定报价体系，建立客户管理，品牌建设。\\n\\n【AI赋能点】企业顾问AI做初步诊断，知识库存档经验，AI写培训材料，专家系统定制可对外售卖。",
+      "summary": "完整集团蓝图：教育主营+企业咨询/金融/健康三板块。创始人四语+法律+中港30年经验。转型路径：经验体系化→培养团队→公司化运营。"
+    },
+    {
+      "date": "2026-07-19",
+      "question": "事情多但方向不清晰，东跑跑西跑跑跑不出样子。帮我理清主线，集中在教育+培训板块。",
+      "answer": "【你的问题诊断】不是事情太少，而是事情太多没有主线。90%的事情都跟教育+培训相关，但没有串成一条线，所以感觉散乱。\\n\\n【核心主线：一句话说清楚你在做什么】你是一个用心理学底座做教育的人。所有事情都围绕这条主线：教育（讲给家长听）→培训（讲给企业听）→心理/催眠（深入解决个人问题）。三个方向，一个内核：心理学。\\n\\n【把散乱的事情串成一条线】\\n\\n第一环：亲子教育讲座（引流入口）——你已经在做：深圳幼儿园/小学讲座。定位：让家长认识你、信任你。作用：不是终点，是入口。\\n\\n第二环：家长深度课程（主要收入）——从讲座中筛选想深入的家长。做系列课（6-12节），收费999-2999元/人。你是心理咨询师+催眠师，课程比普通讲师有深度。\\n\\n第三环：1对1心理咨询/催眠（高客单）——从课程中筛选有具体问题的家长。500-2000元/次。这是你独有的，普通教育讲师做不到。\\n\\n第四环：企业培训（B端收入）——用你的心理学+教育经验做企业培训。给西班牙/瑞典/中国企业做。差异化：不是普通管理培训，是懂人的培训。\\n\\n第五环：中港教育项目（战略级）——深圳名校×香港留学机构。这是未来能做大的战略项目。做成一个可以复制到其他学校。\\n\\n【不该做的事】金融保险、健康板块：不是不做，是现在不亲自做。招人来管，你只做教育+培训。每做一件事问自己：这件事服务于上面五个环节中的哪个？不服务就不做。\\n\\n【每周时间分配建议】50%亲子教育+家长课程，20%心理咨询/催眠，20%企业培训，10%中港项目推进。\\n\\n【判断要不要做一件事的标准】问自己三个问题：1.这件事跟教育或培训有关吗？2.这件事能帮我吸引更多家长/企业客户吗？3.这件事能转化为收入吗？三个都YES就做，否则不做或交给别人。\\n\\n【你的复合优势（别人抄不走）】心理咨询师+催眠师+教育讲师=唯一。香港人+大陆30年+四语=唯一。政府合作+外企客户=唯一。三个唯一叠加，没人能复制。",
+      "summary": "核心主线：用心理学底座做教育。五环串成一条线：讲座引流→家长课程→1对1心理/催眠→企业培训→中港项目。不服务于这五环的事不做。"
+    },
+    {
+      "date": "2026-07-19",
+      "question": "一人公司用原来公司（9年）还是注册新公司？目标是未来做集团，至少3家公司。",
+      "answer": "【建议：用原来的公司，不要再注册新的】\\n\\n原因1：原公司9年是资产\\n• 投标要求成立3年以上——你满足\\n• 客户查工商看到9年——信任感强\\n• 银行贷款、资质申请——年限越长越有利\\n• 政府合作背书、外企客户资源都挂在这个公司名下\\n• 重新注册新公司，9年积累全部归零\\n\\n原因2：集团架构不需要每家都是新注册的\\n正确做法：原公司改成集团下属的教育培训公司（保留9年资质），新注册第2家做企业咨询（装外企客户业务），新注册第3家做中港教育项目（深圳×香港），上面注册控股公司作为集团母公司。\\n\\n原因3：一人公司是经营模式，不是必须注册新公司\\n一人公司=一个人+AI系统高效运营。完全可以：用原公司做主体，内部按业务线分部门运营，等业务做大了再拆分注册新公司。\\n\\n【具体路径】\\n现在（0-6月）：不注册新公司，用原公司运营，内部按教育/咨询/中港三条线分管理\\n第二步（6-12月）：注册第2家公司（企业咨询），把外企客户业务装进去\\n第三步（12-18月）：注册第3家公司（中港教育），把深圳×香港项目装进去\\n第四步（18-24月）：注册控股公司，把3家公司整合为集团\\n\\n【核心原则】先做业务，再注册公司。业务没做起来就注册一堆公司，是给自己增加成本和麻烦。等哪条线业务稳定了，再注册公司把它装进去。",
+      "summary": "用原公司不注册新的——9年资质是资产。集团路径：原公司(教育)→第2家(企业咨询)→第3家(中港教育)→控股公司整合为集团。原则：先做业务再注册公司。"
+    }
+  ],
+  "business": [
+    {
+      "date": "2026-07-18",
+      "question": "核心员工（占50%业绩）在出差途中突发心脏病去世。华南地区只有这一位同事，另一位华南同事能力差距大。全国销售仅3人。老板下周从西班牙飞过来。客户怎么交接？怎么跟老板汇报？",
+      "answer": "核心策略：不是\"找一个人顶\"，而是\"分三层接力\"。\\n\\n第一层：客户ABC分级\\n• A档（命脉客户，3-5个）：老板亲自+你陪同，一家一家拜访\\n• B档（重要客户，10-20个）：华东销售远程管理+华南同事跑腿配合\\n• C档（长尾客户，30-50个）：华南同事独立负责，练手成长\\n\\n第二层：交接时间表\\n第1天：内部会议统一口径\\n第1-3天：老板拜访A档\\n第1周：华东介入B档\\n第1月：每周进度会\\n第3月：评估留存率\\n\\n第三层：给客户的话术（分ABC不同说法）\\n\\n第四层：华南弱同事——给C档练手+配合华东跑腿+每周汇报，给成长机会\\n\\n第五层：跟老板汇报框架（30分钟，5个部分：事态回顾→影响评估→交接方案→人手问题→需决策事项）\\n\\n中长期：6个月内必须招人，杜绝关键人单点风险。",
+      "summary": "ABC三级客户分层+三层接力：A档老板亲自拜访、B档华东支援+华南配合、C档华南练手。老板汇报框架已备好。中长期必须补充人手。"
+    },
+    {
+      "date": "2026-07-19",
+      "question": "企业培训现在市场价格是多少？按小时、按天、按月怎么算？现在按天收费对生活没保障，想做项目制或顾问形式，有什么推荐？",
+      "answer": "【2025-2026企业培训市场价格】\\n\\n按讲师级别收费：\\n• 初级讲师：3,000-8,000元/天，500-1,200元/时\\n• 中级讲师：8,000-15,000元/天，1,200-2,500元/时\\n• 高级讲师：15,000-30,000元/天，2,500-5,000元/时\\n• 知名专家：30,000-50,000+元/天，5,000-10,000+元/时\\n\\n以你的资历（香港背景+大陆30年+四语+心理咨询/催眠师+外企经验），至少属于高级讲师区间，对外企可按知名专家报价。\\n\\n【四种收费模式对比】\\n① 按天计费（你现在用的）：去一天算一天，没活就没钱，而且越熟练做得越快收入反而越少\\n② 项目制：一个项目打包报价30,000-100,000元，含调研+设计+授课+跟进\\n③ 月度顾问（Retainer）：每月固定15,000-30,000元，提供会议+咨询+优先响应，收入稳定\\n④ 混合模式：月费+项目费+单次，最佳组合\\n\\n【推荐方案：三层收入结构】\\n第一层：月度顾问费15,000-30,000元/月（保底收入，锁定客户关系）\\n第二层：项目制30,000-100,000元/项目（主要收入，打包价代替按天）\\n第三层：单次培训10,000-20,000元/天（补充收入，只接老客户临时需求）\\n\\n【举例：西班牙公司怎么谈】\\n现在：每月去2-3天，按天收费约20,000-30,000元/月\\n改成：月度顾问费20,000元/月 + 培训项目50,000元/项目 + 额外单次15,000元/天\\n结果：同样工作量，收入从20,000-30,000/月提升到50,000-70,000/月，且收入可预期\\n\\n【跟客户谈转型的关键话术】\\n不说\"涨价\"，说\"升级服务模式\"。强调客户得到更多（调研、设计、跟进而不只是一天课）。给客户选择：月费方案vs项目方案。\\n话术示例：\"我正在从单次培训师升级为企业培训顾问。以后不只来上一天课就走，而是帮你们做整套培训体系——前期调研需求、设计课程方案、现场授课、课后跟进效果。\"",
+      "summary": "企业培训市场价：高级讲师15,000-30,000元/天。推荐从按天计费升级为三层收入结构：月度顾问费（保底）+项目制（主要收入）+单次培训（补充）。同样工作量收入可翻倍且稳定。"
+    }
+  ]
+};
+
+var currentDept = "all";
+
+function renderTabs() {
+  var el = document.getElementById("tabs");
+  var h = '<button class="tab active" onclick="switchDept(\'all\')">🌐 全部</button>';
+  departments.forEach(function(d) {
+    var c = (records[d.key] || []).length;
+    h += '<button class="tab" onclick="switchDept(\''+d.key+'\')">'+d.icon+' '+d.name+' ('+c+')</button>';
+  });
+  el.innerHTML = h;
+}
+
+function switchDept(key) {
+  currentDept = key;
+  document.querySelectorAll(".tab").forEach(function(t, i) {
+    var tabKey = i === 0 ? "all" : departments[i-1].key;
+    t.classList.toggle("active", tabKey === key);
+  });
+  render();
+}
+
+function render() {
+  var el = document.getElementById("content");
+  var h = "";
+  var depts = currentDept === "all" ? departments : departments.filter(function(d) { return d.key === currentDept; });
+  depts.forEach(function(d) {
+    var recs = records[d.key] || [];
+    if (currentDept !== "all") {
+      h += '<div class="dept-header">'+d.icon+' '+d.name+' ('+recs.length+'条)</div>';
+    } else {
+      h += '<div class="dept-header">'+d.icon+' '+d.name+' ('+recs.length+'条)</div>';
+    }
+    if (recs.length === 0) {
+      h += '<div class="empty"><div class="empty-icon">📭</div><p>暂无存档</p></div>';
+    } else {
+      if (d.key === "parenting") {
+        h += '<a href="frankie-card-en.html" class="profile-card"><div class="pc-avatar">FT</div><div class="pc-info"><div class="pc-name">💎 Frankie Tsang 曾仕昭 · 专业名片</div><div class="pc-desc">28+年经验 · 心理学 · 教育 · 法律 · 催眠治疗<br>英文电子名片 · 点击查看完整档案</div></div><div class="pc-arrow">→</div></a>';
+      }
+      recs.slice().reverse().forEach(function(r) {
+        var a = (r.answer || "").replace(/\\n/g, "<br>");
+        h += '<div class="record"><div class="record-date">📅 '+r.date+' · '+d.icon+' '+d.name+'</div><div class="record-q">'+r.question+'</div><div class="record-a">'+a+'</div><div class="record-summary">📌 '+r.summary+'</div></div>';
+      });
+    }
+  });
+  el.innerHTML = h || '<div class="empty"><div class="empty-icon">📭</div><p>暂无存档记录</p></div>';
+}
+
+renderTabs();
+render();
+</script>
+</body>
+</html>

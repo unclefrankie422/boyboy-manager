@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frankie Tsang — Professional Profile Card</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Georgia','Times New Roman',serif;background:#1a1a2e;padding:0;}
+.page{max-width:850px;margin:0 auto;background:#fff;box-shadow:0 0 60px rgba(0,0,0,.5);}
+
+/* ===== Hero Section ===== */
+.hero{background:linear-gradient(135deg,#0f3954 0%,#1a6b8c 50%,#0f3954 100%);padding:50px 40px 40px;text-align:center;color:#fff;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><circle cx="30" cy="30" r="1" fill="rgba(255,255,255,0.1)"/></svg>');opacity:.5;}
+.hero-inner{position:relative;z-index:1;}
+.avatar-circle{width:130px;height:130px;border-radius:50%;background:linear-gradient(135deg,#c9a84c,#f4d06f);margin:0 auto 20px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;color:#0f3954;font-weight:bold;border:4px solid rgba(255,255,255,.3);box-shadow:0 8px 30px rgba(0,0,0,.3);}
+.hero h1{font-size:2.4rem;font-weight:700;letter-spacing:2px;margin-bottom:6px;}
+.hero .subtitle{font-size:1rem;opacity:.8;letter-spacing:3px;text-transform:uppercase;margin-bottom:14px;}
+.hero .tagline{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:30px;padding:6px 24px;font-size:.85rem;letter-spacing:1px;}
+
+/* ===== Company Bar ===== */
+.company-bar{background:#c9a84c;color:#0f3954;text-align:center;padding:14px 20px;font-size:1.05rem;font-weight:700;letter-spacing:.5px;}
+
+/* ===== Bio Section ===== */
+.bio{padding:35px 40px;background:#f8f6f0;border-bottom:1px solid #e5e0d0;}
+.bio h2{color:#0f3954;font-size:1.1rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid #c9a84c;}
+.bio p{font-size:.92rem;line-height:1.85;color:#333;text-align:justify;}
+
+/* ===== Expertise Grid ===== */
+.expertise{padding:35px 40px;}
+.expertise h2{color:#0f3954;font-size:1.1rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:20px;padding-bottom:8px;border-bottom:2px solid #c9a84c;}
+.exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.exp-item{background:#f8f6f0;border:1px solid #e5e0d0;border-radius:10px;padding:14px 8px;text-align:center;font-size:.85rem;font-weight:600;color:#0f3954;transition:all .3s;}
+.exp-item:hover{background:#0f3954;color:#fff;border-color:#0f3954;}
+
+/* ===== Sections ===== */
+.section{padding:30px 40px;border-top:1px solid #f0ede5;}
+.section:nth-child(even){background:#faf9f6;}
+.section h2{color:#0f3954;font-size:1.1rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:20px;padding-bottom:8px;border-bottom:2px solid #c9a84c;display:flex;align-items:center;gap:8px;}
+.section h2 .num{background:#c9a84c;color:#fff;width:28px;height:28px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.8rem;}
+.item-list{display:flex;flex-direction:column;gap:8px;}
+.item{background:#fff;border-left:3px solid #c9a84c;border-radius:0 8px 8px 0;padding:12px 16px;box-shadow:0 1px 3px rgba(0,0,0,.05);transition:all .2s;}
+.item:hover{box-shadow:0 2px 8px rgba(0,0,0,.1);transform:translateX(2px);}
+.item .label{font-size:.88rem;color:#1a1a2e;font-weight:600;line-height:1.5;}
+.item .sub{font-size:.75rem;color:#888;margin-top:3px;}
+
+/* ===== Two Column Layout ===== */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:30px;}
+@media(max-width:600px){.two-col{grid-template-columns:1fr;}.exp-grid{grid-template-columns:repeat(2,1fr);}.hero h1{font-size:1.8rem;}}
+
+/* ===== QR Section ===== */
+.qr-section{background:linear-gradient(135deg,#0f3954,#1a6b8c);padding:35px 40px;text-align:center;}
+.qr-section h2{color:#fff;font-size:1.1rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:20px;}
+.qr-grid{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;}
+.qr-card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:20px;text-align:center;width:160px;}
+.qr-placeholder{width:100px;height:100px;background:#fff;border-radius:10px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-size:2rem;}
+.qr-card .name{color:#fff;font-size:.8rem;font-weight:600;}
+
+/* ===== Footer ===== */
+.footer{background:#1a1a2e;color:rgba(255,255,255,.5);text-align:center;padding:20px;font-size:.75rem;letter-spacing:1px;}
+.footer strong{color:#c9a84c;}
+
+/* ===== Decorative ===== */
+.divider{height:3px;background:linear-gradient(90deg,transparent,#c9a84c,transparent);margin:0;}
+.gold-line{width:60px;height:3px;background:#c9a84c;margin:10px auto;}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="avatar-circle">FT</div>
+    <h1>FRANKIE TSANG</h1>
+    <div class="subtitle">曾仕昭 · Professional Profile</div>
+    <div class="gold-line"></div>
+    <div class="tagline">28+ Years of Experience · Psychology · Education · Law</div>
+  </div>
+</div>
+
+<div class="company-bar">
+  Shenzhen Frankie Z Style Education Technology Co., Ltd.
+</div>
+
+<!-- ===== BIO ===== -->
+<div class="bio">
+  <h2>◆ Biography</h2>
+  <p>Frankie Tsang formerly served as a Hong Kong civil servant. He later joined a Hong Kong-listed company and was stationed in Mainland China for 19 years, serving in senior management and representing the group in handling external public relations and all legal affairs.</p>
+  <p style="margin-top:12px;">After retirement, he founded his own company and established <strong>"Xiao Xin Ni Ni" (小心逆逆)</strong> Parent Grand Lecture Hall, which has spread across Hong Kong, Macau, and Shenzhen, earning the love and recognition of parents and educators. He is also a qualified service provider for the <strong>"Shenzhen People's Livelihood Micro-Projects"</strong> initiative, delivering services to multiple communities, schools, and enterprises in Shenzhen. To date, he has accumulated over <strong>28 years of practical experience</strong>.</p>
+</div>
+
+<!-- ===== EXPERTISE ===== -->
+<div class="expertise">
+  <h2>◆ Areas of Expertise</h2>
+  <div class="exp-grid">
+    <div class="exp-item">Parent-Child Relationships</div>
+    <div class="exp-item">Marriage & Family</div>
+    <div class="exp-item">Elderly Care</div>
+    <div class="exp-item">Psychology</div>
+    <div class="exp-item">Communication</div>
+    <div class="exp-item">Philosophy</div>
+    <div class="exp-item">Hypnotherapy</div>
+    <div class="exp-item">Personal Growth</div>
+    <div class="exp-item">Personal Coaching</div>
+  </div>
+</div>
+
+<!-- ===== POSITIONS ===== -->
+<div class="section">
+  <h2><span class="num">1</span> Positions & Affiliations</h2>
+  <div class="item-list">
+    <div class="item"><div class="label">Founder and Brand Patent Holder of "Xiao Xin Ni Ni" Course</div></div>
+    <div class="item"><div class="label">CEO, Shenzhen Frankie Z Style Education Technology Co., Ltd.</div></div>
+    <div class="item"><div class="label">TQUK (UK) China Regional Approved Certification Centre</div></div>
+    <div class="item"><div class="label">President, 14th Council, Jinan University Hong Kong Alumni Association</div></div>
+    <div class="item"><div class="label">President (2nd & 3rd Term), Jinan University Hong Kong Law Alumni Association</div></div>
+    <div class="item"><div class="label">Honorary President, Jinan University Hong Kong Law Alumni Association</div></div>
+    <div class="item"><div class="label">Bachelor of Laws, Jinan University</div></div>
+    <div class="item"><div class="label">Practical Supervisor, Master of Laws (Professional Degree), Jinan University (2015–2018)</div></div>
+    <div class="item"><div class="label">Founding Member, Lingnan University (HK) Practical Philosophy Alumni Association</div></div>
+    <div class="item"><div class="label">Graduate Alumni Member, Lingnan University (Hong Kong)</div></div>
+    <div class="item"><div class="label">Master of Arts in Philosophy, Lingnan University (Hong Kong)</div></div>
+    <div class="item"><div class="label">Career Mentor, Lingnan University (HK) Master's Program</div></div>
+    <div class="item"><div class="label">Member, Hong Kong Institute of Management</div></div>
+    <div class="item"><div class="label">Honorary Advisor, Hong Kong Curriculum Development Association</div></div>
+    <div class="item"><div class="label">Vice Chairman, Legal & Mediation Committee, HKFTU Professional Training General Association (2014)</div></div>
+    <div class="item"><div class="label">Professional Manager, Hong Kong Institute of Management</div></div>
+    <div class="item"><div class="label">Chairman of Affairs, Hong Kong Mediation Development Research General Association</div></div>
+    <div class="item"><div class="label">Permanent Member, Hong Kong School Managers Association</div></div>
+  </div>
+</div>
+
+<!-- ===== CERTIFICATIONS ===== -->
+<div class="section">
+  <h2><span class="num">2</span> Certifications & Qualifications</h2>
+  <div class="item-list">
+    <div class="item"><div class="label">EverythingDiSC® International Certified Consultant</div></div>
+    <div class="item"><div class="label">EverythingDiSC® Certified Trainer</div></div>
+    <div class="item"><div class="label">NGH (USA) Approved Hypnotherapist & Certification Instructor</div></div>
+    <div class="item"><div class="label">Member, American Psychological Association (APA)</div></div>
+    <div class="item"><div class="label">Points of You® Coach</div></div>
+    <div class="item"><div class="label">National Level 2 Psychological Counselor (China)</div></div>
+    <div class="item"><div class="label">House-Tree-Person (HTP) Projective Drawing Analyst</div></div>
+    <div class="item"><div class="label">Council Member, Guangdong Law Society (2007–2009)</div></div>
+    <div class="item"><div class="label">Honorary President, Belt and Road Guangdong-HK-Macao Legal Association</div></div>
+    <div class="item"><div class="label">Founding President (1st Term), Macau International Trainers Association</div></div>
+    <div class="item"><div class="label">Guest Lecturer, Huizhou Mental Health Culture Association (2015–2017)</div></div>
+    <div class="item"><div class="label">Member, Chinese Society of Education</div></div>
+    <div class="item"><div class="label">Sensory Integration Instructor</div></div>
+    <div class="item"><div class="label">National Senior Nutritionist</div></div>
+    <div class="item"><div class="label">NLP Master Practitioner</div></div>
+    <div class="item"><div class="label">Education & Study Abroad Planning Consultant</div></div>
+    <div class="item"><div class="label">Chief Lecturer, Junior Professor Club</div></div>
+    <div class="item"><div class="label">Mission Coach Photo Therapy</div></div>
+  </div>
+</div>
+
+<!-- ===== MOOC & ADDITIONAL ===== -->
+<div class="section">
+  <h2><span class="num">3</span> MOOC Certificates & Additional Qualifications</h2>
+  <div class="item-list">
+    <div class="item"><div class="label">Director, Yinuo Gao Consulting</div></div>
+    <div class="item"><div class="label">MOOC Certificate in Love Psychology (Excellence)</div></div>
+    <div class="item"><div class="label">MOOC Certificate in Understanding Children's Inner World</div></div>
+    <div class="item"><div class="label">MOOC Certificate in Depression Psychological Counseling</div></div>
+    <div class="item"><div class="label">MOOC Certificate in Criminal Psychology</div></div>
+    <div class="item"><div class="label">MOOC Certificate in Nutrition & Health (Excellence)</div></div>
+    <div class="item"><div class="label">MOOC Certificate in Student Psychological Counseling</div></div>
+    <div class="item"><div class="label">MOOC Certificate in Abnormal Psychology & Crisis Intervention (Excellence)</div></div>
+    <div class="item"><div class="label">MOOC Certificate in Educational Psychology</div></div>
+    <div class="item"><div class="label">MOOC Certificate in Insurance Studies (Excellence)</div></div>
+    <div class="item"><div class="label">MOOC in Music Psychology</div></div>
+    <div class="item"><div class="label">Certificate in Basic Childhood Developmental Disorders</div></div>
+    <div class="item"><div class="label">Healing Power of Contemporary Play Therapy & Prescriptive Play Therapy</div></div>
+    <div class="item"><div class="label">Peking University Internet-Based Self-Help Emotion Management & Mindfulness Course</div></div>
+    <div class="item"><div class="label">Strategic Partnership & Marketing, Rongguang Kanghua (Shenzhen) Health Management Technology Co., Ltd.</div></div>
+    <div class="item"><div class="label">Co-Dean, Rongguang Health Group 183 Gene Management Academy</div></div>
+    <div class="item"><div class="label">Certificate, Yixin Psychology Academy — "40 Essential Skills for Community Psychological Services"</div></div>
+  </div>
+</div>
+
+<!-- ===== QR CODES ===== -->
+<div class="qr-section">
+  <h2>◆ QR Codes</h2>
+  <div class="qr-grid">
+    <div class="qr-card">
+      <div class="qr-placeholder">📱</div>
+      <div class="name">Frankie Tsang<br>Personal QR Code</div>
+    </div>
+    <div class="qr-card">
+      <div class="qr-placeholder">📖</div>
+      <div class="name">小博士俱乐部<br>Junior Professor Club</div>
+    </div>
+    <div class="qr-card">
+      <div class="qr-placeholder">🛍️</div>
+      <div class="name">远方好物<br>Yuanfang Haowu</div>
+    </div>
+  </div>
+  <p style="color:rgba(255,255,255,.6);font-size:.75rem;margin-top:16px;">Scan QR codes to connect</p>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  <strong>FRANKIE TSANG</strong> · 曾仕昭 · Professional Profile<br>
+  Psychology · Education · Law · Hypnotherapy · Coaching<br>
+  © 2026 · Shenzhen Frankie Z Style Education Technology Co., Ltd.
+</div>
+
+</div>
+
+</body>
+</html>
