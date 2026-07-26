@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frankie 工作台 · 图书馆</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#0f3954,#1a6b8c);min-height:100vh;padding:20px 16px 40px;color:#333;}
+
+/* 顶栏 */
+.topbar{background:rgba(255,255,255,.1);backdrop-filter:blur(10px);border-radius:20px;padding:20px;text-align:center;margin-bottom:24px;border:1px solid rgba(255,255,255,.15);}
+.topbar h1{color:#fff;font-size:1.4rem;margin-bottom:4px;}
+.topbar p{color:rgba(255,255,255,.7);font-size:.82rem;}
+.topbar .back{display:inline-block;margin-top:10px;color:rgba(255,255,255,.8);text-decoration:none;font-size:.8rem;padding:6px 16px;border:1px solid rgba(255,255,255,.2);border-radius:20px;}
+
+/* 分区标签 */
+.section-label{color:rgba(255,255,255,.9);font-size:.85rem;font-weight:700;margin:20px auto 12px;max-width:700px;display:flex;align-items:center;gap:8px;}
+.section-label::before{content:'';width:4px;height:16px;background:rgba(255,255,255,.4);border-radius:2px;}
+.section-label::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.12);}
+
+/* 语言卡片网格 */
+.grid{max-width:700px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+
+/* 语言卡片 */
+.lang-card{background:#fff;border-radius:16px;padding:20px 18px;text-decoration:none;color:#333;display:flex;flex-direction:column;gap:10px;box-shadow:0 4px 16px rgba(0,0,0,.1);transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden;}
+.lang-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.2);}
+.lang-card:active{transform:translateY(0);}
+.lang-header{display:flex;align-items:center;gap:12px;}
+.lang-flag{font-size:2rem;width:50px;height:50px;display:flex;align-items:center;justify-content:center;border-radius:12px;flex-shrink:0;}
+.lang-info{flex:1;}
+.lang-name{font-size:1.1rem;font-weight:700;color:#1f2937;}
+.lang-en{font-size:.75rem;color:#9ca3af;}
+.lang-desc{font-size:.78rem;color:#6b7280;line-height:1.5;}
+.lang-count{display:inline-block;font-size:.7rem;font-weight:600;padding:3px 10px;border-radius:12px;margin-top:4px;align-self:flex-start;}
+
+/* 色系 */
+.bg-blue{background:#dbeafe;color:#2569eb;}
+.bg-green{background:#d1fae5;color:#059669;}
+.bg-orange{background:#fed7aa;color:#ea580c;}
+.bg-pink{background:#fce7f3;color:#be185d;}
+.bg-purple{background:#ede9fe;color:#7c3aed;}
+.bg-gold{background:#fef3c7;color:#92400e;}
+.bg-teal{background:#ccfbf1;color:#0d9488;}
+.bg-rose{background:#fecdd3;color:#e11d48;}
+.badge-blue{background:#dbeafe;color:#2569eb;}
+.badge-green{background:#d1fae5;color:#059669;}
+.badge-orange{background:#fed7aa;color:#ea580c;}
+.badge-pink{background:#fce7f3;color:#be185d;}
+.badge-purple{background:#ede9fe;color:#7c3aed;}
+.badge-gold{background:#fef3c7;color:#92400e;}
+.badge-teal{background:#ccfbf1;color:#0d9488;}
+.badge-rose{background:#fecdd3;color:#e11d48;}
+
+/* 内容项 */
+.content-item{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:14px 16px;margin:8px 0;display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;transition:background .2s;}
+.content-item:hover{background:rgba(255,255,255,.15);}
+.content-item .ci-icon{font-size:1.4rem;flex-shrink:0;}
+.content-item .ci-text{flex:1;font-size:.85rem;}
+.content-item .ci-arrow{font-size:.9rem;opacity:.5;}
+
+/* 底部 */
+.footer{text-align:center;color:rgba(255,255,255,.3);font-size:.7rem;margin-top:30px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08);}
+
+/* 手机适配 */
+@media(max-width:600px){
+  .grid{grid-template-columns:1fr;}
+  .topbar h1{font-size:1.1rem;}
+  .lang-card{padding:16px 14px;}
+  .lang-flag{font-size:1.6rem;width:42px;height:42px;}
+  .lang-name{font-size:1rem;}
+}
+
+/* iPad适配 */
+@media(min-width:601px) and (max-width:1024px){
+  .grid{max-width:800px;gap:16px;}
+  .lang-card{padding:24px 20px;}
+  .lang-flag{font-size:2.4rem;width:56px;height:56px;}
+  .lang-name{font-size:1.2rem;}
+}
+
+/* 大屏适配 */
+@media(min-width:1025px){
+  .grid{max-width:900px;gap:18px;}
+  .lang-card{padding:26px 22px;}
+  .lang-flag{font-size:2.6rem;width:60px;height:60px;}
+  .lang-name{font-size:1.25rem;}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>📚 图书馆</h1>
+  <p>语言学习 · 图书资料 · 个人知识库</p>
+  <a href="index.html" class="back">← 返回工作台</a>
+</div>
+
+<!-- 第一区：我的语言 -->
+<div class="section-label">🌐 我的学习语言</div>
+<div class="grid">
+
+  <a href="library-en.html" class="lang-card">
+    <div class="lang-header">
+      <div class="lang-flag bg-blue">🇬🇧</div>
+      <div class="lang-info">
+        <div class="lang-name">英语</div>
+        <div class="lang-en">English</div>
+      </div>
+    </div>
+    <div class="lang-desc">日常沟通 · 商务英语 · 培训用语</div>
+    <span class="lang-count badge-blue">0 条资料</span>
+  </a>
+
+  <a href="library-yue.html" class="lang-card">
+    <div class="lang-header">
+      <div class="lang-flag bg-green">🗣️</div>
+      <div class="lang-info">
+        <div class="lang-name">粤语</div>
+        <div class="lang-en">Cantonese</div>
+      </div>
+    </div>
+    <div class="lang-desc">香港本土 · 日常交流 · 文化传承</div>
+    <span class="lang-count badge-green">0 条资料</span>
+  </a>
+
+  <a href="library-teochew.html" class="lang-card">
+    <div class="lang-header">
+      <div class="lang-flag bg-orange">💬</div>
+      <div class="lang-info">
+        <div class="lang-name">潮州话</div>
+        <div class="lang-en">Teochew</div>
+      </div>
+    </div>
+    <div class="lang-desc">母语传承 · 家乡文化 · 乡音乡情</div>
+    <span class="lang-count badge-orange">0 条资料</span>
+  </a>
+
+  <a href="library-ja.html" class="lang-card">
+    <div class="lang-header">
+      <div class="lang-flag bg-pink">🇯🇵</div>
+      <div class="lang-info">
+        <div class="lang-name">日语</div>
+        <div class="lang-en">Japanese · 日本語</div>
+      </div>
+    </div>
+    <div class="lang-desc">日常会话 · 商务日语 · 文化兴趣</div>
+    <span class="lang-count badge-pink">0 条资料</span>
+  </a>
+
+  <a href="library-es.html" class="lang-card">
+    <div class="lang-header">
+      <div class="lang-flag bg-gold">🇪🇸</div>
+      <div class="lang-info">
+        <div class="lang-name">西班牙语</div>
+        <div class="lang-en">Spanish · Español</div>
+      </div>
+    </div>
+    <div class="lang-desc">商务沟通 · 外企客户 · 拉美市场</div>
+    <span class="lang-count badge-gold">0 条资料</span>
+  </a>
+
+  <a href="library-ms.html" class="lang-card">
+    <div class="lang-header">
+      <div class="lang-flag bg-teal">🇲🇾</div>
+      <div class="lang-info">
+        <div class="lang-name">马来语</div>
+        <div class="lang-en">Malay · Bahasa Melayu</div>
+      </div>
+    </div>
+    <div class="lang-desc">东南亚市场 · 文化交流 · 商务拓展</div>
+    <span class="lang-count badge-teal">0 条资料</span>
+  </a>
+
+</div>
+
+<!-- 第二区：图书与阅读 -->
+<div class="section-label">📖 图书与阅读</div>
+<div class="max-width:700px;margin:0 auto;">
+
+  <a href="library-books.html" class="content-item" style="max-width:672px;margin-left:auto;margin-right:auto;">
+    <div class="ci-icon">📖</div>
+    <div class="ci-text">我的书架 · 电子书与教材</div>
+    <div class="ci-arrow">→</div>
+  </a>
+
+  <a href="library-notes.html" class="content-item" style="max-width:672px;margin-left:auto;margin-right:auto;">
+    <div class="ci-icon">📝</div>
+    <div class="ci-text">学习笔记 · 知识卡片</div>
+    <div class="ci-arrow">→</div>
+  </a>
+
+  <a href="library-reading.html" class="content-item" style="max-width:672px;margin-left:auto;margin-right:auto;">
+    <div class="ci-icon">📚</div>
+    <div class="ci-text">阅读清单 · 待读与已读</div>
+    <div class="ci-arrow">→</div>
+  </a>
+
+</div>
+
+<div class="footer">
+  Frankie Tsang 曾仕昭 · 个人图书馆<br>
+  2026 · Shenzhen Frankie Z Style Education Technology Co., Ltd.
+</div>
+
+</body>
+</html>
