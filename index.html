@@ -3,87 +3,187 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>boyboy管家</title>
+<title>Frankie Tsang 工作台</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#667eea,#764ba2);min-height:100vh;padding:30px 16px;color:#333;}
-.header{text-align:center;color:#fff;margin-bottom:40px;}
-.header .logo{font-size:4rem;margin-bottom:12px;}
-.header h1{font-size:1.8rem;font-weight:800;text-shadow:2px 2px 8px rgba(0,0,0,.2);}
-.header p{font-size:.9rem;opacity:.9;margin-top:6px;}
-.grid{max-width:500px;margin:0 auto;display:flex;flex-direction:column;gap:16px;}
-.card{background:#fff;border-radius:20px;padding:24px 20px;text-align:center;box-shadow:0 6px 24px rgba(0,0,0,.1);text-decoration:none;color:#333;display:block;position:relative;overflow:hidden;}
-.card-icon{font-size:2.8rem;margin-bottom:10px;display:block;}
-.card-title{font-size:1.2rem;font-weight:800;color:#1f2937;margin-bottom:4px;}
-.card-desc{font-size:.82rem;color:#6b7280;line-height:1.5;}
-.card-badge{display:inline-block;font-size:.73rem;font-weight:700;padding:5px 14px;border-radius:16px;margin-top:10px;}
-.badge-purple{background:#ede9fe;color:#6d28d9;}
-.badge-green{background:#d1fae5;color:#047857;}
-.badge-blue{background:#dbeafe;color:#1d4ed8;}
-.badge-orange{background:#fef3c7;color:#92400e;}
-.badge-pink{background:#fce7f3;color:#be185d;}
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#667eea,#764ba2);min-height:100vh;padding:20px 16px 40px;color:#333;}
 
-.section-label{text-align:center;color:rgba(255,255,255,.85);font-size:.9rem;font-weight:700;margin:30px auto 16px;max-width:500px;}
-.footer{text-align:center;color:rgba(255,255,255,.45);font-size:.72rem;margin-top:30px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);}
+/* 顶部 */
+.header{text-align:center;color:#fff;margin-bottom:30px;}
+.header .avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#c9a84c,#f4d06f);margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:bold;color:#0f3954;border:3px solid rgba(255,255,255,.3);box-shadow:0 4px 20px rgba(0,0,0,.2);}
+.header h1{font-size:1.5rem;font-weight:800;text-shadow:1px 1px 6px rgba(0,0,0,.2);}
+.header .subtitle{font-size:.82rem;opacity:.85;margin-top:6px;line-height:1.5;}
+.header .company{font-size:.72rem;opacity:.6;margin-top:4px;}
+
+/* 分区标签 */
+.section-label{color:rgba(255,255,255,.9);font-size:.85rem;font-weight:700;margin:24px auto 12px;max-width:600px;display:flex;align-items:center;gap:8px;}
+.section-label::before{content:'';width:4px;height:16px;background:rgba(255,255,255,.5);border-radius:2px;}
+.section-label::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.15);}
+
+/* 卡片网格 */
+.grid{max-width:600px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+.grid-full{max-width:600px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+
+/* 卡片 */
+.card{background:#fff;border-radius:16px;padding:18px 16px;text-decoration:none;color:#333;display:flex;align-items:center;gap:14px;box-shadow:0 4px 16px rgba(0,0,0,.1);transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden;}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.15);}
+.card:active{transform:translateY(0);}
+.card-icon{font-size:2rem;flex-shrink:0;width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:12px;}
+.card-body{flex:1;min-width:0;}
+.card-title{font-size:1rem;font-weight:700;color:#1f2937;margin-bottom:2px;}
+.card-desc{font-size:.75rem;color:#6b7280;line-height:1.4;}
+.card-arrow{font-size:1rem;color:#d1d5db;flex-shrink:0;}
+
+/* 色系 */
+.bg-purple{background:#ede9fe;color:#7c3aed;}
+.bg-green{background:#d1fae5;color:#059669;}
+.bg-blue{background:#dbeafe;color:#2569eb;}
+.bg-orange{background:#fed7aa;color:#ea580c;}
+.bg-pink{background:#fce7f3;color:#be185d;}
+.bg-gold{background:#fef3c7;color:#92400e;}
+.bg-teal{background:#ccfbf1;color:#0d9488;}
+.bg-rose{background:#fecdd3;color:#e11d48;}
+
+/* 底部 */
+.footer{text-align:center;color:rgba(255,255,255,.4);font-size:.7rem;margin-top:30px;padding-top:16px;border-top:1px solid rgba(255,255,255,.1);line-height:1.6;}
+
+/* 手机适配 */
+@media(max-width:600px){
+  .grid{grid-template-columns:1fr;}
+  .header h1{font-size:1.2rem;}
+  .card{padding:14px 12px;}
+  .card-icon{font-size:1.6rem;width:40px;height:40px;}
+  .card-title{font-size:.9rem;}
+  .card-desc{font-size:.7rem;}
+}
 </style>
 </head>
 <body>
 
+<!-- 顶部个人标识 -->
 <div class="header">
-  <div class="logo">🏠</div>
-  <h1>boyboy管家</h1>
-  <p>你的私人专家团队</p>
+  <div class="avatar">FT</div>
+  <h1>Frankie Tsang 曾仕昭</h1>
+  <div class="subtitle">亲子教育顾问 · 企业培训讲师 · 心理咨询师</div>
+  <div class="company">Shenzhen Frankie Z Style Education Technology Co., Ltd.</div>
 </div>
 
+<!-- 第一区：我的档案 -->
+<div class="section-label">📂 我的档案</div>
 <div class="grid">
   <a href="archive.html" class="card">
-    <span class="card-icon">📂</span>
-    <span class="card-title">档案室</span>
-    <span class="card-desc">9个部门 · 存档记录 · 一键查阅</span>
-    <span class="card-badge badge-purple">进入 →</span>
-  </a>
-
-  <a href="business-plan.html" class="card">
-    <span class="card-icon">📋</span>
-    <span class="card-title">业务档案</span>
-    <span class="card-desc">战略蓝图 · 五环战略 · 集团架构</span>
-    <span class="card-badge badge-green">进入 →</span>
-  </a>
-
-  <a href="sales-training.html" class="card">
-    <span class="card-icon">🎓</span>
-    <span class="card-title">销售培训方案</span>
-    <span class="card-desc">新员工3个月转岗培训 · 中英文</span>
-    <span class="card-badge badge-blue">进入 →</span>
-  </a>
-
-  <a href="universal-sales-training.html" class="card">
-    <span class="card-icon">🌍</span>
-    <span class="card-title">通用销售培训方案</span>
-    <span class="card-desc">适用任何企业 · 男女通用 · 中英文</span>
-    <span class="card-badge badge-pink">进入 →</span>
+    <div class="card-icon bg-purple">📂</div>
+    <div class="card-body">
+      <div class="card-title">档案室</div>
+      <div class="card-desc">9个部门 · 存档记录</div>
+    </div>
+    <div class="card-arrow">→</div>
   </a>
 
   <a href="frankie-card-en.html" class="card">
-    <span class="card-icon">💎</span>
-    <span class="card-title">Frankie Tsang 名片</span>
-    <span class="card-desc">曾仕昭英文电子名片 · 专业档案</span>
-    <span class="card-badge badge-green">进入 →</span>
+    <div class="card-icon bg-gold">💎</div>
+    <div class="card-body">
+      <div class="card-title">我的名片</div>
+      <div class="card-desc">英文电子名片 · 专业档案</div>
+    </div>
+    <div class="card-arrow">→</div>
+  </a>
+
+  <a href="business-plan.html" class="card">
+    <div class="card-icon bg-green">📋</div>
+    <div class="card-body">
+      <div class="card-title">业务档案</div>
+      <div class="card-desc">战略蓝图 · 五环战略</div>
+    </div>
+    <div class="card-arrow">→</div>
+  </a>
+
+  <a href="crisis-plan.html" class="card">
+    <div class="card-icon bg-rose">⚡</div>
+    <div class="card-body">
+      <div class="card-title">危机预案</div>
+      <div class="card-desc">突发事件汇报 · 中英文</div>
+    </div>
+    <div class="card-arrow">→</div>
   </a>
 </div>
 
-<div class="section-label">📥 PPT 课件下载</div>
-
+<!-- 第二区：培训方案 -->
+<div class="section-label">🎓 培训方案</div>
 <div class="grid">
-  <a href="downloads.html" class="card">
-    <span class="card-icon">📥</span>
-    <span class="card-title">PPT 课件下载</span>
-    <span class="card-desc">销售培训 + 通用版 + TQUK三个课件 · 一键下载</span>
-    <span class="card-badge badge-orange">5个课件 →</span>
+  <a href="sales-training.html" class="card">
+    <div class="card-icon bg-blue">🎓</div>
+    <div class="card-body">
+      <div class="card-title">销售培训方案</div>
+      <div class="card-desc">新员工3个月转岗培训 · 中英文</div>
+    </div>
+    <div class="card-arrow">→</div>
+  </a>
+
+  <a href="universal-sales-training.html" class="card">
+    <div class="card-icon bg-pink">🌍</div>
+    <div class="card-body">
+      <div class="card-title">通用销售培训</div>
+      <div class="card-desc">适用任何企业 · 男女通用</div>
+    </div>
+    <div class="card-arrow">→</div>
+  </a>
+
+  <a href="sales-training-condensed-en.html" class="card">
+    <div class="card-icon bg-teal">📄</div>
+    <div class="card-body">
+      <div class="card-title">培训精简版(EN)</div>
+      <div class="card-desc">Highlights · 英文版</div>
+    </div>
+    <div class="card-arrow">→</div>
   </a>
 </div>
 
-<div class="footer">🏠 boyboy管家 · 2026-07-21</div>
+<!-- 第三区：课件中心 -->
+<div class="section-label">🎬 课件中心 · 点击直接看</div>
+<div class="grid">
+  <a href="parents-six-dilemmas-view.html" class="card">
+    <div class="card-icon bg-orange">👨‍👩‍👧</div>
+    <div class="card-body">
+      <div class="card-title">六大困境 PPT</div>
+      <div class="card-desc">现代家长 · 11页 · 在线看</div>
+    </div>
+    <div class="card-arrow">→</div>
+  </a>
+
+  <a href="parents-video-view.html" class="card">
+    <div class="card-icon bg-purple">🎬</div>
+    <div class="card-body">
+      <div class="card-title">六大困境 视频</div>
+      <div class="card-desc">47秒 · 动画版 · 在线看</div>
+    </div>
+    <div class="card-arrow">→</div>
+  </a>
+
+  <a href="kids-excellence-view.html" class="card">
+    <div class="card-icon bg-pink">👶</div>
+    <div class="card-body">
+      <div class="card-title">孩子优秀不是梦</div>
+      <div class="card-desc">8章节 · 在线看</div>
+    </div>
+    <div class="card-arrow">→</div>
+  </a>
+
+  <a href="downloads.html" class="card">
+    <div class="card-icon bg-green">📥</div>
+    <div class="card-body">
+      <div class="card-title">课件下载中心</div>
+      <div class="card-desc">销售培训 + TQUK + 通用版</div>
+    </div>
+    <div class="card-arrow">→</div>
+  </a>
+</div>
+
+<!-- 底部 -->
+<div class="footer">
+  Frankie Tsang 曾仕昭 · 个人工作台<br>
+  Shenzhen Frankie Z Style Education Technology Co., Ltd. · 2026
+</div>
 
 </body>
 </html>
