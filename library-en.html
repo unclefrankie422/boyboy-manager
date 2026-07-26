@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>英语学习 · Frankie 图书馆</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#1e3a5f,#2569eb);min-height:100vh;padding:20px 16px 40px;color:#333;}
+
+.topbar{background:rgba(255,255,255,.1);backdrop-filter:blur(10px);border-radius:20px;padding:24px 20px;text-align:center;margin-bottom:24px;border:1px solid rgba(255,255,255,.15);}
+.topbar h1{color:#fff;font-size:1.4rem;margin-bottom:4px;}
+.topbar p{color:rgba(255,255,255,.7);font-size:.82rem;}
+.topbar .back{display:inline-block;margin-top:10px;color:rgba(255,255,255,.8);text-decoration:none;font-size:.8rem;padding:6px 16px;border:1px solid rgba(255,255,255,.2);border-radius:20px;}
+
+.section-label{color:rgba(255,255,255,.9);font-size:.85rem;font-weight:700;margin:20px auto 12px;max-width:700px;display:flex;align-items:center;gap:8px;}
+.section-label::before{content:'';width:4px;height:16px;background:rgba(255,255,255,.4);border-radius:2px;}
+.section-label::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.12);}
+
+.resource-card{background:#fff;border-radius:16px;padding:20px 18px;margin:0 auto 14px;max-width:700px;text-decoration:none;color:#333;display:flex;align-items:flex-start;gap:14px;box-shadow:0 4px 16px rgba(0,0,0,.1);transition:transform .2s,box-shadow .2s;}
+.resource-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.2);}
+.resource-card:active{transform:translateY(0);}
+.rc-icon{font-size:2rem;width:50px;height:50px;display:flex;align-items:center;justify-content:center;border-radius:12px;flex-shrink:0;}
+.rc-info{flex:1;}
+.rc-title{font-size:1rem;font-weight:700;color:#1f2937;margin-bottom:4px;line-height:1.4;}
+.rc-desc{font-size:.8rem;color:#6b7280;line-height:1.5;}
+.rc-badge{display:inline-block;font-size:.68rem;font-weight:600;padding:3px 10px;border-radius:10px;margin-top:6px;}
+
+.bg-blue{background:#dbeafe;color:#2569eb;}
+.bg-purple{background:#ede9fe;color:#7c3aed;}
+.bg-green{background:#d1fae5;color:#059669;}
+.bg-gold{background:#fef3c7;color:#92400e;}
+.badge-blue{background:#dbeafe;color:#2569eb;}
+.badge-purple{background:#ede9fe;color:#7c3aed;}
+.badge-green{background:#d1fae5;color:#059669;}
+.badge-gold{background:#fef3c7;color:#92400e;}
+
+.footer{text-align:center;color:rgba(255,255,255,.3);font-size:.7rem;margin-top:30px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08);}
+
+@media(max-width:600px){
+  .topbar h1{font-size:1.1rem;}
+  .resource-card{padding:16px 14px;}
+  .rc-icon{font-size:1.6rem;width:42px;height:42px;}
+  .rc-title{font-size:.95rem;}
+}
+@media(min-width:601px) and (max-width:1024px){
+  .resource-card{max-width:800px;padding:24px 20px;}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>🇬🇧 英语学习</h1>
+  <p>English Learning · 画面法学英语 · 母语思维训练</p>
+  <a href="library.html" class="back">← 返回图书馆</a>
+</div>
+
+<div class="section-label">📖 母语思维训练课程</div>
+
+<a href="english-day1-view.html" class="resource-card">
+  <div class="rc-icon bg-blue">🧠</div>
+  <div class="rc-info">
+    <div class="rc-title">Day 1 · 重塑"英语记忆回路"</div>
+    <div class="rc-desc">用画面法让词句牢牢记进脑子。掌握 up / off / on 的母语画面，一个词搞定上百固定搭配。</div>
+    <span class="rc-badge badge-blue">23页 · 在线查看</span>
+  </div>
+</a>
+
+<a href="english-day2-view.html" class="resource-card">
+  <div class="rc-icon bg-green">💬</div>
+  <div class="rc-info">
+    <div class="rc-title">Day 2 · 搞定日常700高频句型</div>
+    <div class="rc-desc">打破哑巴英语魔咒。用母语思维学动词：hold / stand / lie / have / take 的本质画面。</div>
+    <span class="rc-badge badge-green">20页 · 在线查看</span>
+  </div>
+</a>
+
+<a href="english-day3-view.html" class="resource-card">
+  <div class="rc-icon bg-purple">🎯</div>
+  <div class="rc-info">
+    <div class="rc-title">Day 3 · 告别苦背语法规则</div>
+    <div class="rc-desc">快速精准表达。解决介词卡壳误区：at / on / in / out of 的母语逻辑，看画面不背规则。</div>
+    <span class="rc-badge badge-purple">23页 · 在线查看</span>
+  </div>
+</a>
+
+<div class="section-label">📚 课程与文档</div>
+
+<a href="21st-century-skills-view.html" class="resource-card">
+  <div class="rc-icon bg-gold">📋</div>
+  <div class="rc-info">
+    <div class="rc-title">21st Century Skills Courses</div>
+    <div class="rc-desc">21世纪技能在线课程项目文档（中英双语），面向中国市场的教育课程规划。</div>
+    <span class="rc-badge badge-gold">中英双语 · 在线查看</span>
+  </div>
+</a>
+
+<div class="footer">
+  Frankie Tsang 曾仕昭 · 英语学习资料库<br>
+  2026 · Shenzhen Frankie Z Style Education Technology Co., Ltd.
+</div>
+
+</body>
+</html>
