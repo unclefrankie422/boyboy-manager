@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>英语高端课程市场调查报告</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#f5f5f7;padding:20px 16px 40px;color:#333;}
+.container{max-width:900px;margin:0 auto;}
+
+/* 头部 */
+.hero{background:linear-gradient(135deg,#1e3a5f,#2569eb);border-radius:20px;padding:32px 24px;text-align:center;margin-bottom:24px;color:#fff;}
+.hero .tag{display:inline-block;background:rgba(255,255,255,.2);font-size:.72rem;padding:4px 14px;border-radius:12px;margin-bottom:12px;}
+.hero h1{font-size:1.5rem;margin-bottom:8px;}
+.hero .sub{font-size:.82rem;opacity:.8;}
+.hero .date{font-size:.72rem;opacity:.5;margin-top:8px;}
+
+/* 被调查课程卡 */
+.target-course{background:#fff;border-radius:16px;padding:24px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.06);border-left:4px solid #2569eb;}
+.target-course h2{font-size:1.1rem;color:#2569eb;margin-bottom:12px;}
+.target-course .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.target-course .info-item{font-size:.85rem;}
+.target-course .info-item strong{color:#1e3a5f;}
+
+/* 对比表格 */
+.section{margin-bottom:24px;}
+.section h2{font-size:1.1rem;color:#1e3a5f;margin-bottom:12px;padding-left:12px;border-left:3px solid #2569eb;}
+.table-wrap{overflow-x:auto;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.06);}
+table{width:100%;border-collapse:collapse;background:#fff;min-width:700px;}
+th{background:#1e3a5f;color:#fff;padding:12px 10px;font-size:.78rem;text-align:left;white-space:nowrap;}
+td{padding:12px 10px;font-size:.82rem;border-bottom:1px solid #eee;vertical-align:top;}
+tr:hover{background:#f8faff;}
+tr:last-child td{border-bottom:none;}
+.highlight-row{background:#f0f7ff !important;}
+.highlight-row td:first-child{font-weight:700;color:#2569eb;}
+
+/* 分析卡片 */
+.insight-card{background:#fff;border-radius:16px;padding:24px;margin-bottom:16px;box-shadow:0 2px 12px rgba(0,0,0,.06);}
+.insight-card h3{font-size:1rem;color:#1e3a5f;margin-bottom:10px;}
+.insight-card p,.insight-card li{font-size:.85rem;color:#4b5563;line-height:1.8;}
+.insight-card ul{padding-left:18px;}
+.insight-card .verdict{display:inline-block;padding:6px 16px;border-radius:8px;font-weight:700;font-size:.85rem;margin-top:8px;}
+.verdict-good{background:#d1fae5;color:#065f46;}
+.verdict-caution{background:#fffbeb;color:#92400e;}
+
+/* 价格带图 */
+.bar-wrap{background:#f0f0f3;border-radius:8px;height:36px;margin:12px 0;position:relative;overflow:visible;}
+.bar-segment{position:absolute;height:100%;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.7rem;color:#fff;font-weight:700;min-width:60px;}
+.bar-target{position:absolute;top:-8px;width:3px;height:52px;background:#e11d48;border-radius:2px;}
+.bar-target::after{content:attr(data-label);position:absolute;top:-20px;left:50%;transform:translateX(-50%);font-size:.7rem;color:#e11d48;font-weight:700;white-space:nowrap;}
+
+.footer{text-align:center;color:#9ca3af;font-size:.72rem;margin-top:30px;padding-top:20px;border-top:1px solid #e5e7eb;}
+
+@media(max-width:600px){
+  .hero h1{font-size:1.2rem;}
+  .target-course .info-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="hero">
+  <div class="tag">市场调查报告</div>
+  <h1>英语高端课程 · 市场横向对比</h1>
+  <div class="sub">24小时 · 牛津硕士 · 全英文授课 · 收费近2万元</div>
+  <div class="date">2026年7月 · 数据来源：公开市场信息</div>
+</div>
+
+<!-- 被调查课程 -->
+<div class="target-course">
+  <h2>📋 待评估课程</h2>
+  <div class="info-grid">
+    <div class="info-item"><strong>课时</strong>：24小时</div>
+    <div class="info-item"><strong>师资</strong>：牛津大学硕士研究生</div>
+    <div class="info-item"><strong>授课方式</strong>：全英文授课</div>
+    <div class="info-item"><strong>收费</strong>：接近20,000元</div>
+    <div class="info-item"><strong>单价</strong>：约 833元/小时</div>
+    <div class="info-item"><strong>定位</strong>：高端英语培训</div>
+  </div>
+</div>
+
+<!-- 第一部分：同类竞品对比 -->
+<div class="section">
+  <h2>一、同类高端英语课程对比</h2>
+  <div class="table-wrap">
+    <table>
+      <tr><th>课程/机构</th><th>师资背景</th><th>课时数</th><th>授课方式</th><th>总价（元）</th><th>单价（元/时）</th></tr>
+      <tr class="highlight-row"><td><strong>👉 待评估课程</strong></td><td>牛津大学硕士</td><td>24h</td><td>全英文授课</td><td>≈20,000</td><td>≈833</td></tr>
+      <tr><td>TutorChase 牛剑导师</td><td>牛津/剑桥毕业生</td><td>按需</td><td>线上一对一</td><td>—</td><td>370-925</td></tr>
+      <tr><td>Spires 名校导师</td><td>全球Top30硕博</td><td>按需</td><td>线上一对一</td><td>—</td><td>370-465</td></tr>
+      <tr><td>EF英孚 一对一</td><td>欧美外教（TEFL）</td><td>按需</td><td>线下/线上</td><td>—</td><td>450-750</td></tr>
+      <tr><td>华尔街英语 VIP</td><td>欧美外教</td><td>约60h/级别</td><td>线下+线上</td><td>45,000-60,000</td><td>约750-1,000</td></tr>
+      <tr><td>新东方 一对一</td><td>国内名师</td><td>按需</td><td>线下/线上</td><td>—</td><td>400-800</td></tr>
+      <tr><td>italki 牛剑外教</td><td>名校背景自由教师</td><td>按需</td><td>线上</td><td>—</td><td>200-500</td></tr>
+      <tr><td>Cambly 高端套餐</td><td>母语外教</td><td>按需</td><td>线上</td><td>—</td><td>150-300</td></tr>
+      <tr><td>线下VIP高端套餐</td><td>欧美外教</td><td>50-100h</td><td>线下小班/一对一</td><td>50,000-100,000+</td><td>500-1,000+</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- 第二部分：价格带分析 -->
+<div class="section">
+  <h2>二、价格带定位分析</h2>
+  <div class="insight-card">
+    <h3>英语培训市场每小时单价分布</h3>
+    <div style="display:flex;justify-content:space-between;font-size:.72rem;color:#6b7280;margin-bottom:4px;">
+      <span>低端</span><span>中端</span><span>中高端</span><span>高端</span><span>顶级</span>
+    </div>
+    <div class="bar-wrap">
+      <div class="bar-segment" style="left:0;width:20%;background:#86efac;color:#166534;">100-300</div>
+      <div class="bar-segment" style="left:20%;width:25%;background:#fcd34d;color:#854d0e;">300-500</div>
+      <div class="bar-segment" style="left:45%;width:20%;background:#fb923c;color:#fff;">500-750</div>
+      <div class="bar-segment" style="left:65%;width:20%;background:#f87171;color:#fff;">750-900</div>
+      <div class="bar-segment" style="left:85%;width:15%;background:#e11d48;color:#fff;">900+</div>
+      <div class="bar-target" style="left:72%;" data-label="← 833元"></div>
+    </div>
+    <p style="margin-top:16px;">💡 <strong>833元/小时</strong> 处于 <strong>「高端」与「顶级」的交界带</strong>，高于市面上约 <strong>95%</strong> 的英语培训课程定价。</p>
+  </div>
+</div>
+
+<!-- 第三部分：竞品详细分析 -->
+<div class="section">
+  <h2>三、最接近的直接竞品</h2>
+
+  <div class="insight-card">
+    <h3>🥇 TutorChase 牛剑导师（相似度 ★★★★★）</h3>
+    <p>专门匹配牛津、剑桥在读或毕业的导师进行一对一辅导，线上授课。</p>
+    <ul>
+      <li>师资：牛津/剑桥本科或研究生背景</li>
+      <li>价格：370-925元/小时（根据导师资历浮动）</li>
+      <li>特点：与待评估课程最接近——同为"牛剑"品牌背书</li>
+      <li>差异：TutorChase按单次购买，无固定课时包；待评估课程是24小时打包</li>
+    </ul>
+    <span class="verdict verdict-good">价格在TutorChase中高端区间内</span>
+  </div>
+
+  <div class="insight-card">
+    <h3>🥈 EF英孚一对一（相似度 ★★★★☆）</h3>
+    <p>老牌英语培训机构，欧美外教一对一。</p>
+    <ul>
+      <li>师资：欧美外教，TEFL/TESOL认证，但无名校背景</li>
+      <li>价格：450-750元/小时</li>
+      <li>特点：品牌知名度高、体系成熟，但师资背景不如牛津硕士</li>
+      <li>差异：待评估课程比EF高端档位高出约11%</li>
+    </ul>
+    <span class="verdict verdict-good">比EF品牌溢价合理，师资有代差优势</span>
+  </div>
+
+  <div class="insight-card">
+    <h3>🥉 华尔街英语 VIP（相似度 ★★★☆☆）</h3>
+    <p>老牌线下高端英语培训。</p>
+    <ul>
+      <li>师资：欧美外教，一般无顶尖名校背景</li>
+      <li>价格：750-1,000元/小时（VIP一对一）</li>
+      <li>特点：线下沉浸式体验好，但总价高（一个级别4-6万）</li>
+      <li>差异：华尔街价格范围涵盖833元，但师资无牛剑背书</li>
+    </ul>
+    <span class="verdict verdict-good">价格在华尔街VIP区间内，师资更有优势</span>
+  </div>
+</div>
+
+<!-- 第四部分：价格合理性分析 -->
+<div class="section">
+  <h2>四、价格合理性判断</h2>
+
+  <div class="insight-card">
+    <h3>✅ 支撑价格的有利因素</h3>
+    <ul>
+      <li><strong>牛津硕士学历</strong>：市面上90%以上外教仅有TEFL/TESOL认证，牛津硕士是极强的差异化卖点，品牌溢价显著</li>
+      <li><strong>与TutorChase高端档对齐</strong>：TutorChase牛剑导师最高925元/时，833元在其中高端合理区间</li>
+      <li><strong>总价可控</strong>：2万元一次付费，远低于华尔街英语全套（4.5万+）和线下VIP套餐（5万+）</li>
+      <li><strong>全英文授课</strong>：纯英文沉浸式环境，比中英混讲的外教课程有教学价值加成</li>
+    </ul>
+  </div>
+
+  <div class="insight-card">
+    <h3>⚠️ 需要注意的因素</h3>
+    <ul>
+      <li><strong>24小时课时偏短</strong>：相当于华尔街英语2-3个月的量，对学员来说可能只是入门，效果取决于课程设计密度</li>
+      <li><strong>学历 ≠ 教学能力</strong>：牛津硕士不代表会教学，建议确认教师是否持有TESOL/CELTA等教学资质</li>
+      <li><strong>与italki牛剑外教（200-500元/时）有价差</strong>：价格是italki同类师资的1.7-4倍，需要有足够的课程体系和服务附加值来支撑</li>
+      <li><strong>市场教育成本</strong>：国内消费者对"833元/小时"的认知锚定在"比EF贵"，需要强调牛津硕士的稀缺性</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 第五部分：营销建议 -->
+<div class="section">
+  <h2>五、定位与营销建议</h2>
+
+  <div class="insight-card">
+    <h3>🎯 核心差异化定位</h3>
+    <p style="font-size:.9rem;"><strong>"牛津硕士亲授，不是普通外教"</strong></p>
+    <p>不要跟EF、华尔街比价格，要跟TutorChase、Spires比师资。核心卖点是"牛津"，不是"英语课"。</p>
+  </div>
+
+  <div class="insight-card">
+    <h3>📢 营销话术方向</h3>
+    <ul>
+      <li><strong>对标TutorChase</strong>：同为牛剑导师，但我们提供完整的24小时课程体系，而非零散的单次辅导</li>
+      <li><strong>强调稀缺性</strong>：牛津硕士在中国教英语的非常少，不是随便能碰到的</li>
+      <li><strong>提供试听</strong>：免费15-30分钟试听课，降低客户决策门槛——高端课程最怕客户不敢试</li>
+      <li><strong>突出全英文</strong>：不是中英混讲，是真正的沉浸式母语环境，这个价值很多人愿意多付钱</li>
+    </ul>
+  </div>
+
+  <div class="insight-card">
+    <h3>💰 定价策略建议</h3>
+    <ul>
+      <li><strong>公开标价</strong>：19,800元（心理上"不到2万"）</li>
+      <li><strong>早鸟价</strong>：前10名 14,800元（制造稀缺感，快速获客）</li>
+      <li><strong>团购价</strong>：两人同行 17,800元/人（裂变拉新）</li>
+      <li><strong>拆分方案</strong>：也可提供8小时体验包 6,800元（降低首次付费门槛）</li>
+    </ul>
+  </div>
+</div>
+
+<div class="section">
+  <h2>六、总结</h2>
+  <div class="insight-card">
+    <table style="min-width:auto;">
+      <tr><td style="width:120px;font-weight:700;">市场定位</td><td>高端英语培训，处于高端与顶级交界带</td></tr>
+      <tr><td style="font-weight:700;">价格水平</td><td>高于市场95%课程，但低于线下VIP顶级</td></tr>
+      <tr><td style="font-weight:700;">最直接竞品</td><td>TutorChase牛剑导师（370-925元/时）</td></tr>
+      <tr><td style="font-weight:700;">核心优势</td><td>牛津硕士学历背书 + 全英文沉浸 + 24h体系化课程</td></tr>
+      <tr><td style="font-weight:700;">主要风险</td><td>课时偏短、学历≠教学能力、市场认知需要教育</td></tr>
+      <tr><td style="font-weight:700;">定价判断</td><td><span class="verdict verdict-good">合理偏高区间，核心在于能否把"牛津硕士"的价值讲清楚</span></td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="footer">
+  Frankie Tsang 曾仕昭 · 市场调查报告<br>
+  2026年7月 · 仅供内部参考 · Shenzhen Frankie Z Style Education Technology Co., Ltd.
+</div>
+
+</div>
+</body>
+</html>
