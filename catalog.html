@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frankie 工作台 · 文件目录</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#1e293b,#334155);min-height:100vh;padding:20px 16px 40px;color:#333;}
+
+/* 顶栏 */
+.topbar{background:rgba(255,255,255,.08);backdrop-filter:blur(10px);border-radius:20px;padding:24px 20px;text-align:center;margin-bottom:20px;border:1px solid rgba(255,255,255,.12);}
+.topbar h1{color:#fff;font-size:1.4rem;margin-bottom:4px;}
+.topbar p{color:rgba(255,255,255,.6);font-size:.82rem;}
+.topbar .back{display:inline-block;margin-top:10px;color:rgba(255,255,255,.8);text-decoration:none;font-size:.8rem;padding:6px 16px;border:1px solid rgba(255,255,255,.2);border-radius:20px;}
+
+/* 统计栏 */
+.stats{max-width:900px;margin:0 auto 20px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
+.stat-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:12px 18px;text-align:center;min-width:80px;}
+.stat-card .num{font-size:1.5rem;font-weight:800;color:#fff;}
+.stat-card .label{font-size:.68rem;color:rgba(255,255,255,.5);margin-top:2px;}
+
+/* 搜索框 */
+.search-wrap{max-width:900px;margin:0 auto 20px;}
+.search-box{width:100%;padding:12px 18px;border-radius:12px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.08);color:#fff;font-size:.9rem;outline:none;}
+.search-box::placeholder{color:rgba(255,255,255,.4);}
+.search-box:focus{border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.12);}
+
+/* 主题分区 */
+.section{max-width:900px;margin:0 auto 24px;}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.section-badge{font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:8px;color:#fff;}
+.section-title{color:rgba(255,255,255,.9);font-size:.95rem;font-weight:700;}
+.section-count{color:rgba(255,255,255,.4);font-size:.72rem;margin-left:auto;}
+
+/* 主题色 */
+.badge-st{background:#2569eb;}
+.badge-ust{background:#7c3aed;}
+.badge-tquk{background:#059669;}
+.badge-pe{background:#ea580c;}
+.badge-eng{background:#0d9488;}
+.badge-arch{background:#92400e;}
+
+/* 文件列表 */
+.file-list{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden;}
+.file-item{display:flex;align-items:center;gap:12px;padding:14px 16px;text-decoration:none;color:rgba(255,255,255,.85);border-bottom:1px solid rgba(255,255,255,.06);transition:background .15s;}
+.file-item:last-child{border-bottom:none;}
+.file-item:hover{background:rgba(255,255,255,.1);}
+.file-num{font-size:.72rem;font-weight:700;padding:3px 8px;border-radius:6px;flex-shrink:0;min-width:60px;text-align:center;}
+.file-icon{font-size:1.3rem;flex-shrink:0;width:32px;text-align:center;}
+.file-info{flex:1;min-width:0;}
+.file-name{font-size:.88rem;font-weight:600;color:#fff;margin-bottom:2px;}
+.file-desc{font-size:.72rem;color:rgba(255,255,255,.5);}
+.file-date{font-size:.7rem;color:rgba(255,255,255,.35);flex-shrink:0;white-space:nowrap;}
+.file-arrow{font-size:.85rem;color:rgba(255,255,255,.3);flex-shrink:0;}
+
+/* 底部 */
+.footer{text-align:center;color:rgba(255,255,255,.25);font-size:.7rem;margin-top:30px;padding-top:16px;border-top:1px solid rgba(255,255,255,.06);line-height:1.6;}
+
+/* 手机适配 */
+@media(max-width:600px){
+  .topbar h1{font-size:1.1rem;}
+  .stats{gap:6px;}
+  .stat-card{padding:10px 14px;min-width:65px;}
+  .stat-card .num{font-size:1.2rem;}
+  .file-item{padding:12px 12px;gap:8px;}
+  .file-num{font-size:.65rem;min-width:50px;padding:2px 6px;}
+  .file-icon{font-size:1.1rem;width:26px;}
+  .file-name{font-size:.82rem;}
+  .file-desc{font-size:.68rem;}
+  .file-date{font-size:.65rem;}
+}
+
+/* iPad适配 */
+@media(min-width:601px) and (max-width:1024px){
+  .section{max-width:800px;}
+  .stats{max-width:800px;}
+  .search-wrap{max-width:800px;}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>📂 文件目录</h1>
+  <p>所有文件编号管理 · 按主题分类 · 附日期</p>
+  <a href="index.html" class="back">← 返回工作台</a>
+</div>
+
+<!-- 统计栏 -->
+<div class="stats">
+  <div class="stat-card"><div class="num">28</div><div class="label">总文件</div></div>
+  <div class="stat-card"><div class="num">6</div><div class="label">主题</div></div>
+  <div class="stat-card"><div class="num">4</div><div class="label">销售培训</div></div>
+  <div class="stat-card"><div class="num">5</div><div class="label">亲子教育</div></div>
+  <div class="stat-card"><div class="num">5</div><div class="label">英语学习</div></div>
+  <div class="stat-card"><div class="num">8</div><div class="label">档案管理</div></div>
+</div>
+
+<!-- 搜索框 -->
+<div class="search-wrap">
+  <input type="text" class="search-box" id="searchInput" placeholder="🔍 搜索文件名、编号或说明..." oninput="filterFiles()">
+</div>
+
+<!-- ST - 销售培训 -->
+<div class="section" data-theme="st">
+  <div class="section-header">
+    <span class="section-badge badge-st">ST</span>
+    <span class="section-title">销售培训 Sales Training</span>
+    <span class="section-count">4 个文件</span>
+  </div>
+  <div class="file-list">
+    <a href="sales-training.html" class="file-item">
+      <span class="file-num badge-st">ST-V1</span>
+      <span class="file-icon">📋</span>
+      <div class="file-info">
+        <div class="file-name">销售培训方案（中英文）</div>
+        <div class="file-desc">新员工3个月转岗培训 · 完整方案</div>
+      </div>
+      <span class="file-date">07-22</span>
+      <span class="file-arrow">→</span>
+    </a>
+    <a href="sales-training-slides-dl.html" class="file-item">
+      <span class="file-num badge-st">ST-V2</span>
+      <span class="file-icon">📊</span>
+      <div class="file-info">
+        <div class="file-name">销售培训PPT（下载版）</div>
+        <div class="file-desc">配套课件 · 可下载</div>
+      </div>
+      <span class="file-date">07-22</span>
+      <span class="file-arrow">→</span>
+    </a>
+    <a href="sales-training-condensed-en.html" class="file-item">
+      <span class="file-num badge-st">ST-V3</span>
+      <span class="file-icon">📋</span>
+      <div class="file-info">
+        <div class="file-name">精简版方案（英文）</div>
+        <div class="file-desc">Highlights · 英文版</div>
+      </div>
+      <span class="file-date">07-22</span>
+      <span class="file-arrow">→</span>
+    </a>
+    <a href="sales-training-condensed-en-dl.html" class="file-item">
+      <span class="file-num badge-st">ST-V4</span>
+      <span class="file-icon">📊</span>
+      <div class="file-info">
+        <div class="file-name">精简版PPT（下载版）</div>
+        <div class="file-desc">英文精简课件 · 可下载</div>
+      </div>
+      <span class="file-date">07-22</span>
+      <span class="file-arrow">→</span>
+    </a>
+  </div>
+</div>
+
+<!-- UST - 通用销售培训 -->
+<div class="section" data-theme="ust">
+  <div class="section-header">
+    <span class="section-badge badge-ust">UST</span>
+    <span class="section-title">通用销售培训 Universal Sales Training</span>
+    <span class="section-count">2 个文件</span>
+  </div>
+  <div class="file-list">
+    <a href="universal-sales-training.html" class="file-item">
+      <span class="file-num badge-ust">UST-V1</span>
+      <span class="file-icon">📋</span>
+      <div class="file-info">
+        <div class="file-name">通用销售培训方案</div>
+        <div class="file-desc">适用任何企业 · 男女通用</div>
+      </div>
+      <span class="file-date">07-22</span>
+      <span class="file-arrow">→</span>
+    </a>
+    <a href="universal-sales-training-slides-dl.html" class="file-item">
+      <span class="file-num badge-ust">UST-V2</span>
+      <span class="file-icon">📊</span>
+      <div class="file-info">
+        <div class="file-name">通用版PPT（下载版）</div>
+        <div class="file-desc">配套课件 · 可下载</div>
+      </div>
+      <span class="file-date">07-22</span>
+      <span class="file-arrow">→</span>
+    </a>
+  </div>
+</div>
+
+<!-- TQUK - TQUK亲子教育 -->
+<div class="section" data-theme="tquk">
+  <div class="section-header">
+    <span class="section-badge badge-tquk">TQUK</span>
+    <span class="section-title">TQUK 亲子教育课程</span>
+    <span class="section-count">3 个文件</span>
+  </div>
+  <div class="file-list">
+    <a href="TQUK-1-家长面临的困难-dl.html" class="file-item">
+      <span class="file-num badge-tquk">TQUK-V1</span>
+      <span class="file-icon">📊</span>
+      <div class="file-info">
+        <div class="file-name">第1讲：家长面临的困难</div>
+        <div class="file-desc">TQUK课程 · 下载版</div>
+      </div>
+      <span class="file-date">07-22</span>
+      <span class="file-arrow">→</span>
+    </a>
+    <a href="TQUK-2-互动讨论-dl.html" class="file-item">
+      <span class="file-num badge-tquk">TQUK-V2</span>
+      <span class="file-icon">📊</span>
+      <div class="file-info">
+        <div class="file-name">第2讲：互动讨论</div>
+        <div class="file-desc">TQUK课程 · 下载版</div>
+      </div>
+      <span class="file-date">07-22</span>
+      <span class="file-arrow">→</span>
+    </a>
+    <a href="TQUK-3-应对方法与练习-dl.html" class="file-item">
+      <span class="file-num badge-tquk">TQUK-V3</span>
+      <span class="file-icon">📊</span>
+      <div class="file-info">
+        <div class="file-name">第3讲：应对方法与练习</div>
+        <div class="file-desc">TQUK课程 · 下载版</div>
+      </div>
+      <span class="file-date">07-22</span>
+      <span class="file-arrow">→</span>
+    </a>
+  </div>
+</div>
+
+<!-- PE - 亲子教育 -->
+<div class="section" data-theme="pe">
+  <div class="section-header">
+    <span class="section-badge badge-pe">PE</span>
+    <span class="section-title">亲子教育 Parenting Education</span>
+    <span class="section-count">5 个文件</span>
+  </div>
+  <div class="file-list">
+    <a href="parents-six-dilemmas-view.html" class="file-item">
+      <span class="file-num badge-pe">PE-V1</span>
+      <span class="file-icon">📊</span>
+      <div class="file-info">
+        <div class="file-name">现代家长的六大困境 PPT</div>
+        <div class="file-desc">11页 · 在线查看</div>
+      </div>
+      <span class="file-date">07-23</span>
+      <span class="file-arrow">→</span>
+    </a>
+    <a href="parents-six-dilemmas-dl.html" class="file-item">
+      <span class="file-num badge-pe">PE-V2</span>
+      <span class="file-icon">📊</span>
+      <div class="file-info">
+        <div class="file-name">六大困境 PPT（下载版）</div>
+        <div class="file-desc">可下载 · PPT格式</div>
+      </div>
+      <span class="file-date">07-22</span>
+      <span class="file-arrow">→</span>
+    </a>
+    <a href="parents-video-view.html" class="file-item">
+      <span class="file-num badge-pe">PE-V3</span>
+      <span class="file-icon">🎬</span>
+      <div class="file-info">
+        <div class="file-name">六大困境宣传片</div>
+        <div class="file-desc">47秒 · 动画版 · 在线看</div>
+      </div>
+      <span class="file-date">07-23</span>
+      <span class="file-arrow">→</span>
+    </a>
+    <a href="kids-excellence-view.html" class="file-item">
+      <span class="file-num badge-pe">PE-V4</span>
+      <span class="file-icon">📊</span>
+      <div class="file-info">
+        <div class="file-name">孩子优秀不是梦 PPT</div>
+        <div class="file-desc">8章节 · 在线查看</div>
+      </div>
+      <span class="file-date">07-23</span>
+      <span class="file-arrow">→</span>
+    </a>
+    <a href="kids-excellence-dl.html" class="file-item">
+      <span class="file-num badge-pe">PE-V5</span>
+      <span class="file-icon">📊</span>
+      <div class="file-info">
+        <div class="file-name">孩子优秀不是梦（下载版）</div>
+        <div class="file-desc">可下载 · PPT格式</div>
+      </div>
+      <span class="file-date">07-22</span>
+      <span class="file-arrow">→</span>
+    </a>
+  </div>
+</div>
+
+<!-- ENG - 英语学习 -->
+<div class="section" data-theme="eng">
+  <div class="section-header">
+    <span class="section-badge badge-eng">ENG</span>
+    <span class="section-title">英语学习 English Learning</span>
+    <span class="section-count">5 个文件</span>
+  </div>
+  <div class="file-list">
+    <a href="english-course-market-research.html" class="file-item">
+      <span class="file-num badge-eng">ENG-V1</span>
+      <span class="file-icon">📋</span>
+      <div class="file-info">
+        <div class="file-name">英语高端课程市场调查报告</div>
+        <div class="file-desc">竞品对比 · 价格分析 · 营销建议</div>
+      </div>
+      <span class="file-date">07-28</span>
+      <span class="file-arrow">→</span>
+    </a>
+    <a href="english-day1-view.html" class="file-item">
+      <span class="file-num badge-eng">ENG-V2</span>
+      <span class="file-icon">📄</span>
+      <div class="file-info">
+        <div class="file-name">Day 1：重塑英语记忆回路</div>
+        <div class="file-desc">画面法学 up/off/on · 23页</div>
+      </div>
+      <span class="file-date">07-26</span>
+      <span class="file-arrow">→</span>
+    </a>
+    <a href="english-day2-view.html" class="file-item">
+      <span class="file-num badge-eng">ENG-V3</span>
+      <span class="file-icon">📄</span>
+      <div class="file-info">
+        <div class="file-name">Day 2：700高频句型</div>
+        <div class="file-desc">hold/have/take 母语思维 · 20页</div>
+      </div>
+      <span class="file-date">07-26</span>
+      <span class="file-arrow">→</span>
+    </a>
+    <a href="english-day3-view.html" class="file-item">
+      <span class="file-num badge-eng">ENG-V4</span>
+      <span class="file-icon">📄</span>
+      <div class="file-info">
+        <div class="file-name">Day 3：告别苦背语法规则</div>
+        <div class="file-desc">at/on/in/out of 画面法 · 23页</div>
+      </div>
+      <span class="file-date">07-26</span>
+      <span class="file-arrow">→</span>
+    </a>
+    <a href="21st-century-skills-view.html" class="file-item">
+      <span class="file-num badge-eng">ENG-V5</span>
+      <span class="file-icon">📄</span>
+      <div class="file-info">
+        <div class="file-name">21世纪技能课程</div>
+        <div class="file-desc">中英双语 · 教育项目文档</div>
+      </div>
+      <span class="file-date">07-26</span>
+      <span class="file-arrow">→</span>
+    </a>
+  </div>
+</div>
+
+<!-- ARCH - 档案管理 -->
+<div class="section" data-theme="arch">
+  <div class="section-header">
+    <span class="section-badge badge-arch">ARCH</span>
+    <span class="section-title">档案管理 Archive</span>
+    <span class="section-count">8 个文件</span>
+  </div>
+  <div class="file-list">
+    <a href="library.html" class="file-item">
+      <span class="file-num badge-arch">ARCH-V1</span>
+      <span class="file-icon">📚</span>
+      <div class="file-info">
+        <div class="file-name">图书馆</div>
+        <div class="file-desc">6种语言 · 图书资料</div>
+      </div>
+      <span class="file-date">07-26</span>
+      <span class="file-arrow">→</span>
+    </a>
+    <a href="library-en.html" class="file-item">
+      <span class="file-num badge-arch">ARCH-V2</span>
+      <span class="file-icon">🇬🇧</span>
+      <div class="file-info">
+        <div class="file-name">英语学习子页面</div>
+        <div class="file-desc">图书馆 · 英语专区</div>
+      </div>
+      <span class="file-date">07-26</span>
+      <span class="file-arrow">→</span>
+    </a>
+    <a href="archive.html" class="file-item">
+      <span class="file-num badge-arch">ARCH-V3</span>
+      <span class="file-icon">🗄️</span>
+      <div class="file-info">
+        <div class="file-name">档案室</div>
+        <div class="file-desc">9个部门 · 存档记录</div>
+      </div>
+      <span class="file-date">07-23</span>
+      <span class="file-arrow">→</span>
+    </a>
+    <a href="frankie-card-en.html" class="file-item">
+      <span class="file-num badge-arch">ARCH-V4</span>
+      <span class="file-icon">🃏</span>
+      <div class="file-info">
+        <div class="file-name">英文电子名片</div>
+        <div class="file-desc">Frankie Tsang · 专业档案</div>
+      </div>
+      <span class="file-date">07-22</span>
+      <span class="file-arrow">→</span>
+    </a>
+    <a href="business-plan.html" class="file-item">
+      <span class="file-num badge-arch">ARCH-V5</span>
+      <span class="file-icon">💼</span>
+      <div class="file-info">
+        <div class="file-name">业务档案</div>
+        <div class="file-desc">战略蓝图 · 五环战略</div>
+      </div>
+      <span class="file-date">07-22</span>
+      <span class="file-arrow">→</span>
+    </a>
+    <a href="crisis-plan.html" class="file-item">
+      <span class="file-num badge-arch">ARCH-V6</span>
+      <span class="file-icon">⚠️</span>
+      <div class="file-info">
+        <div class="file-name">危机预案</div>
+        <div class="file-desc">突发事件汇报 · 中英文</div>
+      </div>
+      <span class="file-date">07-22</span>
+      <span class="file-arrow">→</span>
+    </a>
+    <a href="expert-team.html" class="file-item">
+      <span class="file-num badge-arch">ARCH-V7</span>
+      <span class="file-icon">👥</span>
+      <div class="file-info">
+        <div class="file-name">专家团队介绍</div>
+        <div class="file-desc">团队成员 · 专业背景</div>
+      </div>
+      <span class="file-date">07-22</span>
+      <span class="file-arrow">→</span>
+    </a>
+    <a href="downloads.html" class="file-item">
+      <span class="file-num badge-arch">ARCH-V8</span>
+      <span class="file-icon">📥</span>
+      <div class="file-info">
+        <div class="file-name">下载中心</div>
+        <div class="file-desc">销售培训 + TQUK + 通用版</div>
+      </div>
+      <span class="file-date">07-22</span>
+      <span class="file-arrow">→</span>
+    </a>
+  </div>
+</div>
+
+<div class="footer">
+  Frankie Tsang 曾仕昭 · 个人工作台 · 文件目录<br>
+  编号规则：主题代码-V版本号 | 日期格式：MM-DD<br>
+  2026 · Shenzhen Frankie Z Style Education Technology Co., Ltd.
+</div>
+
+<script>
+function filterFiles(){
+  var input=document.getElementById('searchInput').value.toLowerCase();
+  var sections=document.querySelectorAll('.section');
+  sections.forEach(function(section){
+    var items=section.querySelectorAll('.file-item');
+    var hasMatch=false;
+    items.forEach(function(item){
+      var text=item.textContent.toLowerCase();
+      if(text.indexOf(input)>-1){
+        item.style.display='';
+        hasMatch=true;
+      }else{
+        item.style.display='none';
+      }
+    });
+    section.style.display=hasMatch?'':'none';
+  });
+}
+</script>
+
+</body>
+</html>
