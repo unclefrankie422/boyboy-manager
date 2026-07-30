@@ -11,14 +11,12 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
 .icon{font-size:4rem;margin-bottom:16px;display:block;}
 h1{font-size:1.4rem;color:#1f2937;margin-bottom:6px;}
 p{font-size:.9rem;color:#6b7280;margin-bottom:4px;}
-.size{font-size:.78rem;color:#9ca3af;margin-bottom:20px;}
-.btn{display:inline-block;padding:14px 40px;border-radius:30px;font-size:1rem;font-weight:700;color:#fff;background:linear-gradient(135deg,#f97316,#ea580c);text-decoration:none;cursor:pointer;border:none;transition:transform .2s;}
-.btn:hover{transform:scale(1.05);}
+.size{font-size:.78rem;color:#9ca3af;margin-bottom:24px;}
+.btn{display:inline-block;padding:16px 44px;border-radius:30px;font-size:1.05rem;font-weight:700;color:#fff;background:linear-gradient(135deg,#f97316,#ea580c);text-decoration:none;cursor:pointer;border:none;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 16px rgba(0,0,0,.15);}
+.btn:hover{transform:scale(1.05);box-shadow:0 6px 24px rgba(0,0,0,.2);}
 .btn:active{transform:scale(.97);}
-.btn.doing{opacity:.7;pointer-events:none;}
-.status{font-size:.8rem;color:#6b7280;margin-top:10px;min-height:20px;}
-.hint{font-size:.75rem;color:#9ca3af;margin-top:14px;line-height:1.6;}
-.back{margin-top:16px;}
+.hint{font-size:.75rem;color:#9ca3af;margin-top:16px;line-height:1.6;}
+.back{margin-top:18px;}
 .back a{color:#6b7280;text-decoration:none;font-size:.8rem;}
 </style>
 </head>
@@ -26,51 +24,11 @@ p{font-size:.9rem;color:#6b7280;margin-bottom:4px;}
 <div class="box">
   <span class="icon">👨‍👩‍👧</span>
   <h1>现代家长的六大困境</h1>
-  <p>亲子教育讲座课件 · 11页</p>
-  <p class="size" id="filesize">计算中...</p>
-  <a class="btn" id="dlbtn" href="#">点击下载 PPT</a>
-  <div class="status" id="status"></div>
-  <p class="hint">点击按钮开始下载<br>如无反应，请用 Chrome 浏览器打开</p>
+  <p>11页 · 亲子教育</p>
+  <p class="size">49 KB · 点击按钮自动下载</p>
+  <a class="btn" href="parents-six-dilemmas.pptx" download>📥 点击下载 PPT</a>
+  <p class="hint">💡 iPhone/iPad/Mac/电脑都能直接下载<br>如无反应，请长按按钮 → 下载链接文件</p>
   <div class="back"><a href="index.html">← 返回首页</a></div>
 </div>
-<script>
-document.getElementById('dlbtn').addEventListener('click', function(e) {
-  e.preventDefault();
-  var btn = this;
-  var status = document.getElementById('status');
-
-  if (btn.classList.contains('doing')) return;
-  btn.classList.add('doing');
-  btn.textContent = '下载中...';
-  status.textContent = '正在获取文件，请稍候...';
-
-  fetch('parents-six-dilemmas.pptx')
-    .then(function(resp) {
-      if (!resp.ok) throw new Error('Failed');
-      return resp.blob();
-    })
-    .then(function(blob) {
-      document.getElementById('filesize').textContent = (blob.size/1024).toFixed(0) + ' KB';
-      var url = URL.createObjectURL(blob);
-      var a = document.createElement('a');
-      a.href = url;
-      a.download = '现代家长的六大困境.pptx';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-      status.textContent = '下载完成！';
-      btn.textContent = '点击下载 PPT';
-      btn.classList.remove('doing');
-    })
-    .catch(function(err) {
-      status.textContent = '加载失败，使用备用链接下载';
-      btn.textContent = '备用链接下载';
-      btn.classList.remove('doing');
-      btn.href = 'parents-six-dilemmas.pptx';
-      btn.setAttribute('download', '现代家长的六大困境.pptx');
-    });
-});
-</script>
 </body>
 </html>
