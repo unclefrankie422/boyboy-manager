@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>企业微信操作手册 · Frankie 工作台</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#07c160,#06ae56);min-height:100vh;padding:20px 16px 40px;color:#333;}
+
+.topbar{background:rgba(255,255,255,.12);backdrop-filter:blur(10px);border-radius:20px;padding:24px 20px;text-align:center;margin-bottom:24px;border:1px solid rgba(255,255,255,.15);}
+.topbar h1{color:#fff;font-size:1.5rem;margin-bottom:6px;}
+.topbar .sub{color:rgba(255,255,255,.75);font-size:.82rem;}
+.topbar .back{display:inline-block;margin-top:10px;color:rgba(255,255,255,.85);text-decoration:none;font-size:.8rem;padding:6px 16px;border:1px solid rgba(255,255,255,.25);border-radius:20px;}
+
+.toc{max-width:700px;margin:0 auto 24px;background:#fff;border-radius:16px;padding:24px;box-shadow:0 4px 16px rgba(0,0,0,.1);}
+.toc h2{font-size:1.1rem;color:#07c160;margin-bottom:12px;}
+.toc ol{padding-left:20px;}
+.toc li{font-size:.85rem;color:#4b5563;line-height:2;}
+
+.section{max-width:700px;margin:0 auto 20px;background:#fff;border-radius:16px;padding:24px;box-shadow:0 4px 16px rgba(0,0,0,.1);}
+.section h2{font-size:1.15rem;color:#07c160;margin-bottom:4px;padding-bottom:10px;border-bottom:2px solid #e8f5e9;}
+.section .step-num{display:inline-block;background:#07c160;color:#fff;font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:4px;margin-right:8px;vertical-align:middle;}
+.section h3{font-size:1rem;color:#1f2937;margin:16px 0 8px;}
+.section p{font-size:.88rem;color:#4b5563;line-height:1.8;margin-bottom:10px;}
+.section ul,.section ol{padding-left:20px;margin:8px 0 16px;}
+.section li{font-size:.85rem;color:#4b5563;line-height:1.9;}
+
+.tip{background:#f0fdf4;border-left:3px solid #07c160;padding:12px 16px;border-radius:8px;margin:12px 0;font-size:.83rem;color:#065f46;}
+.tip strong{color:#07c160;}
+.warning{background:#fffbeb;border-left:3px solid #f59e0b;padding:12px 16px;border-radius:8px;margin:12px 0;font-size:.83rem;color:#92400e;}
+
+.table-wrap{overflow-x:auto;margin:12px 0;}
+table{width:100%;border-collapse:collapse;font-size:.82rem;}
+th{background:#f0fdf4;color:#065f46;padding:10px 12px;text-align:left;font-weight:600;}
+td{padding:10px 12px;border-bottom:1px solid #e5e7eb;}
+tr:hover td{background:#f9fdfb;}
+
+.checklist{background:#f8fafc;border-radius:12px;padding:16px 20px;margin:12px 0;}
+.checklist li{list-style:none;padding-left:24px;position:relative;}
+.checklist li::before{content:'☐';position:absolute;left:0;color:#07c160;font-size:1.1rem;}
+
+.footer{text-align:center;color:rgba(255,255,255,.4);font-size:.72rem;margin-top:30px;padding-top:16px;border-top:1px solid rgba(255,255,255,.1);line-height:1.8;}
+
+@media(max-width:600px){
+  .topbar h1{font-size:1.2rem;}
+  .section{padding:18px 14px;}
+  .section h2{font-size:1.05rem;}
+  .section h3{font-size:.95rem;}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>📗 企业微信 · 详细操作手册</h1>
+  <div class="sub">从零开始，一步一步教你用好企业微信 · 替代个人微信做业务</div>
+  <a href="index.html" class="back">← 返回工作台</a>
+</div>
+
+<!-- 目录 -->
+<div class="toc">
+  <h2>📑 目录</h2>
+  <ol>
+    <li>下载与安装</li>
+    <li>注册登录与创建企业</li>
+    <li>完善企业信息与认证</li>
+    <li>添加内部成员（团队）</li>
+    <li>添加客户（最重要！）</li>
+    <li>客户群管理与运营</li>
+    <li>群发消息给客户</li>
+    <li>企业朋友圈</li>
+    <li>对外收款（收学费）</li>
+    <li>日常沟通与协作</li>
+    <li>数据统计与管理</li>
+    <li>常见问题与技巧</li>
+  </ol>
+</div>
+
+<!-- 第1步 -->
+<div class="section">
+  <h2><span class="step-num">1</span> 下载与安装</h2>
+  
+  <h3>📱 手机下载</h3>
+  <ul>
+    <li><strong>华为/安卓手机：</strong>打开「应用市场」→ 搜索「企业微信」→ 下载安装</li>
+    <li><strong>iPhone：</strong>打开 App Store → 搜索「企业微信」→ 下载安装</li>
+  </ul>
+
+  <h3>💻 电脑下载</h3>
+  <ul>
+    <li>浏览器打开：<strong>work.weixin.qq.com</strong></li>
+    <li>点击「下载」→ 选择 Windows 或 Mac 版本</li>
+    <li>下载后双击安装</li>
+  </ul>
+
+  <div class="tip">
+    💡 <strong>提示：</strong>手机和电脑可以同时登录，消息自动同步。比如手机收到通知，晚上用电脑也能看到。
+  </div>
+</div>
+
+<!-- 第2步 -->
+<div class="section">
+  <h2><span class="step-num">2</span> 注册登录与创建企业</h2>
+
+  <h3>登录（最快30秒）</h3>
+  <ol>
+    <li>打开企业微信 App</li>
+    <li>点击「<strong>微信登录</strong>」（不用注册新账号！）</li>
+    <li>授权微信账号 → 输入手机号 → 收验证码</li>
+    <li>完成！</li>
+  </ol>
+
+  <h3>创建企业</h3>
+  <ol>
+    <li>登录后，如果没有加入任何企业，会自动提示创建</li>
+    <li>填写企业名称，例如：「<strong>Frankie Z Style Education</strong>」</li>
+    <li>选择行业：<strong>教育</strong></li>
+    <li>点击创建 → 完成！</li>
+  </ol>
+
+  <div class="warning">
+    ⚠️ <strong>注意：</strong>企业名称创建后可以修改，建议用正式名称，客户看到会更信任。
+  </div>
+</div>
+
+<!-- 第3步 -->
+<div class="section">
+  <h2><span class="step-num">3</span> 完善企业信息与认证</h2>
+
+  <p>创建企业后，完善信息能让客户更信任你：</p>
+
+  <ol>
+    <li>进入「工作台」→「管理企业」</li>
+    <li>点击「企业信息」</li>
+    <li>上传<strong>企业 Logo</strong>（可以用您的 FT 头像）</li>
+    <li>填写企业简介</li>
+    <li>设置企业简称（对外展示用）</li>
+  </ol>
+
+  <h3>企业认证（建议做）</h3>
+  <div class="table-wrap">
+    <table>
+      <tr><th>认证类型</th><th>需要什么</th><th>费用</th><th>推荐</th></tr>
+      <tr><td>企业认证</td><td>营业执照</td><td>300元/年</td><td>⭐ 推荐（显示✓标识，客户更信任）</td></tr>
+      <tr><td>个人认证</td><td>身份证</td><td>免费</td><td>可选</td></tr>
+    </table>
+  </div>
+
+  <div class="tip">
+    💡 <strong>建议：</strong>您的公司「Shenzhen Frankie Z Style Education Technology Co., Ltd.」有营业执照，可以做企业认证，显示绿色✓标识，客户更信任。
+  </div>
+</div>
+
+<!-- 第4步 -->
+<div class="section">
+  <h2><span class="step-num">4</span> 添加内部成员（团队）</h2>
+
+  <p>如果有助理或合作伙伴，可以把他们加进来：</p>
+
+  <ol>
+    <li>打开企业微信 → 点击「通讯录」</li>
+    <li>点击「添加成员」</li>
+    <li>选择邀请方式：
+      <ul>
+        <li><strong>微信邀请：</strong>发链接到微信群或私聊，对方点击加入</li>
+        <li><strong>二维码：</strong>让对方扫码加入</li>
+        <li><strong>手动添加：</strong>输入对方手机号直接邀请</li>
+      </ul>
+    </li>
+  </ol>
+
+  <div class="tip">
+    💡 <strong>提示：</strong>即使只有您一个人，也建议建好企业结构。以后加人方便，客户看到也显得专业。
+  </div>
+</div>
+
+<!-- 第5步 -->
+<div class="section">
+  <h2><span class="step-num">5</span> ⭐ 添加客户（最重要！）</h2>
+
+  <p>这是企业微信替代个人微信的核心功能：<strong>用企业微信加客户的个人微信，客户不需要下载企业微信！</strong></p>
+
+  <h3>怎么加客户？有 4 种方式：</h3>
+
+  <div class="table-wrap">
+    <table>
+      <tr><th>方式</th><th>操作</th><th>适合场景</th></tr>
+      <tr><td>1. 扫一扫</td><td>客户微信扫您的企微二维码</td><td>面对面、名片上印二维码</td></tr>
+      <tr><td>2. 搜索手机号</td><td>在企微里搜客户手机号添加</td><td>已知客户手机号</td></tr>
+      <tr><td>3. 从微信好友添加</td><td>把个人微信好友转为企微客户</td><td>已有微信好友</td></tr>
+      <tr><td>4. 联系我二维码</td><td>生成专属二维码发朋友圈/群</td><td>推广引流</td></tr>
+    </table>
+  </div>
+
+  <h3>添加后做什么？</h3>
+  <ul>
+    <li><strong>打标签：</strong>给客户分类，比如「潜在学员」「已报名」「亲子教育」「企业培训」</li>
+    <li><strong>写备注：</strong>记录客户需求、孩子年龄、意向课程等</li>
+    <li><strong>发欢迎语：</strong>客户添加后自动发送欢迎消息</li>
+  </ul>
+
+  <div class="warning">
+    ⚠️ <strong>重要：</strong>企业微信加客户有上限，未认证约 1000 人，认证后可达 50000 人。建议尽早完成企业认证。
+  </div>
+</div>
+
+<!-- 第6步 -->
+<div class="section">
+  <h2><span class="step-num">6</span> 客户群管理与运营</h2>
+
+  <h3>创建客户群</h3>
+  <ol>
+    <li>点击「消息」→ 右上角「+」→「发起群聊」</li>
+    <li>选择客户（至少选 2 人）</li>
+    <li>设置群名称，例如：「Frankie 亲子教育交流群」</li>
+    <li>完成！</li>
+  </ol>
+
+  <h3>群管理功能</h3>
+  <div class="table-wrap">
+    <table>
+      <tr><th>功能</th><th>说明</th></tr>
+      <tr><td>群公告</td><td>发布课程通知，所有人看到</td></tr>
+      <tr><td>群机器人</td><td>自动发欢迎语、课程提醒</td></tr>
+      <tr><td>防骚扰</td><td>防止群里发广告</td></tr>
+      <tr><td>群活码</td><td>一个二维码关联多个群，群满自动换群</td></tr>
+      <tr><td>群上限</td><td>最多 500 人/群</td></tr>
+    </table>
+  </div>
+
+  <div class="tip">
+    💡 <strong>建议：</strong>按课程类型建不同的群，比如「亲子教育群」「企业培训群」「英语学习群」，方便精准运营。
+  </div>
+</div>
+
+<!-- 第7步 -->
+<div class="section">
+  <h2><span class="step-num">7</span> 群发消息给客户</h2>
+
+  <p>不用一个个私聊！一键群发给所有客户或指定标签的客户：</p>
+
+  <ol>
+    <li>打开「工作台」→「客户联系」→「群发助手」</li>
+    <li>选择发送对象：
+      <ul>
+        <li><strong>按标签选：</strong>比如只发给「已报名」标签的客户</li>
+        <li><strong>全部客户：</strong>发给所有添加的客户</li>
+      </ul>
+    </li>
+    <li>编辑消息（文字+图片+链接）</li>
+    <li>点击发送</li>
+  </ol>
+
+  <div class="table-wrap">
+    <table>
+      <tr><th>使用场景</th><th>示例消息</th></tr>
+      <tr><td>课程预告</td><td>「本周六下午3点，牛津硕士全英文授课体验课，限20人，点击报名→」</td></tr>
+      <tr><td>优惠通知</td><td>「早鸟价最后3天！亲子教育课程立减500元」</td></tr>
+      <tr><td>干货分享</td><td>「孩子不听话怎么办？3个实用方法，点击查看→」</td></tr>
+      <tr><td>节日问候</td><td>「中秋快乐！送上家庭教育小贴士一张」</td></tr>
+    </table>
+  </div>
+
+  <div class="warning">
+    ⚠️ <strong>注意：</strong>群发频率不要太高，建议一周1-2次，避免客户反感。
+  </div>
+</div>
+
+<!-- 第8步 -->
+<div class="section">
+  <h2><span class="step-num">8</span> 企业朋友圈</h2>
+
+  <p>发朋友圈，客户在个人微信里就能看到！跟个人微信朋友圈一样，但是企业身份。</p>
+
+  <ol>
+    <li>打开「工作台」→「客户联系」→「客户朋友圈」</li>
+    <li>编辑内容（文字+图片+链接）</li>
+    <li>选择可见客户（按标签筛选）</li>
+    <li>发布</li>
+  </ol>
+
+  <div class="tip">
+    💡 <strong>建议：</strong>每天发 1 条，内容要「有用」，不要只发广告。比如：教育小知识、学员好评截图、课程花絮。
+  </div>
+</div>
+
+<!-- 第9步 -->
+<div class="section">
+  <h2><span class="step-num">9</span> 对外收款（收学费）</h2>
+
+  <p>客户直接微信付款，钱进企业账户，不需要个人微信转账！</p>
+
+  <h3>开通步骤：</h3>
+  <ol>
+    <li>打开「工作台」→「对外收款」</li>
+    <li>按提示绑定企业银行账户</li>
+    <li>开通后，在聊天窗口就能发起收款</li>
+  </ol>
+
+  <h3>收款方式：</h3>
+  <div class="table-wrap">
+    <table>
+      <tr><th>方式</th><th>操作</th></tr>
+      <tr><td>主动收款</td><td>聊天中点击「+」→「对外收款」→ 输入金额 → 发送</td></tr>
+      <tr><td>收款码</td><td>生成固定金额或任意金额的收款二维码</td></tr>
+      <tr><td>收款单</td><td>创建正式收款单，适合课程报名缴费</td></tr>
+    </table>
+  </div>
+
+  <div class="tip">
+    💡 <strong>好处：</strong>① 钱直接进企业对公账户，财务清晰；② 客户信任度高（显示企业名称）；③ 自动生成收款记录。
+  </div>
+</div>
+
+<!-- 第10步 -->
+<div class="section">
+  <h2><span class="step-num">10</span> 日常沟通与协作</h2>
+
+  <h3>跟微信一样的操作</h3>
+  <ul>
+    <li>发文字、语音、图片、表情 → 一模一样</li>
+    <li>发文件 → 支持 Word、PPT、PDF、视频</li>
+    <li>发红包 → 支持</li>
+    <li>视频通话 → 最多 9 人</li>
+  </ul>
+
+  <h3>企业微信特有的功能</h3>
+  <div class="table-wrap">
+    <table>
+      <tr><th>功能</th><th>说明</th></tr>
+      <tr><td>消息云端保存</td><td>换手机不丢记录，聊天记录永久保存</td></tr>
+      <tr><td>多端同步</td><td>手机+电脑同时登录，消息实时同步</td></tr>
+      <tr><td>已读回执</td><td>知道对方是否已读消息</td></tr>
+      <tr><td>日程提醒</td><td>设置课程提醒，到时间自动通知</td></tr>
+      <tr><td>会议功能</td><td>预约线上会议，自动通知参会人</td></tr>
+      <tr><td>微盘</td><td>企业云盘，存课件、视频，随时分享</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- 第11步 -->
+<div class="section">
+  <h2><span class="step-num">11</span> 数据统计与管理</h2>
+
+  <p>看看您的客户数据，了解运营效果：</p>
+
+  <ol>
+    <li>打开「工作台」→「客户联系」→ 右上角「数据统计」</li>
+    <li>可以看到：
+      <ul>
+        <li>新增客户数（每天/每周加了多少人）</li>
+        <li>客户总数</li>
+        <li>群发消息送达率</li>
+        <li>客户流失数</li>
+      </ul>
+    </li>
+  </ol>
+
+  <div class="tip">
+    💡 <strong>建议：</strong>每周看一次数据，了解客户增长趋势，调整运营策略。
+  </div>
+</div>
+
+<!-- 第12步 -->
+<div class="section">
+  <h2><span class="step-num">12</span> 常见问题与技巧</h2>
+
+  <h3>❓ 企业微信和个人微信有什么区别？</h3>
+  <div class="table-wrap">
+    <table>
+      <tr><th>对比项</th><th>个人微信</th><th>企业微信</th></tr>
+      <tr><td>好友上限</td><td>约5000人</td><td>认证后50000人</td></tr>
+      <tr><td>群发消息</td><td>每次选200人</td><td>一键群发所有客户</td></tr>
+      <tr><td>客户管理</td><td>无标签、无统计</td><td>标签分类、数据统计</td></tr>
+      <tr><td>对外收款</td><td>个人转账</td><td>企业收款，正规发票</td></tr>
+      <tr><td>员工离职</td><td>客户跟着人走</td><td>客户留给企业，不会丢</td></tr>
+      <tr><td>朋友圈</td><td>所有人可见</td><td>按标签可见，更精准</td></tr>
+    </table>
+  </div>
+
+  <h3>❓ 客户会不会反感企业微信？</h3>
+  <p>不会。客户加的仍然是您的企业微信联系人，聊天界面和个人微信几乎一样。而且企业认证的绿色✓标识反而让客户更信任。</p>
+
+  <h3>❓ 可以同时用个人微信和企业微信吗？</h3>
+  <p>可以！两个独立 App，互不干扰。建议：</p>
+  <ul>
+    <li><strong>个人微信：</strong>家人朋友聊天</li>
+    <li><strong>企业微信：</strong>所有学员、客户、业务往来</li>
+  </ul>
+
+  <h3>❓ 怎样把个人微信的好友转到企业微信？</h3>
+  <ol>
+    <li>企业微信 →「我」→「设置」→「切换身份」</li>
+    <li>选择「从微信好友添加」</li>
+    <li>选择要转移的微信好友 → 发送邀请</li>
+    <li>对方同意后，自动成为企业微信客户</li>
+  </ol>
+
+  <h3>🔧 实用技巧</h3>
+  <ul>
+    <li><strong>快捷回复：</strong>设置常用回复语，一键发送（如课程介绍、价格表）</li>
+    <li><strong>自动欢迎语：</strong>新客户添加后自动发送欢迎消息+课程介绍</li>
+    <li><strong>聊天记录迁移：</strong>换手机时，云端自动恢复，不用手动迁移</li>
+    <li><strong>企业微信 + 视频号：</strong>绑定视频号，直播时可以展示课程</li>
+  </ul>
+</div>
+
+<!-- 操作清单 -->
+<div class="section">
+  <h2>✅ 操作清单（照着做）</h2>
+  <ol class="checklist">
+    <li>下载企业微信 App（手机+电脑）</li>
+    <li>用微信登录，创建企业</li>
+    <li>完善企业信息（名称、Logo、简介）</li>
+    <li>完成企业认证（用营业执照）</li>
+    <li>设置对外名片（头像、职称、联系方式）</li>
+    <li>把第一个客户添加到企业微信</li>
+    <li>给客户打标签分类</li>
+    <li>建第一个客户群</li>
+    <li>发第一条企业朋友圈</li>
+    <li>开通对外收款</li>
+  </ol>
+</div>
+
+<div class="footer">
+  Frankie Tsang 曾仕昭 · 企业微信操作手册<br>
+  2026年7月 · Shenzhen Frankie Z Style Education Technology Co., Ltd.<br>
+  按步骤操作，有任何问题随时问 WorkBuddy
+</div>
+
+</body>
+</html>
