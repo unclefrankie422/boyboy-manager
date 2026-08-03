@@ -64,6 +64,23 @@ body{font-family:'Georgia','Times New Roman',serif;background:#1a1a2e;padding:0;
 .divider{height:3px;background:linear-gradient(90deg,transparent,#c9a84c,transparent);margin:0;}
 .gold-line{width:60px;height:3px;background:#c9a84c;margin:10px auto;}
 </style>
+
+<!-- PWA -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#667eea">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Frankie 工作台">
+<link rel="apple-touch-icon" href="icon-192.png">
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./service-worker.js')
+      .then(reg => console.log('SW registered:', reg.scope))
+      .catch(err => console.log('SW registration failed:', err));
+  });
+}
+</script>
 </head>
 <body>
 
