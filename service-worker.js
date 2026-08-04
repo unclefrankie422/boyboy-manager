@@ -15,6 +15,7 @@ const FILES_TO_CACHE = [
   './english-day3-view.html',
   './why-four-seed-oil-view.html',
   './why-four-seed-oil-dl.html',
+  './personal-ip-strategy.html',
   './why-four-seed-oil.pptx',
   './manifest.json'
 ];
