@@ -1,5 +1,5 @@
 // Frankie 工作台 Service Worker - 离线缓存
-const CACHE_NAME = 'frankie-workbuddy-v1';
+const CACHE_NAME = 'frankie-workbuddy-v2';
 const FILES_TO_CACHE = [
   './',
   './index.html',
@@ -17,7 +17,9 @@ const FILES_TO_CACHE = [
   './why-four-seed-oil-dl.html',
   './personal-ip-strategy.html',
   './why-four-seed-oil.pptx',
-  './manifest.json'
+  './manifest.json',
+  './ox1_promo_card.png',
+  './ox1-promo.html'
 ];
 
 // 安装时缓存所有文件
