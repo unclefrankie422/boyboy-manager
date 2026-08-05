@@ -1,7 +1,7 @@
 {
   "name": "Frankie 工作台",
   "short_name": "Frankie",
-  "description": "Frankie Tsang 曾仕昭 个人工作台 - 离线可用",
+  "description": "UncleFrankie 个人工作台 - 离线可用",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
