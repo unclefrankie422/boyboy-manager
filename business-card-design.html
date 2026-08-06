@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UncleFrankie 名片设计</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#2a2a2a;padding:30px 16px;}
+.page-title{text-align:center;color:#fff;font-size:1.3rem;margin-bottom:8px;font-weight:700;}
+.page-sub{text-align:center;color:#888;font-size:.82rem;margin-bottom:30px;}
+.version-label{text-align:center;color:#f4d06f;font-size:.9rem;font-weight:700;margin:30px 0 12px;letter-spacing:1px;}
+
+/* 名片通用 */
+.card{width:420px;height:252px;margin:0 auto 20px;border-radius:10px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.4);position:relative;}
+
+/* ========== 版本A:深蓝金 经典商务 ========== */
+.card-a{background:linear-gradient(135deg,#0f3954,#1a6b8c);}
+.card-a .left{position:absolute;left:0;top:0;width:135px;height:100%;background:rgba(0,0,0,.15);display:flex;flex-direction:column;align-items:center;justify-content:center;border-right:2px solid #c9a84c;}
+.card-a .avatar{width:70px;height:70px;border-radius:50%;background:linear-gradient(135deg,#c9a84c,#f4d06f);display:flex;align-items:center;justify-content:center;font-size:1.8rem;color:#0f3954;font-weight:bold;margin-bottom:8px;border:3px solid rgba(255,255,255,.3);}
+.card-a .avatar-name{color:#f4d06f;font-size:.75rem;letter-spacing:1px;}
+.card-a .right{position:absolute;left:135px;top:0;right:0;height:100%;padding:20px 18px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;}
+.card-a .name{font-size:1.4rem;font-weight:700;color:#fff;letter-spacing:1px;}
+.card-a .name-en{font-size:.72rem;color:#94a3b8;letter-spacing:2px;margin-top:2px;}
+.card-a .gold-line{width:40px;height:2px;background:#c9a84c;margin:8px 0;}
+.card-a .title{font-size:.78rem;color:#f4d06f;margin-bottom:6px;}
+.card-a .slogan{font-size:.72rem;color:#e2e8f0;line-height:1.6;}
+.card-a .company{font-size:.65rem;color:#94a3b8;line-height:1.5;border-top:1px solid rgba(255,255,255,.1);padding-top:6px;}
+.card-a .company strong{color:#c9a84c;}
+
+/* ========== 版本B:白底金 极简优雅 ========== */
+.card-b{background:#fff;border:2px solid #c9a84c;}
+.card-b .top{padding:18px 22px 12px;border-bottom:1px solid #f0e6c8;}
+.card-b .name-row{display:flex;align-items:baseline;gap:10px;}
+.card-b .name{font-size:1.5rem;font-weight:700;color:#1a1a2e;letter-spacing:1px;}
+.card-b .name-en{font-size:.72rem;color:#999;letter-spacing:2px;}
+.card-b .title{font-size:.78rem;color:#c9a84c;font-weight:600;margin-top:4px;}
+.card-b .body{padding:14px 22px;display:flex;justify-content:space-between;align-items:flex-start;}
+.card-b .left-col{flex:1;}
+.card-b .field{font-size:.7rem;color:#666;line-height:1.9;}
+.card-b .field strong{color:#1a1a2e;font-weight:600;}
+.card-b .right-col{text-align:right;}
+.card-b .slogan-box{background:linear-gradient(135deg,#0f3954,#1a6b8c);color:#fff;padding:8px 12px;border-radius:6px;font-size:.68rem;line-height:1.5;text-align:center;margin-bottom:6px;}
+.card-b .slogan-box strong{color:#f4d06f;}
+.card-b .company{font-size:.62rem;color:#888;line-height:1.5;text-align:right;}
+.card-b .company strong{color:#0f3954;}
+
+/* ========== 版本C:深色现代 品牌感 ========== */
+.card-c{background:linear-gradient(160deg,#1a1a2e,#16213e);}
+.card-c::before{content:'';position:absolute;top:0;right:0;width:120px;height:120px;background:radial-gradient(circle,rgba(201,168,76,.15),transparent);border-radius:50%;}
+.card-c .inner{padding:22px 24px;height:100%;display:flex;flex-direction:column;justify-content:space-between;position:relative;z-index:1;}
+.card-c .top-row{display:flex;justify-content:space-between;align-items:flex-start;}
+.card-c .name-block{}
+.card-c .name{font-size:1.45rem;font-weight:700;color:#f4d06f;letter-spacing:1px;}
+.card-c .name-en{font-size:.7rem;color:#94a3b8;letter-spacing:2px;margin-top:2px;}
+.card-c .title-tag{background:rgba(244,208,111,.15);border:1px solid rgba(244,208,111,.3);color:#f4d06f;font-size:.68rem;padding:3px 10px;border-radius:12px;}
+.card-c .mid{margin:8px 0;}
+.card-c .slogan{font-size:.78rem;color:#e2e8f0;line-height:1.7;}
+.card-c .slogan strong{color:#f4d06f;}
+.card-c .fields{font-size:.68rem;color:#94a3b8;line-height:1.8;}
+.card-c .fields span{margin-right:14px;}
+.card-c .fields strong{color:#e2e8f0;}
+.card-c .bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:8px;display:flex;justify-content:space-between;align-items:flex-end;}
+.card-c .company{font-size:.62rem;color:#64748b;line-height:1.5;}
+.card-c .company strong{color:#c9a84c;}
+.card-c .qr-placeholder{width:42px;height:42px;background:rgba(255,255,255,.1);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.8rem;}
+
+/* 说明区 */
+.note{max-width:420px;margin:20px auto 0;background:#fff;border-radius:10px;padding:16px 20px;font-size:.78rem;color:#555;line-height:1.9;}
+.note h3{font-size:.88rem;color:#1a1a2e;margin-bottom:8px;}
+.note strong{color:#c9a84c;}
+.note ul{margin-left:16px;}
+.note li{margin:4px 0;}
+
+/* 印刷规格 */
+.spec{max-width:420px;margin:20px auto 40px;background:#1a1a2e;color:#e2e8f0;border-radius:10px;padding:16px 20px;font-size:.75rem;line-height:1.9;}
+.spec h3{color:#f4d06f;font-size:.88rem;margin-bottom:8px;}
+.spec strong{color:#f4d06f;}
+</style>
+</head>
+<body>
+
+<h1 class="page-title">UncleFrankie 名片设计</h1>
+<p class="page-sub">3 个版本 · 标准名片尺寸 90×54mm · 可直接交印刷店</p>
+
+<!-- ===================== 版本A ===================== -->
+<p class="version-label">— 版本A:深蓝金 · 经典商务 —</p>
+<div class="card card-a">
+  <div class="left">
+    <div class="avatar">UF</div>
+    <div class="avatar-name">UncleFrankie</div>
+  </div>
+  <div class="right">
+    <div>
+      <div class="name">UncleFrankie</div>
+      <div class="name-en">FOUNDER · 创始人</div>
+      <div class="gold-line"></div>
+      <div class="title">法学·哲学·心理学 · 三学融通</div>
+      <div class="slogan">亲子教育 | 婚姻家庭<br>长者心理 | 企业培训</div>
+    </div>
+    <div class="company">
+      <strong>深圳曾仕昭时尚教育科技有限公司</strong><br>
+      香港以诺高顾问公司
+    </div>
+  </div>
+</div>
+
+<!-- ===================== 版本B ===================== -->
+<p class="version-label">— 版本B:白底金 · 极简优雅 —</p>
+<div class="card card-b">
+  <div class="top">
+    <div class="name-row">
+      <div class="name">UncleFrankie</div>
+      <div class="name-en">FOUNDER</div>
+    </div>
+    <div class="title">创始人 · 法学·哲学·心理学 三学融通</div>
+  </div>
+  <div class="body">
+    <div class="left-col">
+      <div class="field"><strong>领域：</strong>亲子教育 · 婚姻家庭</div>
+      <div class="field"><strong>　　　</strong>长者心理 · 企业培训</div>
+      <div class="field" style="margin-top:6px;"><strong>资质：</strong>DiSC国际认证顾问</div>
+      <div class="field"><strong>　　　</strong>NGH催眠师 · 国家二级心理咨询师</div>
+    </div>
+    <div class="right-col">
+      <div class="slogan-box">
+        <strong>50多年人生智慧</strong><br>
+        悠悠心路伴你行
+      </div>
+      <div class="company">
+        <strong>深圳曾仕昭时尚教育科技有限公司</strong><br>
+        香港以诺高顾问公司
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== 版本C ===================== -->
+<p class="version-label">— 版本C:深色现代 · 品牌感 —</p>
+<div class="card card-c">
+  <div class="inner">
+    <div class="top-row">
+      <div class="name-block">
+        <div class="name">UncleFrankie</div>
+        <div class="name-en">FOUNDER · 创始人</div>
+      </div>
+      <div class="title-tag">三学融通</div>
+    </div>
+    <div class="mid">
+      <div class="slogan">
+        <strong>法学 · 哲学 · 心理学</strong> · 50多年人生智慧<br>
+        亲子教育 | 婚姻家庭 | 长者心理 | 企业培训
+      </div>
+    </div>
+    <div class="fields">
+      <span><strong>DiSC</strong>国际认证</span>
+      <span><strong>NGH</strong>催眠师</span>
+      <span><strong>国家二级</strong>心理咨询师</span>
+    </div>
+    <div class="bottom">
+      <div class="company">
+        <strong>深圳曾仕昭时尚教育科技有限公司</strong><br>
+        <strong>香港以诺高顾问公司</strong> · 创办人
+      </div>
+      <div class="qr-placeholder">📷</div>
+    </div>
+  </div>
+</div>
+
+<!-- 说明 -->
+<div class="note">
+<h3>📌 三个版本对比</h3>
+<ul>
+<li><strong>版本A（深蓝金）</strong>：经典商务风，左右布局，适合正式场合、企业培训递名片</li>
+<li><strong>版本B（白底金）</strong>：极简优雅，信息最全，适合咨询、学术场合</li>
+<li><strong>版本C（深色现代）</strong>：品牌感最强，有二维码位，适合年轻受众、社交场合</li>
+</ul>
+</div>
+
+<!-- 印刷规格 -->
+<div class="spec">
+<h3>📐 印刷规格（交给印刷店）</h3>
+<strong>尺寸：</strong>标准名片 90mm × 54mm<br>
+<strong>材质：</strong>300g 铜版纸 / 烫金工艺（金色部分）<br>
+<strong>色彩：</strong>CMYK 四色印刷 + 烫金<br>
+<strong>工艺：</strong>双面覆膜（亮面或哑光均可）<br>
+<strong>背面：</strong>可加二维码（微信+公众号）<br>
+<strong>建议数量：</strong>首印 200-300 张
+</div>
+
+</body>
+</html>
