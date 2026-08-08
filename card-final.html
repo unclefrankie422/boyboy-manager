@@ -51,6 +51,26 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
 /* 主体:两列 */
 .back-body{display:flex;gap:30px;flex:1;}
 
+/* 手机端:名片更窄,上下堆叠 */
+@media (max-width: 540px){
+  .card{width:100%;height:auto;min-height:380px;}
+  .card-front{padding:24px 20px;}
+  .front-company .main{font-size:1.4rem;letter-spacing:1px;}
+  .front-company .sub{font-size:0.72rem;}
+  .front-name .avatar{width:72px;height:72px;font-size:2rem;}
+  .front-name .name{font-size:1.8rem;letter-spacing:1px;}
+  .front-name .title{font-size:0.85rem;}
+  .front-tags .three{font-size:0.78rem;}
+  .front-tags .four{font-size:0.7rem;}
+  .front-contact .line{font-size:0.72rem;}
+
+  /* 背面 - 关键修复:左右两列改为上下堆叠 */
+  .card-back{padding:24px 22px;}
+  .back-header .title{font-size:1.3rem;}
+  .back-body{flex-direction:column;gap:16px;}
+  .back-patent{margin-top:6px;}
+}
+
 /* 左列:专业领域 */
 .back-left{flex:1;}
 .back-section-title{font-size:1rem;color:#f4d06f;font-weight:600;margin-bottom:10px;letter-spacing:1px;}
