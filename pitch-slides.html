@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>一四油 · 招商推介</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html,body{background:#0a1526;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;overflow:hidden;}
+#app{position:relative;width:100vw;height:100vh;display:flex;align-items:center;justify-content:center;}
+.slide{position:absolute;inset:0;display:none;flex-direction:column;padding:5vh 6vw;background:linear-gradient(160deg,#0f3954,#16213e);color:#e2e8f0;overflow:hidden;}
+.slide.on{display:flex;}
+.bar{height:6px;background:#c9a84c;width:100%;position:absolute;top:0;left:0;}
+.h{font-size:clamp(20px,4.5vw,40px);color:#f4d06f;font-weight:700;letter-spacing:1px;margin-bottom:2vh;}
+.sub{font-size:clamp(11px,2.2vw,15px);color:#94a3b8;margin-top:-1vh;margin-bottom:2vh;}
+.card{background:rgba(26,40,66,.7);border:1px solid rgba(201,168,76,.35);border-radius:14px;padding:18px 20px;margin-bottom:14px;}
+.two{display:flex;gap:16px;flex:1;min-height:0;}
+.two>.card{flex:1;margin-bottom:0;}
+.b{color:#f4d06f;font-weight:700;font-size:clamp(13px,2.6vw,17px);margin-bottom:8px;}
+.li{font-size:clamp(12px,2.4vw,15px);line-height:1.7;color:#cbd5e1;padding-left:16px;position:relative;}
+.li:before{content:"◆";color:#c9a84c;position:absolute;left:0;font-size:10px;top:3px;}
+.stats{display:flex;gap:12px;margin:1vh 0;flex-wrap:wrap;}
+.stat{flex:1;min-width:120px;background:rgba(26,40,66,.7);border:1px solid rgba(201,168,76,.35);border-radius:12px;padding:14px;text-align:center;}
+.stat .big{font-size:clamp(18px,4vw,30px);color:#f4d06f;font-weight:700;}
+.stat .sm{font-size:clamp(10px,2vw,12.5px);color:#cbd5e1;margin-top:4px;}
+.table{width:100%;border-collapse:collapse;font-size:clamp(10px,2vw,13px);}
+.table th,.table td{padding:8px 6px;text-align:left;border-bottom:1px solid rgba(255,255,255,.1);}
+.table th{color:#f4d06f;background:rgba(15,57,84,.8);}
+.table .hl{background:rgba(201,168,76,.12);color:#f4d06f;font-weight:700;}
+.three{display:flex;gap:14px;flex:1;min-height:0;}
+.three>.card{flex:1;margin-bottom:0;display:flex;flex-direction:column;}
+.step{flex:1;background:rgba(26,40,66,.7);border:1px solid rgba(201,168,76,.35);border-radius:12px;padding:14px;display:flex;flex-direction:column;justify-content:center;}
+.step .n{font-size:clamp(16px,3.5vw,24px);color:#f4d06f;font-weight:700;text-align:center;}
+.step .d{font-size:clamp(11px,2.2vw,14px);color:#cbd5e1;text-align:center;margin-top:8px;line-height:1.5;}
+.cta{font-size:clamp(18px,4vw,34px);color:#fff;font-weight:700;text-align:center;margin-top:3vh;}
+.cta2{font-size:clamp(13px,2.6vw,18px);color:#f4d06f;text-align:center;margin-top:1.5vh;}
+.center{justify-content:center;align-items:center;text-align:center;}
+.foot{font-size:clamp(10px,2vw,12px);color:#64748b;text-align:center;margin-top:auto;padding-top:10px;}
+.nav{position:fixed;bottom:14px;left:0;right:0;display:flex;justify-content:center;align-items:center;gap:20px;z-index:10;}
+.nav button{background:rgba(201,168,76,.9);border:none;color:#0f2438;font-size:20px;width:46px;height:46px;border-radius:50%;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.4);}
+.dots{display:flex;gap:6px;}
+.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.3);}
+.dot.on{background:#f4d06f;}
+.pg{position:fixed;top:14px;right:18px;color:#94a3b8;font-size:13px;z-index:10;}
+</style>
+</head>
+<body>
+<div id="app">
+
+  <!-- 1 Cover -->
+  <section class="slide center on" style="justify-content:center;">
+    <div style="width:6px;height:90px;background:#c9a84c;position:absolute;left:8vw;top:50%;transform:translateY(-50%);"></div>
+    <div class="h" style="font-size:clamp(28px,7vw,52px);">一四油 · 招商推介</div>
+    <div class="cta2" style="font-size:clamp(15px,3.5vw,22px);">大健康轻创业 · 三级进阶 · 多劳多得</div>
+    <div style="margin-top:3vh;color:#cbd5e1;font-size:clamp(12px,2.5vw,16px);">低门槛起步 · 完整赋能体系 · 透明收益分配</div>
+    <div class="foot">内部培训资料 · 数据以官方最新发布为准</div>
+  </section>
+
+  <!-- 2 机会 -->
+  <section class="slide">
+    <div class="bar"></div>
+    <div class="h">为什么是现在的机会</div>
+    <div class="sub">一个低门槛、可复制的大健康创业模型</div>
+    <div class="stats">
+      <div class="stat"><div class="big">19440 元</div><div class="sm">起步门槛（3 箱 144 瓶）</div></div>
+      <div class="stat"><div class="big">135 元/瓶</div><div class="sm">经销商永久批发价</div></div>
+      <div class="stat"><div class="big">25–85 元</div><div class="sm">真实单瓶利润空间</div></div>
+      <div class="stat"><div class="big">3 级</div><div class="sm">清晰可量化的进阶通道</div></div>
+    </div>
+    <div class="card" style="flex:1;">
+      <div class="b">核心逻辑：用零售端的价盘空间，构建可复制的经销网络</div>
+      <div class="li">产品端：复购型健康消费，用户黏性强、复购周期稳定</div>
+      <div class="li">渠道端：3 箱即可成为经销商，门槛低、决策快</div>
+      <div class="li">收益端：单瓶利润空间 25–191 元，随等级跃升而放大</div>
+      <div class="li">团队端：下级进货持续产生服务费与补贴，越带越宽</div>
+    </div>
+  </section>
+
+  <!-- 3 生意本质 -->
+  <section class="slide">
+    <div class="bar"></div>
+    <div class="h">生意的本质：批发 → 零售，赚差价</div>
+    <div class="sub">清清楚楚一门低买高卖的生意，不带任何模糊空间</div>
+    <div class="two" style="flex:1;">
+      <div class="card">
+        <div class="b">◆ 你如何赚钱</div>
+        <div class="li">批发价进货：135 / 115 / 95 元（随等级下降）</div>
+        <div class="li">零售 / 会员价卖出：286 / 220 / 190 / 160 元</div>
+        <div class="li">中间差价 = 你的利润（单瓶 25–191 元）</div>
+        <div class="li">带团队额外获服务费 + 进货补贴</div>
+      </div>
+      <div class="card">
+        <div class="b">◆ 两种身份，一种逻辑</div>
+        <div class="li">消费者：按零售 / 会员价买，自用或送礼</div>
+        <div class="li">经销商：按批发价买，卖出赚差价</div>
+        <div class="li">级别越高，进货价越低，单瓶利润越大</div>
+        <div class="li" style="color:#f4d06f;font-weight:700;">一句话：低买高卖 + 团队复制 = 这门生意</div>
+      </div>
+    </div>
+    <div class="card" style="text-align:center;color:#f4d06f;font-weight:700;">这就是批发与零售——你投得越多、级别越高，进货价越低，单瓶赚得越多。</div>
+  </section>
+
+  <!-- 4 价盘 -->
+  <section class="slide">
+    <div class="bar"></div>
+    <div class="h">价盘与利润空间 · 一目了然</div>
+    <div class="sub">采购数量不累计 · 后续进货永久享受对应等级单价</div>
+    <div style="display:flex;gap:16px;flex:1;min-height:0;">
+      <div class="card" style="flex:2.3;margin-bottom:0;overflow:auto;">
+        <table class="table">
+          <tr><th>采购规格</th><th>总价</th><th>单瓶</th><th>身份/适用</th></tr>
+          <tr><td>1 瓶</td><td>286 元</td><td>286 元</td><td>零售</td></tr>
+          <tr><td>3 瓶</td><td>660 元</td><td>220 元</td><td>小批量</td></tr>
+          <tr><td>24 瓶（半箱）</td><td>4560 元</td><td>190 元</td><td>大批量</td></tr>
+          <tr><td>48 瓶（1 箱）</td><td>7680 元</td><td>160 元</td><td>会员价档</td></tr>
+          <tr class="hl"><td>3 箱（144 瓶）</td><td>19440 元</td><td>135 元</td><td>★经销商</td></tr>
+          <tr class="hl"><td>18 箱（864 瓶）</td><td>99360 元</td><td>115 元</td><td>★大经销商</td></tr>
+          <tr class="hl"><td>95 箱（4560 瓶）</td><td>433200 元</td><td>95 元</td><td>★总经销商</td></tr>
+        </table>
+      </div>
+      <div class="card" style="flex:1;margin-bottom:0;">
+        <div class="b">单瓶利润空间</div>
+        <div class="li">零售 286 → 经销 135<br><b style="color:#f4d06f;">空间 151 元</b></div>
+        <div class="li">会员价 160 → 经销 135<br><b style="color:#f4d06f;">赚 25 元</b></div>
+        <div class="li">24 瓶档 190 → 经销 135<br><b style="color:#f4d06f;">赚 55 元</b></div>
+        <div class="li">3 瓶档 220 → 经销 135<br><b style="color:#f4d06f;">赚 85 元</b></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 三级进阶 -->
+  <section class="slide">
+    <div class="bar"></div>
+    <div class="h">三级进阶路径 · 清晰可量化</div>
+    <div class="sub">每升一级，批发价下降、单瓶利润放大</div>
+    <div class="three" style="flex:1;">
+      <div class="step"><div class="n">① 基础经销商</div><div class="d">一次性 3 箱 144 瓶<br>（19440 元）<br><br><b style="color:#f4d06f;font-size:1.3em;">135 元/瓶</b></div></div>
+      <div class="step"><div class="n">② 大经销商</div><div class="d">当月团队累计 18 箱<br>（864 瓶）<br><br><b style="color:#f4d06f;font-size:1.3em;">115 元/瓶</b></div></div>
+      <div class="step"><div class="n">③ 总经销商</div><div class="d">当月团队累计 95 箱<br>（4560 瓶）<br><br><b style="color:#f4d06f;font-size:1.3em;">95 元/瓶</b></div></div>
+    </div>
+    <div class="card" style="text-align:center;font-size:clamp(11px,2.2vw,13.5px);">关键规则：采购数量不累计 · 后续进货永久享受晋级后单价 · 月度计算周期为当月 26 日—次月 25 日</div>
+  </section>
+
+  <!-- 6 收益模型 -->
+  <section class="slide">
+    <div class="bar"></div>
+    <div class="h">收益模型 · 每一级能赚多少</div>
+    <div class="sub">收益 = 差价 + 服务费 + 进货补贴 + 年度分红（多劳多得）</div>
+    <div class="three" style="flex:1;">
+      <div class="step" style="justify-content:flex-start;gap:6px;align-items:stretch;">
+        <div class="n" style="font-size:clamp(14px,3vw,18px);">基础经销商</div>
+        <div class="d" style="font-weight:700;color:#f4d06f;">135 元/瓶 进货</div>
+        <div class="li">售 144 瓶（按零售价）可赚 12240 元</div>
+        <div class="li">对应毛利率约 63%</div>
+        <div class="li">实际按会员/小批量档单瓶赚 25–85 元</div>
+        <div class="li">服务费 8 元/瓶（下级进货）</div>
+        <div class="li">进货补贴 3%–23%</div>
+      </div>
+      <div class="step" style="justify-content:flex-start;gap:6px;align-items:stretch;">
+        <div class="n" style="font-size:clamp(14px,3vw,18px);">大经销商</div>
+        <div class="d" style="font-weight:700;color:#f4d06f;">115 元/瓶 进货</div>
+        <div class="li">对比会员价单瓶赚 45 元</div>
+        <div class="li">对比零售价单瓶赚 171 元</div>
+        <div class="li">服务费 8 元/瓶</div>
+        <div class="li">进货补贴 3%–23%</div>
+      </div>
+      <div class="step" style="justify-content:flex-start;gap:6px;align-items:stretch;">
+        <div class="n" style="font-size:clamp(14px,3vw,18px);">总经销商</div>
+        <div class="d" style="font-weight:700;color:#f4d06f;">95 元/瓶 进货</div>
+        <div class="li">对比会员价单瓶赚 65 元</div>
+        <div class="li">对比零售价单瓶赚 191 元</div>
+        <div class="li">服务费 10 元/瓶（公司直付）</div>
+        <div class="li">进货补贴 3%–23% 上不封顶</div>
+      </div>
+    </div>
+    <div class="card" style="text-align:center;color:#f4d06f;font-weight:700;font-size:clamp(11px,2.2vw,13px);">案例：总经销团队月销售额 2000 万（约 20 万瓶）→ 服务费 200 万 + 进货补贴 120 万 + 年度分红 80 万 ≈ 400 万元/月</div>
+  </section>
+
+  <!-- 7 新人90天 -->
+  <section class="slide">
+    <div class="bar"></div>
+    <div class="h">新人前 90 天 · 真实路径</div>
+    <div class="sub">不画大饼——回本 + 微利，是第一步目标</div>
+    <div class="three" style="flex:1;">
+      <div class="step"><div class="n">第 1 月</div><div class="d">自用好 + 送 10 位精准亲友体验<br><br>转化 5 个复购客户<br>练熟产品话术</div></div>
+      <div class="step"><div class="n">第 2 月</div><div class="d">老客转介绍 + 社群真实分享<br><br>累计 24 个精准客户<br>完成铺货动作</div></div>
+      <div class="step"><div class="n">第 3 月</div><div class="d">带出 1–2 个同频伙伴<br><br>开始有服务费收入<br>团队起量</div></div>
+    </div>
+    <div class="card" style="text-align:center;font-size:clamp(11px,2.2vw,14px);">
+      <b style="color:#f4d06f;">现实预期：</b>前 3 个月以「回本 + 微利」为主，团队与被动收入从第 3 月起逐步起量。<br>稳扎稳打，好过一夜暴富——400 万/月的案例是塔尖，不是起点。
+    </div>
+  </section>
+
+  <!-- 8 赋能 -->
+  <section class="slide">
+    <div class="bar"></div>
+    <div class="h">赋能体系 · 你不是一个人</div>
+    <div class="sub">从培训到售后，标准化流程兜底</div>
+    <div style="display:flex;flex-wrap:wrap;gap:14px;flex:1;align-content:flex-start;">
+      <div class="card" style="width:calc(33% - 10px);margin-bottom:0;"><div class="b">系统培训</div><div style="font-size:clamp(11px,2.2vw,13px);color:#cbd5e1;">产品知识 · 铺货技巧 · 回款话术 · 调理反应应对</div></div>
+      <div class="card" style="width:calc(33% - 10px);margin-bottom:0;"><div class="b">标准售后</div><div style="font-size:clamp(11px,2.2vw,13px);color:#cbd5e1;">7 天体验打卡 + 1 个月跟踪 + 3 个月回访</div></div>
+      <div class="card" style="width:calc(33% - 10px);margin-bottom:0;"><div class="b">团队扶持</div><div style="font-size:clamp(11px,2.2vw,13px);color:#cbd5e1;">大经销筛选 6 名核心伙伴，复制起步模式</div></div>
+      <div class="card" style="width:calc(33% - 10px);margin-bottom:0;"><div class="b">透明分配</div><div style="font-size:clamp(11px,2.2vw,13px);color:#cbd5e1;">差价/服务费/补贴按规则公开透明发放</div></div>
+      <div class="card" style="width:calc(33% - 10px);margin-bottom:0;"><div class="b">退货保障</div><div style="font-size:clamp(11px,2.2vw,13px);color:#cbd5e1;">首次进货 1 月内未使用可无条件退</div></div>
+      <div class="card" style="width:calc(33% - 10px);margin-bottom:0;"><div class="b">合规经营</div><div style="font-size:clamp(11px,2.2vw,13px);color:#cbd5e1;">总经销需注册公司、对公转账、合法纳税</div></div>
+    </div>
+  </section>
+
+  <!-- 9 谁适合 -->
+  <section class="slide">
+    <div class="bar"></div>
+    <div class="h">谁适合做 · 起步三步</div>
+    <div class="sub">无论身份，都能找到自己的切入点</div>
+    <div class="two" style="flex:1;">
+      <div class="card">
+        <div class="b">◆ 适合人群</div>
+        <div class="li">健康行业从业者 / 养生馆主</div>
+        <div class="li">宝妈 / 退休人群（时间灵活）</div>
+        <div class="li">微商 / 社群团长（有私域流量）</div>
+        <div class="li">企业主 / 销售背景（带团队强）</div>
+        <div class="li">认同产品、想轻创业的普通人</div>
+      </div>
+      <div class="card">
+        <div class="b">◆ 起步三步</div>
+        <div class="li">① 采购 3 箱（144 瓶）19440 元 → 成为经销商</div>
+        <div class="li">② 参加系统培训 + 完成 24 个精准铺货</div>
+        <div class="li">③ 带团队冲 18 箱→95 箱，晋级大/总经销</div>
+        <div class="li" style="color:#f4d06f;font-weight:700;">全程：差价 + 服务费 + 补贴 + 分红，多劳多得</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 CTA -->
+  <section class="slide center">
+    <div class="bar"></div>
+    <div class="cta">现在，就是最好的起步时机</div>
+    <div class="cta2">第一步只需：采购 3 箱（144 瓶）= 19440 元，即刻成为经销商</div>
+    <div class="card" style="margin-top:4vh;text-align:center;max-width:80%;">
+      <div style="color:#cbd5e1;font-size:clamp(13px,2.6vw,16px);">联系我们，获取：产品资料 · 培训入口 · 1对1 起步辅导</div>
+      <div style="color:#64748b;font-size:clamp(11px,2vw,13px);margin-top:8px;">（二维码 / 微信号 见下方）</div>
+    </div>
+  </section>
+
+  <!-- 11 封底 -->
+  <section class="slide center">
+    <div style="width:100%;height:6px;background:#c9a84c;position:absolute;top:50%;"></div>
+    <div class="cta" style="font-size:clamp(24px,6vw,38px);">多劳多得 · 踩准节点 · 跟上节奏</div>
+    <div class="cta2">一四油经销商制度参考 · 内部培训资料</div>
+  </section>
+
+</div>
+
+<div class="pg" id="pg">1 / 11</div>
+<div class="nav">
+  <button onclick="go(-1)">‹</button>
+  <div class="dots" id="dots"></div>
+  <button onclick="go(1)">›</button>
+</div>
+
+<script>
+const slides=[...document.querySelectorAll('.slide')];
+const dotsBox=document.getElementById('dots');
+const pg=document.getElementById('pg');
+let cur=0;
+slides.forEach((_,i)=>{const d=document.createElement('div');d.className='dot'+(i===0?' on':'');dotsBox.appendChild(d);});
+function show(i){cur=(i+slides.length)%slides.length;slides.forEach((s,j)=>s.classList.toggle('on',j===cur));
+  [...dotsBox.children].forEach((d,j)=>d.classList.toggle('on',j===cur));pg.textContent=(cur+1)+' / '+slides.length;}
+function go(d){show(cur+d);}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(1);if(e.key==='ArrowLeft')go(-1);});
+let sx=0;document.addEventListener('touchstart',e=>sx=e.touches[0].clientX);
+document.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(dx>50)go(-1);if(dx<-50)go(1);});
+</script>
+</body>
+</html>
