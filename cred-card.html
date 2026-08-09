@@ -24,6 +24,10 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
 
 .section-title{font-size:0.9rem;color:#f4d06f;font-weight:700;letter-spacing:2px;margin:18px 0 10px;padding-left:10px;border-left:3px solid #c9a84c;}
 
+/* 擅长领域 chips */
+.tags{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:6px 0 4px;padding-bottom:6px;border-bottom:1px dashed rgba(201,168,76,.2);}
+.tag{background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.4);color:#f4d06f;font-size:.7rem;padding:3px 10px;border-radius:14px;letter-spacing:.5px;}
+
 /* 资格列表 */
 .cred-item{display:flex;align-items:flex-start;gap:8px;padding:5px 0;font-size:0.8rem;color:#e2e8f0;line-height:1.5;}
 .cred-item .dot{color:#c9a84c;font-weight:700;flex-shrink:0;margin-top:1px;}
@@ -56,60 +60,80 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
 
   <!-- 内容 -->
   <div class="body">
-    <!-- 专业资格 -->
-    <div class="section-title">专业资格与履历</div>
-    <div class="cred-item"><span class="dot">◆</span><span>国家二级心理咨询师</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>NGH（美国）认证催眠治疗师及认证讲师</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>EverythingDiSC 国际认证顾问及培训师</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>美国心理学会（APA）会员</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>Points of You 教练</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>NLP 执行师</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>感觉统合训练师</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>房树人（HTP）绘画投射分析师</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>国家高级营养师</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>香港管理专业协会会员 · 专业经理</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>香港课程发展议会荣誉顾问</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>香港调解发展研究总会事务主席</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>香港学界联会永久会员</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>广东省法学会理事（2007–2009）</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>一带一路粤港澳大湾区法律协会荣誉会长</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>香港工联会专业培训总会 法律及调解委员会 副主席（2014）</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>澳门国际培训师协会创会会长（首届）</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>惠州市心理健康文化协会客座讲师（2015–2017）</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>中国教育学会会员</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>升学及留学规划顾问</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>小博士俱乐部首席讲师</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>使命教练照片疗法（Mission Coach Photo Therapy）</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>暨南大学法学学士</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>暨南大学香港校友会 第14届会长</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>暨南大学香港法律校友会 会长（第2、3届）· 荣誉会长</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>暨南大学法学专业硕士（实务）实践导师（2015–2018）</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>岭南大学（香港）实用哲学硕士同学会创会会员</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>岭南大学（香港）哲学文学硕士</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>岭南大学（香港）硕士课程职业导师</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>英国TQUK 中国区认可认证中心主任</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>以诺高顾问公司总监</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>深圳曾仕昭时尚教育科技有限公司 创始人</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>荣耀康华（深圳）健康管理科技公司策略伙伴</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>荣耀健康集团183基因管理学院副院长</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>一心心理学苑"社区心理服务40项核心技能"认证</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>「小心逆逆」家长大讲堂创始人（注册专利）</span></div>
+    <!-- 擅长领域 -->
+    <div class="tags">
+      <span class="tag">亲子关系</span>
+      <span class="tag">婚姻家庭</span>
+      <span class="tag">长者关爱</span>
+      <span class="tag">心理学</span>
+      <span class="tag">沟通学</span>
+      <span class="tag">哲学</span>
+      <span class="tag">催眠</span>
+      <span class="tag">个人成长</span>
+      <span class="tag">个人辅导</span>
+    </div>
 
-    <!-- MOOC 心理学课程认证 -->
+    <!-- 专业职务与头衔 (18项,镜像图左列) -->
+    <div class="section-title">专业职务与头衔</div>
+    <div class="cred-item"><span class="dot">◆</span><span>"小心逆逆"课程创始人及品牌专利拥有人</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>深圳曾仕昭时尚教育科技有限公司首席执行官</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>英国TQUK中国地区核准发证中心</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>暨南大学香港校友会第十四届理事会会长</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>暨南大学香港法学同学会会长(第2、3届)</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>暨南大学香港法学同学会荣誉会长</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>暨南大学法学学士</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>暨南大学法律硕士专业学位研究生实践指导教师(2015-18)</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>香港岭南大学实践哲学同学会创会会员</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>香港岭南大学研究生校友会员</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>香港岭南大学哲学文学硕士</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>香港岭南大学硕士研究生职业指导导师</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>香港管理专业协会会员</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>香港课程发展协会荣誉顾问</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>香港工联会专业人员培训总会法律及调解委员会副主任(2014)</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>香港管理专业协会专业经理</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>香港调解发展研究总会事务主席</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>香港校董学会永久会员</span></div>
+
+    <!-- 专业资格认证 (18项,镜像图中列) -->
+    <div class="section-title">专业资格认证</div>
+    <div class="cred-item"><span class="dot">◆</span><span>EverythingDiSC®国际认证顾问</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>EverythingDiSC®认证讲师</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>美国NGH认可催眠师发证导师</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>美国心理学会APA会员</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>Points of You 教练</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>国家二级心理咨询师</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>屋、树、人心理画研究分析</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>广东省法学会理事(2007-09)</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>一带一路粤港澳法律协会名誉会长</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>澳门国际培训师协会第一届会长</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>惠州市心理健康文化协会客座讲师(2015-17)</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>中国教育学会会员</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>感觉统合导师</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>国家高级营养师</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>NLP高级执行师</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>升学留学策划顾问</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>小博士俱乐部首席讲师</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>使命教练照片疗法</span></div>
+
+    <!-- 心理学专题进修 (17项,镜像图右列) -->
     <div class="section-title">心理学专题进修</div>
-    <div class="cred-item"><span class="dot">◆</span><span>恋爱心理学（优异）</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>读懂孩子内心世界</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>抑郁症心理辅导</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>犯罪心理学</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>营养与健康（优异）</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>学生心理辅导</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>异常心理与危机干预（优异）</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>教育心理学</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>保险学研究（优异）</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>音乐心理学</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>儿童发育障碍基础</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>当代游戏治疗与处方游戏治疗疗愈力</span></div>
-    <div class="cred-item"><span class="dot">◆</span><span>北京大学网络自助情绪管理与正念课程</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>以诺高咨询顾问 董事</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>MOOC爱情心理学优秀证书</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>MOOC走近孩子内心世界证书</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>MOOC抑郁症心理辅导证书</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>MOOC犯罪心理学证书</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>MOOC营养与健康优秀证书</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>MOOC学生心理辅导证书</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>MOOC异常心理与危机干预优秀证书</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>MOOC教育心理学证书</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>MOOC保险学概论优秀证书</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>MOOC音乐心理学</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>基础儿童成长障碍课程证书</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>当代游戏治疗的疗愈力量与处方游戏治疗</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>北京大学互联网自助情绪管理正念课程</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>荣光康华(深圳)健康管理科技有限公司 战略合作市场推广</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>荣光健康集团183基因管理学院联合院长</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>壹心理学堂《社区心理服务必备技能40讲》培训证书</span></div>
 
     <!-- 抑郁症板块 -->
     <div class="section-title">专业专题</div>
