@@ -83,7 +83,7 @@ for i,(big,small,c) in enumerate(stats):
     box(s, bx, Inches(1.55), w, Inches(1.7), fill=CARD, line=GOLD, line_w=Pt(1))
     txt(s, bx, Inches(1.7), w, Inches(0.95), [(big, 30, c, True)], align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
     txt(s, bx, Inches(2.65), w, Inches(0.55), [(small, 12.5, LIGHT, False)], align=PP_ALIGN.CENTER)
-txt(s, Inches(0.7), Inches(3.7), Inches(12), Inches(0.5), [("核心逻辑：用零售端的价盘空间，构建可裂变的经销网络", 16, LGOLD, True)])
+txt(s, Inches(0.7), Inches(3.7), Inches(12), Inches(0.5), [("核心逻辑：用零售端的价盘空间，构建可复制的经销网络", 16, LGOLD, True)])
 box(s, Inches(0.7), Inches(4.3), Inches(11.9), Inches(2.2), fill=CARD, line=GOLD, line_w=Pt(1), radius=True)
 txt(s, Inches(0.95), Inches(4.5), Inches(11.4), Inches(2.0),
     [("● 产品端：复购型健康消费，用户黏性强、复购周期稳定", 14, LIGHT, False, 7),
@@ -91,24 +91,25 @@ txt(s, Inches(0.95), Inches(4.5), Inches(11.4), Inches(2.0),
      ("● 收益端：单瓶利润空间 25–191 元，随等级跃升而放大", 14, LIGHT, False, 7),
      ("● 团队端：下级进货持续产生服务费与补贴，越带越宽", 14, LIGHT, False, 7)])
 
-# ===== Slide 3: 产品简介 (占位) =====
-s = prs.slides.add_slide(BLANK); bg(s, DARK); title(s, "产品简介 · 一四油", "【待补充：以下为结构框架，请提供产品资料后填实】")
+# ===== Slide 3: 生意本质 批发→零售 =====
+s = prs.slides.add_slide(BLANK); bg(s, DARK); title(s, "生意的本质：批发 → 零售，赚差价", "清清楚楚一门低买高卖的生意，不带任何模糊空间")
 box(s, Inches(0.7), Inches(1.5), Inches(5.85), Inches(4.9), fill=CARD, line=GOLD, line_w=Pt(1))
-txt(s, Inches(0.95), Inches(1.65), Inches(5.4), Inches(0.5), [("◆ 产品定位与核心成分", 15, LGOLD, True)])
+txt(s, Inches(0.95), Inches(1.65), Inches(5.4), Inches(0.5), [("◆ 你如何赚钱", 15, LGOLD, True)])
 txt(s, Inches(0.95), Inches(2.2), Inches(5.4), Inches(4.0),
-    [("• 产品名称 / 形态：________", 13, LIGHT, False, 6),
-     ("• 核心成分：________", 13, LIGHT, False, 6),
-     ("• 核心功效（合规表述）：________", 13, LIGHT, False, 6),
-     ("• 适用人群：________", 13, LIGHT, False, 6),
-     ("• 与同类产品的差异化：________", 13, LIGHT, False, 6)])
+    [("• 批发价进货：135 / 115 / 95 元（随等级下降）", 13, LIGHT, False, 7),
+     ("• 零售 / 会员价卖出：286 / 220 / 190 / 160 元", 13, LIGHT, False, 7),
+     ("• 中间差价 = 你的利润（单瓶 25–191 元）", 13, LIGHT, False, 7),
+     ("• 带团队额外获服务费 + 进货补贴", 13, LIGHT, False, 7)])
 box(s, Inches(6.75), Inches(1.5), Inches(5.85), Inches(4.9), fill=CARD, line=GOLD, line_w=Pt(1))
-txt(s, Inches(7.0), Inches(1.65), Inches(5.4), Inches(0.5), [("◆ 用户价值 & 市场痛点", 15, LGOLD, True)])
+txt(s, Inches(7.0), Inches(1.65), Inches(5.4), Inches(0.5), [("◆ 两种身份，一种逻辑", 15, LGOLD, True)])
 txt(s, Inches(7.0), Inches(2.2), Inches(5.4), Inches(4.0),
-    [("• 目标用户痛点：________", 13, LIGHT, False, 6),
-     ("• 使用场景：________", 13, LIGHT, False, 6),
-     ("• 复购周期 / 客单价：________", 13, LIGHT, False, 6),
-     ("• 主推话术 / 体验装设计：________", 13, LIGHT, False, 6),
-     ("• 资质 / 检测报告 / 背书：________", 13, LIGHT, False, 6)])
+    [("• 消费者：按零售 / 会员价买，自用或送礼", 13, LIGHT, False, 7),
+     ("• 经销商：按批发价买，卖出赚差价", 13, LIGHT, False, 7),
+     ("• 级别越高，进货价越低，单瓶利润越大", 13, LIGHT, False, 7),
+     ("• 一句话：低买高卖 + 团队复制 = 这门生意", 13, LGOLD, True, 7)])
+box(s, Inches(0.7), Inches(6.5), Inches(11.9), Inches(0.5), fill=DEEP, line=GOLD, line_w=Pt(1))
+txt(s, Inches(0.9), Inches(6.52), Inches(11.5), Inches(0.45),
+    [("这就是批发与零售——你投得越多、级别越高，进货价越低，单瓶赚得越多。", 13, LGOLD, True)], anchor=MSO_ANCHOR.MIDDLE)
 
 # ===== Slide 4: 价盘与利润空间 =====
 s = prs.slides.add_slide(BLANK); bg(s, DARK); title(s, "价盘与利润空间 · 一目了然", "采购数量不累计 · 后续进货永久享受对应等级单价")
@@ -147,31 +148,7 @@ txt(s, Inches(9.4), Inches(2.25), Inches(3.1), Inches(3.7),
      ("3瓶档 220 → 经销 135", 12.5, LIGHT, False, 5),
      ("  单瓶赚 85 元", 12.5, LGOLD, True, 10)])
 
-# ===== Slide 5: 传销辨析 =====
-s = prs.slides.add_slide(BLANK); bg(s, DARK); title(s, "正规经销 vs 传销 · 一图看清", "我们卖产品赚差价，不是拉人头分钱")
-# two columns
-box(s, Inches(0.7), Inches(1.5), Inches(5.85), Inches(4.7), fill=CARD, line=RGBColor(0x8B,0x3A,0x3A), line_w=Pt(1.5))
-txt(s, Inches(0.95), Inches(1.65), Inches(5.4), Inches(0.5), [("✗ 传销的特征（我们不是）", 15, RGBColor(0xE8,0x8A,0x8A), True)])
-txt(s, Inches(0.95), Inches(2.25), Inches(5.4), Inches(3.8),
-    [("• 靠拉人头、交入门费赚钱", 13.5, LIGHT, False, 9),
-     ("• 没有真实产品 / 产品只是道具", 13.5, LIGHT, False, 9),
-     ("• 承诺躺赚、静态返利", 13.5, LIGHT, False, 9),
-     ("• 多级抽成、无退货保障", 13.5, LIGHT, False, 9),
-     ("• 收入来自下线人头，不靠卖货", 13.5, LIGHT, False, 9)])
-box(s, Inches(6.75), Inches(1.5), Inches(5.85), Inches(4.7), fill=CARD, line=GOLD, line_w=Pt(1.5))
-txt(s, Inches(7.0), Inches(1.65), Inches(5.4), Inches(0.5), [("✓ 我们的模式（正规经销）", 15, LGOLD, True)])
-txt(s, Inches(7.0), Inches(2.25), Inches(5.4), Inches(3.8),
-    [("• 进货真实产品，靠卖差价获利", 13.5, LIGHT, False, 9),
-     ("• 产品可自用 / 复购 / 真实消费", 13.5, LIGHT, False, 9),
-     ("• 首次进货 1 月内可无条件退", 13.5, LIGHT, False, 9),
-     ("• 收益来自销售与服务，多劳多得", 13.5, LIGHT, False, 9),
-     ("• 需注册公司、对公纳税（总经销）", 13.5, LIGHT, False, 9)])
-box(s, Inches(0.7), Inches(6.35), Inches(11.9), Inches(0.7), fill=DEEP, line=GOLD, line_w=Pt(1))
-txt(s, Inches(0.9), Inches(6.4), Inches(11.5), Inches(0.6),
-    [("一句话：你赚的每一分钱，都来自真实的产品销售与售后服务，不是下线的人头费。", 13.5, LGOLD, True)],
-    anchor=MSO_ANCHOR.MIDDLE)
-
-# ===== Slide 6: 三级进阶路径 =====
+# ===== Slide 5: 三级进阶路径 =====
 s = prs.slides.add_slide(BLANK); bg(s, DARK); title(s, "三级进阶路径 · 清晰可量化", "每升一级，批发价下降、单瓶利润放大")
 tiers=[("① 基础经销商","一次性 3 箱 144 瓶","19440 元","135 元/瓶"),
        ("② 大经销商","当月团队累计 18 箱","864 瓶","115 元/瓶"),
