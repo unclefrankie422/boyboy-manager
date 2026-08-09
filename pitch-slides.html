@@ -56,24 +56,53 @@ html,body{background:#0a1526;font-family:-apple-system,"PingFang SC","Microsoft 
 .dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.3);}
 .dot.on{background:#f4d06f;}
 .pg{position:fixed;top:14px;right:18px;color:#94a3b8;font-size:13px;z-index:10;}
+
+/* 首页名片 */
+.bc{display:flex;flex-direction:column;align-items:center;width:100%;min-width:0;max-height:100%;}
+.bc .brand{font-size:clamp(10px,2.2vw,13px);color:#c9a84c;letter-spacing:4px;font-weight:700;}
+.bc .av{width:clamp(60px,15vw,80px);height:clamp(60px,15vw,80px);border-radius:50%;background:linear-gradient(135deg,#c9a84c,#f4d06f);display:flex;align-items:center;justify-content:center;font-size:clamp(22px,5.5vw,30px);color:#0f3954;font-weight:700;border:3px solid rgba(255,255,255,.22);margin:2vh 0 1.3vh;}
+.bc .nm{font-size:clamp(21px,4.8vw,30px);color:#fff;font-weight:700;letter-spacing:1px;line-height:1.1;}
+.bc .en{font-size:clamp(9px,1.8vw,11px);color:#94a3b8;letter-spacing:3px;margin-top:2px;}
+.bc .tt{font-size:clamp(12px,2.5vw,15px);color:#f4d06f;margin-top:1vh;font-weight:700;text-align:center;line-height:1.4;}
+.bc .dv{width:46px;height:2px;background:#c9a84c;margin:1.6vh 0;}
+.bc .tags{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:0 0 1.6vh;max-width:100%;}
+.bc .tag{background:rgba(201,168,76,.14);border:1px solid rgba(201,168,76,.4);color:#f4d06f;font-size:clamp(10px,2vw,12px);padding:3px 10px;border-radius:14px;white-space:nowrap;}
+.bc .ql{width:100%;background:rgba(26,40,66,.7);border:1px solid rgba(201,168,76,.3);border-radius:12px;padding:13px 16px;min-width:0;max-width:100%;box-sizing:border-box;}
+.bc .ql .li{font-size:clamp(11px,2.2vw,13.5px);line-height:1.6;color:#cbd5e1;padding-left:15px;position:relative;}
+.bc .ql .li:before{content:"◆";color:#c9a84c;position:absolute;left:0;font-size:9px;top:2px;}
+.bc .ct{display:flex;gap:13px;align-items:center;margin-top:1.8vh;width:100%;}
+.bc .qr{width:clamp(54px,13vw,68px);height:clamp(54px,13vw,68px);border-radius:10px;flex-shrink:0;border:2px solid rgba(201,168,76,.5);background:#e2e8f0;display:flex;align-items:center;justify-content:center;color:#0f2438;font-size:11px;font-weight:700;letter-spacing:1px;}
+.bc .ci{font-size:clamp(10px,2vw,12px);color:#cbd5e1;line-height:1.7;min-width:0;}
+.bc .ci b{color:#f4d06f;font-weight:700;}
 </style>
 </head>
 <body>
 <div id="app">
 
-  <!-- 1 Cover -->
-  <section class="slide on" style="justify-content:flex-start;padding:11vh 6vw 16vh;">
-    <div style="font-size:clamp(10px,2vw,12px);color:#c9a84c;letter-spacing:6px;font-weight:700;">YI SI YOU · 2026 招商推介</div>
-    <div class="h" style="font-size:clamp(26px,6vw,46px);margin-top:2vh;">一四油 · 招商推介</div>
-    <div style="width:60px;height:3px;background:#c9a84c;margin:2.5vh 0 2.5vh;"></div>
-    <div style="font-size:clamp(14px,3.2vw,20px);color:#f4d06f;font-weight:700;">大健康轻创业 · 三级进阶 · 多劳多得</div>
-    <div style="margin-top:1.5vh;color:#cbd5e1;font-size:clamp(12px,2.4vw,14px);line-height:1.6;">低门槛起步 · 完整赋能体系 · 透明收益分配</div>
-    <div style="margin-top:3vh;display:flex;gap:10px;flex-wrap:wrap;">
-      <span style="font-size:clamp(10px,2vw,12px);color:#0f2438;background:#c9a84c;padding:5px 12px;border-radius:20px;font-weight:700;">批发价 135 元/瓶</span>
-      <span style="font-size:clamp(10px,2vw,12px);color:#0f2438;background:#c9a84c;padding:5px 12px;border-radius:20px;font-weight:700;">3 箱即入门</span>
-      <span style="font-size:clamp(10px,2vw,12px);color:#0f2438;background:#c9a84c;padding:5px 12px;border-radius:20px;font-weight:700;">真实单瓶利润 25–85 元</span>
+  <!-- 1 名片 -->
+  <section class="slide on center" style="justify-content:flex-start;padding:5.5vh 7vw;">
+    <div class="bc">
+      <div class="brand">一四油 · YI SI YOU</div>
+      <div class="av">FT</div>
+      <div class="nm">Frankie Tsang</div>
+      <div class="en">FRANKIE TSANG</div>
+      <div class="tt">心理咨询师 · 企业培训师 · 长者心理专家</div>
+      <div class="dv"></div>
+      <div class="tags">
+        <span class="tag">亲子关系</span><span class="tag">婚姻家庭</span><span class="tag">长者关爱</span>
+        <span class="tag">心理学</span><span class="tag">催眠</span><span class="tag">个人成长</span>
+      </div>
+      <div class="ql">
+        <div class="li">国家二级心理咨询师 · 美国 NGH 催眠发证导师</div>
+        <div class="li">岭南大学（香港）哲学文学硕士 · 暨南大学法学学士</div>
+        <div class="li">EverythingDiSC® 国际认证顾问及认证讲师</div>
+        <div class="li">壹心理学堂《抑郁症诊断与 5 大疗法》121 课时结业</div>
+      </div>
+      <div class="ct">
+        <div class="qr">QR</div>
+        <div class="ci"><b>扫码加我 · 一对一聊聊一四油</b><br>微信 · WhatsApp · 邮箱<br>联系方式待嵌入</div>
+      </div>
     </div>
-    <div style="margin-top:auto;color:#64748b;font-size:clamp(10px,2vw,12px);text-align:center;">内部培训资料 · 数据以官方最新发布为准</div>
   </section>
 
   <!-- 2 机会 -->
