@@ -13,9 +13,9 @@ html,body{background:#0a1526;font-family:-apple-system,"PingFang SC","Microsoft 
 .bar{height:6px;background:#c9a84c;width:100%;position:absolute;top:0;left:0;}
 .h{font-size:clamp(20px,4.5vw,40px);color:#f4d06f;font-weight:700;letter-spacing:1px;margin-bottom:2vh;}
 .sub{font-size:clamp(11px,2.2vw,15px);color:#94a3b8;margin-top:-1vh;margin-bottom:2vh;}
-.card{background:rgba(26,40,66,.7);border:1px solid rgba(201,168,76,.35);border-radius:14px;padding:18px 20px;margin-bottom:14px;}
-.two{display:flex;gap:16px;flex:1;min-height:0;}
-.two>.card{flex:1;margin-bottom:0;}
+.card{background:rgba(26,40,66,.7);border:1px solid rgba(201,168,76,.35);border-radius:14px;padding:18px 20px;margin-bottom:14px;min-width:0;max-width:100%;box-sizing:border-box;}
+.two{display:flex;gap:16px;flex:1;min-height:0;min-width:0;}
+.two>.card{flex:1;margin-bottom:0;min-width:0;}
 .b{color:#f4d06f;font-weight:700;font-size:clamp(13px,2.6vw,17px);margin-bottom:8px;}
 .li{font-size:clamp(12px,2.4vw,15px);line-height:1.7;color:#cbd5e1;padding-left:16px;position:relative;}
 .li:before{content:"◆";color:#c9a84c;position:absolute;left:0;font-size:10px;top:3px;}
@@ -23,12 +23,26 @@ html,body{background:#0a1526;font-family:-apple-system,"PingFang SC","Microsoft 
 .stat{flex:1;min-width:120px;background:rgba(26,40,66,.7);border:1px solid rgba(201,168,76,.35);border-radius:12px;padding:14px;text-align:center;}
 .stat .big{font-size:clamp(18px,4vw,30px);color:#f4d06f;font-weight:700;}
 .stat .sm{font-size:clamp(10px,2vw,12.5px);color:#cbd5e1;margin-top:4px;}
-.table{width:100%;border-collapse:collapse;font-size:clamp(10px,2vw,13px);}
-.table th,.table td{padding:8px 6px;text-align:left;border-bottom:1px solid rgba(255,255,255,.1);}
-.table th{color:#f4d06f;background:rgba(15,57,84,.8);}
+.table{width:100%;border-collapse:collapse;font-size:clamp(10px,1.9vw,12px);}
+.table th,.table td{padding:6px 5px;text-align:left;border-bottom:1px solid rgba(255,255,255,.1);}
+.table th{color:#f4d06f;background:rgba(15,57,84,.8);font-weight:700;}
 .table .hl{background:rgba(201,168,76,.12);color:#f4d06f;font-weight:700;}
-.three{display:flex;gap:14px;flex:1;min-height:0;}
-.three>.card{flex:1;margin-bottom:0;display:flex;flex-direction:column;}
+.table th:nth-child(1),.table td:nth-child(1){width:32%;}
+.table th:nth-child(2),.table td:nth-child(2){width:24%;}
+.table th:nth-child(3),.table td:nth-child(3){width:18%;}
+.table th:nth-child(4),.table td:nth-child(4){width:26%;}
+.table.t-compare th:nth-child(1),.table.t-compare td:nth-child(1){width:24%;}
+.table.t-compare th:nth-child(2),.table.t-compare td:nth-child(2){width:25%;}
+.table.t-compare th:nth-child(3),.table.t-compare td:nth-child(3){width:25%;}
+.table.t-compare th:nth-child(4),.table.t-compare td:nth-child(4){width:26%;}
+.table.t-tier th:nth-child(1),.table.t-tier td:nth-child(1){width:22%;}
+.table.t-tier th:nth-child(2),.table.t-tier td:nth-child(2){width:22%;}
+.table.t-tier th:nth-child(3),.table.t-tier td:nth-child(3){width:18%;}
+.table.t-tier th:nth-child(4),.table.t-tier td:nth-child(4){width:19%;}
+.table.t-tier th:nth-child(5),.table.t-tier td:nth-child(5){width:19%;}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;flex:1;min-height:0;min-width:0;align-items:stretch;}
+.three>.step{margin-bottom:0;min-width:0;}
+.three>.card{flex:1;margin-bottom:0;display:flex;flex-direction:column;min-width:0;}
 .step{flex:1;background:rgba(26,40,66,.7);border:1px solid rgba(201,168,76,.35);border-radius:12px;padding:14px;display:flex;flex-direction:column;justify-content:center;}
 .step .n{font-size:clamp(16px,3.5vw,24px);color:#f4d06f;font-weight:700;text-align:center;}
 .step .d{font-size:clamp(11px,2.2vw,14px);color:#cbd5e1;text-align:center;margin-top:8px;line-height:1.5;}
@@ -48,12 +62,18 @@ html,body{background:#0a1526;font-family:-apple-system,"PingFang SC","Microsoft 
 <div id="app">
 
   <!-- 1 Cover -->
-  <section class="slide center on" style="justify-content:center;">
-    <div style="width:6px;height:90px;background:#c9a84c;position:absolute;left:8vw;top:50%;transform:translateY(-50%);"></div>
-    <div class="h" style="font-size:clamp(28px,7vw,52px);">一四油 · 招商推介</div>
-    <div class="cta2" style="font-size:clamp(15px,3.5vw,22px);">大健康轻创业 · 三级进阶 · 多劳多得</div>
-    <div style="margin-top:3vh;color:#cbd5e1;font-size:clamp(12px,2.5vw,16px);">低门槛起步 · 完整赋能体系 · 透明收益分配</div>
-    <div class="foot">内部培训资料 · 数据以官方最新发布为准</div>
+  <section class="slide on" style="justify-content:flex-start;padding:11vh 6vw 16vh;">
+    <div style="font-size:clamp(10px,2vw,12px);color:#c9a84c;letter-spacing:6px;font-weight:700;">YI SI YOU · 2026 招商推介</div>
+    <div class="h" style="font-size:clamp(26px,6vw,46px);margin-top:2vh;">一四油 · 招商推介</div>
+    <div style="width:60px;height:3px;background:#c9a84c;margin:2.5vh 0 2.5vh;"></div>
+    <div style="font-size:clamp(14px,3.2vw,20px);color:#f4d06f;font-weight:700;">大健康轻创业 · 三级进阶 · 多劳多得</div>
+    <div style="margin-top:1.5vh;color:#cbd5e1;font-size:clamp(12px,2.4vw,14px);line-height:1.6;">低门槛起步 · 完整赋能体系 · 透明收益分配</div>
+    <div style="margin-top:3vh;display:flex;gap:10px;flex-wrap:wrap;">
+      <span style="font-size:clamp(10px,2vw,12px);color:#0f2438;background:#c9a84c;padding:5px 12px;border-radius:20px;font-weight:700;">批发价 135 元/瓶</span>
+      <span style="font-size:clamp(10px,2vw,12px);color:#0f2438;background:#c9a84c;padding:5px 12px;border-radius:20px;font-weight:700;">3 箱即入门</span>
+      <span style="font-size:clamp(10px,2vw,12px);color:#0f2438;background:#c9a84c;padding:5px 12px;border-radius:20px;font-weight:700;">真实单瓶利润 25–85 元</span>
+    </div>
+    <div style="margin-top:auto;color:#64748b;font-size:clamp(10px,2vw,12px);text-align:center;">内部培训资料 · 数据以官方最新发布为准</div>
   </section>
 
   <!-- 2 机会 -->
@@ -105,26 +125,24 @@ html,body{background:#0a1526;font-family:-apple-system,"PingFang SC","Microsoft 
     <div class="bar"></div>
     <div class="h">价盘与利润空间 · 一目了然</div>
     <div class="sub">采购数量不累计 · 后续进货永久享受对应等级单价</div>
-    <div style="display:flex;gap:16px;flex:1;min-height:0;">
-      <div class="card" style="flex:2.3;margin-bottom:0;overflow:auto;">
-        <table class="table">
-          <tr><th>采购规格</th><th>总价</th><th>单瓶</th><th>身份/适用</th></tr>
-          <tr><td>1 瓶</td><td>286 元</td><td>286 元</td><td>零售</td></tr>
-          <tr><td>3 瓶</td><td>660 元</td><td>220 元</td><td>小批量</td></tr>
-          <tr><td>24 瓶（半箱）</td><td>4560 元</td><td>190 元</td><td>大批量</td></tr>
-          <tr><td>48 瓶（1 箱）</td><td>7680 元</td><td>160 元</td><td>会员价档</td></tr>
-          <tr class="hl"><td>3 箱（144 瓶）</td><td>19440 元</td><td>135 元</td><td>★经销商</td></tr>
-          <tr class="hl"><td>18 箱（864 瓶）</td><td>99360 元</td><td>115 元</td><td>★大经销商</td></tr>
-          <tr class="hl"><td>95 箱（4560 瓶）</td><td>433200 元</td><td>95 元</td><td>★总经销商</td></tr>
-        </table>
-      </div>
-      <div class="card" style="flex:1;margin-bottom:0;">
-        <div class="b">单瓶利润空间</div>
-        <div class="li">零售 286 → 经销 135<br><b style="color:#f4d06f;">空间 151 元</b></div>
-        <div class="li">会员价 160 → 经销 135<br><b style="color:#f4d06f;">赚 25 元</b></div>
-        <div class="li">24 瓶档 190 → 经销 135<br><b style="color:#f4d06f;">赚 55 元</b></div>
-        <div class="li">3 瓶档 220 → 经销 135<br><b style="color:#f4d06f;">赚 85 元</b></div>
-      </div>
+    <div class="card" style="flex:1;margin-bottom:12px;overflow:auto;">
+      <table class="table">
+        <tr><th>采购规格</th><th>总价</th><th>单瓶</th><th>等级</th></tr>
+        <tr><td>1 瓶</td><td>286 元</td><td>286 元</td><td>零售</td></tr>
+        <tr><td>3 瓶</td><td>660 元</td><td>220 元</td><td>小批量</td></tr>
+        <tr><td>24 瓶（半箱）</td><td>4560 元</td><td>190 元</td><td>大批量</td></tr>
+        <tr><td>48 瓶（1 箱）</td><td>7680 元</td><td>160 元</td><td>会员价</td></tr>
+        <tr class="hl"><td>3 箱（144 瓶）</td><td>19440 元</td><td>135 元</td><td>经销商</td></tr>
+        <tr class="hl"><td>18 箱（864 瓶）</td><td>99360 元</td><td>115 元</td><td>大经销商</td></tr>
+        <tr class="hl"><td>95 箱（4560 瓶）</td><td>433200 元</td><td>95 元</td><td>总经销商</td></tr>
+      </table>
+    </div>
+    <div class="card" style="margin-bottom:0;">
+      <div class="b">单瓶利润空间</div>
+      <div class="li">零售 286 → 经销 135 · <b style="color:#f4d06f;">151 元</b></div>
+      <div class="li">会员价 160 → 经销 135 · <b style="color:#f4d06f;">赚 25 元</b></div>
+      <div class="li">24 瓶档 190 → 经销 135 · <b style="color:#f4d06f;">赚 55 元</b></div>
+      <div class="li">3 瓶档 220 → 经销 135 · <b style="color:#f4d06f;">赚 85 元</b></div>
     </div>
   </section>
 
@@ -133,12 +151,15 @@ html,body{background:#0a1526;font-family:-apple-system,"PingFang SC","Microsoft 
     <div class="bar"></div>
     <div class="h">三级进阶路径 · 清晰可量化</div>
     <div class="sub">每升一级，批发价下降、单瓶利润放大</div>
-    <div class="three" style="flex:1;">
-      <div class="step"><div class="n">① 基础经销商</div><div class="d">一次性 3 箱 144 瓶<br>（19440 元）<br><br><b style="color:#f4d06f;font-size:1.3em;">135 元/瓶</b></div></div>
-      <div class="step"><div class="n">② 大经销商</div><div class="d">当月团队累计 18 箱<br>（864 瓶）<br><br><b style="color:#f4d06f;font-size:1.3em;">115 元/瓶</b></div></div>
-      <div class="step"><div class="n">③ 总经销商</div><div class="d">当月团队累计 95 箱<br>（4560 瓶）<br><br><b style="color:#f4d06f;font-size:1.3em;">95 元/瓶</b></div></div>
+    <div class="card" style="flex:1;margin-bottom:12px;overflow:auto;">
+      <table class="table t-tier">
+        <tr><th>级别</th><th>门槛</th><th>批发价</th><th>对零售价</th><th>对会员价</th></tr>
+        <tr><td><b style="color:#f4d06f;">① 基础</b></td><td>3 箱 144 瓶<br><span style="font-size:clamp(9px,1.8vw,11px);color:#94a3b8;">19440 元</span></td><td class="hl">135 元</td><td>赚 151</td><td>赚 25</td></tr>
+        <tr><td><b style="color:#f4d06f;">② 大经销</b></td><td>月 18 箱<br><span style="font-size:clamp(9px,1.8vw,11px);color:#94a3b8;">864 瓶</span></td><td class="hl">115 元</td><td>赚 171</td><td>赚 45</td></tr>
+        <tr><td><b style="color:#f4d06f;">③ 总经销</b></td><td>月 95 箱<br><span style="font-size:clamp(9px,1.8vw,11px);color:#94a3b8;">4560 瓶</span></td><td class="hl">95 元</td><td>赚 191</td><td>赚 65</td></tr>
+      </table>
     </div>
-    <div class="card" style="text-align:center;font-size:clamp(11px,2.2vw,13.5px);">关键规则：采购数量不累计 · 后续进货永久享受晋级后单价 · 月度计算周期为当月 26 日—次月 25 日</div>
+    <div class="card" style="margin-bottom:0;text-align:center;font-size:clamp(11px,2.2vw,13px);">关键规则：采购数量不累计 · 后续进货永久享受对应等级单价 · 月度计算 26 日—次月 25 日</div>
   </section>
 
   <!-- 6 收益模型 -->
@@ -146,34 +167,19 @@ html,body{background:#0a1526;font-family:-apple-system,"PingFang SC","Microsoft 
     <div class="bar"></div>
     <div class="h">收益模型 · 每一级能赚多少</div>
     <div class="sub">收益 = 差价 + 服务费 + 进货补贴 + 年度分红（多劳多得）</div>
-    <div class="three" style="flex:1;">
-      <div class="step" style="justify-content:flex-start;gap:6px;align-items:stretch;">
-        <div class="n" style="font-size:clamp(14px,3vw,18px);">基础经销商</div>
-        <div class="d" style="font-weight:700;color:#f4d06f;">135 元/瓶 进货</div>
-        <div class="li">售 144 瓶（按零售价）可赚 12240 元</div>
-        <div class="li">对应毛利率约 63%</div>
-        <div class="li">实际按会员/小批量档单瓶赚 25–85 元</div>
-        <div class="li">服务费 8 元/瓶（下级进货）</div>
-        <div class="li">进货补贴 3%–23%</div>
-      </div>
-      <div class="step" style="justify-content:flex-start;gap:6px;align-items:stretch;">
-        <div class="n" style="font-size:clamp(14px,3vw,18px);">大经销商</div>
-        <div class="d" style="font-weight:700;color:#f4d06f;">115 元/瓶 进货</div>
-        <div class="li">对比会员价单瓶赚 45 元</div>
-        <div class="li">对比零售价单瓶赚 171 元</div>
-        <div class="li">服务费 8 元/瓶</div>
-        <div class="li">进货补贴 3%–23%</div>
-      </div>
-      <div class="step" style="justify-content:flex-start;gap:6px;align-items:stretch;">
-        <div class="n" style="font-size:clamp(14px,3vw,18px);">总经销商</div>
-        <div class="d" style="font-weight:700;color:#f4d06f;">95 元/瓶 进货</div>
-        <div class="li">对比会员价单瓶赚 65 元</div>
-        <div class="li">对比零售价单瓶赚 191 元</div>
-        <div class="li">服务费 10 元/瓶（公司直付）</div>
-        <div class="li">进货补贴 3%–23% 上不封顶</div>
-      </div>
+    <div class="card" style="flex:1;margin-bottom:12px;overflow:auto;">
+      <table class="table t-compare">
+        <tr><th>维度</th><th>基础经销</th><th>大经销</th><th>总经销</th></tr>
+        <tr><td>进货价</td><td class="hl">135 元/瓶</td><td class="hl">115 元/瓶</td><td class="hl">95 元/瓶</td></tr>
+        <tr><td>对零售价</td><td>赚 151 元</td><td>赚 171 元</td><td>赚 191 元</td></tr>
+        <tr><td>对会员价</td><td>赚 25 元</td><td>赚 45 元</td><td>赚 65 元</td></tr>
+        <tr><td>服务费</td><td>8 元/瓶</td><td>8 元/瓶</td><td>10 元/瓶</td></tr>
+      </table>
     </div>
-    <div class="card" style="text-align:center;color:#f4d06f;font-weight:700;font-size:clamp(11px,2.2vw,13px);">案例：总经销团队月销售额 2000 万（约 20 万瓶）→ 服务费 200 万 + 进货补贴 120 万 + 年度分红 80 万 ≈ 400 万元/月</div>
+    <div class="card" style="margin-bottom:0;text-align:center;font-size:clamp(11px,2.2vw,13px);">
+      <b style="color:#f4d06f;">进货补贴 3%–23% · 上不封顶</b><br>
+      <span style="color:#cbd5e1;">案例：总经销团队月销售额 2000 万 → 服务费 200 万 + 进货补贴 120 万 + 年度分红 80 万 ≈ <b style="color:#f4d06f;">400 万元/月</b></span>
+    </div>
   </section>
 
   <!-- 7 新人90天 -->
@@ -181,12 +187,30 @@ html,body{background:#0a1526;font-family:-apple-system,"PingFang SC","Microsoft 
     <div class="bar"></div>
     <div class="h">新人前 90 天 · 真实路径</div>
     <div class="sub">不画大饼——回本 + 微利，是第一步目标</div>
-    <div class="three" style="flex:1;">
-      <div class="step"><div class="n">第 1 月</div><div class="d">自用好 + 送 10 位精准亲友体验<br><br>转化 5 个复购客户<br>练熟产品话术</div></div>
-      <div class="step"><div class="n">第 2 月</div><div class="d">老客转介绍 + 社群真实分享<br><br>累计 24 个精准客户<br>完成铺货动作</div></div>
-      <div class="step"><div class="n">第 3 月</div><div class="d">带出 1–2 个同频伙伴<br><br>开始有服务费收入<br>团队起量</div></div>
+    <div style="display:flex;flex-direction:column;gap:10px;flex:1;min-width:0;">
+      <div class="card" style="margin-bottom:0;display:flex;align-items:center;gap:12px;width:100%;box-sizing:border-box;">
+        <div style="font-size:clamp(16px,4vw,22px);font-weight:700;color:#f4d06f;width:50px;text-align:center;line-height:1.1;flex-shrink:0;">第<br>1<br>月</div>
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:clamp(13px,2.8vw,16px);font-weight:700;color:#f4d06f;">自用好 + 送 10 位精准亲友体验</div>
+          <div style="font-size:clamp(11px,2.2vw,13px);color:#cbd5e1;margin-top:3px;">转化 5 个复购客户 · 练熟产品话术</div>
+        </div>
+      </div>
+      <div class="card" style="margin-bottom:0;display:flex;align-items:center;gap:12px;width:100%;box-sizing:border-box;">
+        <div style="font-size:clamp(16px,4vw,22px);font-weight:700;color:#f4d06f;width:50px;text-align:center;line-height:1.1;flex-shrink:0;">第<br>2<br>月</div>
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:clamp(13px,2.8vw,16px);font-weight:700;color:#f4d06f;">老客转介绍 + 社群真实分享</div>
+          <div style="font-size:clamp(11px,2.2vw,13px);color:#cbd5e1;margin-top:3px;">累计 24 个精准客户 · 完成铺货动作</div>
+        </div>
+      </div>
+      <div class="card" style="margin-bottom:0;display:flex;align-items:center;gap:12px;width:100%;box-sizing:border-box;">
+        <div style="font-size:clamp(16px,4vw,22px);font-weight:700;color:#f4d06f;width:50px;text-align:center;line-height:1.1;flex-shrink:0;">第<br>3<br>月</div>
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:clamp(13px,2.8vw,16px);font-weight:700;color:#f4d06f;">带出 1–2 个同频伙伴</div>
+          <div style="font-size:clamp(11px,2.2vw,13px);color:#cbd5e1;margin-top:3px;">开始有服务费收入 · 团队起量</div>
+        </div>
+      </div>
     </div>
-    <div class="card" style="text-align:center;font-size:clamp(11px,2.2vw,14px);">
+    <div class="card" style="margin-top:12px;margin-bottom:0;text-align:center;font-size:clamp(11px,2.2vw,13px);">
       <b style="color:#f4d06f;">现实预期：</b>前 3 个月以「回本 + 微利」为主，团队与被动收入从第 3 月起逐步起量。<br>稳扎稳打，好过一夜暴富——400 万/月的案例是塔尖，不是起点。
     </div>
   </section>
@@ -264,11 +288,14 @@ const pg=document.getElementById('pg');
 let cur=0;
 slides.forEach((_,i)=>{const d=document.createElement('div');d.className='dot'+(i===0?' on':'');dotsBox.appendChild(d);});
 function show(i){cur=(i+slides.length)%slides.length;slides.forEach((s,j)=>s.classList.toggle('on',j===cur));
-  [...dotsBox.children].forEach((d,j)=>d.classList.toggle('on',j===cur));pg.textContent=(cur+1)+' / '+slides.length;}
+  [...dotsBox.children].forEach((d,j)=>d.classList.toggle('on',j===cur));pg.textContent=(cur+1)+' / '+slides.length;
+  if(history.replaceState)history.replaceState(null,'','#s'+(cur+1));}
 function go(d){show(cur+d);}
 document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(1);if(e.key==='ArrowLeft')go(-1);});
 let sx=0;document.addEventListener('touchstart',e=>sx=e.touches[0].clientX);
 document.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(dx>50)go(-1);if(dx<-50)go(1);});
+function _h(){const m=location.hash.match(/^#s(\d+)$/);if(m){const n=parseInt(m[1])-1;if(n>=0&&n<slides.length)show(n);}}
+window.addEventListener('hashchange',_h);_h();
 </script>
 </body>
 </html>
