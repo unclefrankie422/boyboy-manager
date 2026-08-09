@@ -75,7 +75,7 @@ txt(s, Inches(1.2), Inches(5.6), Inches(11), Inches(0.8),
 s = prs.slides.add_slide(BLANK); bg(s, DARK); title(s, "为什么是现在的机会", "一个低门槛、可复制的大健康创业模型")
 stats = [("19440 元","起步门槛（3 箱 144 瓶）",GOLD),
          ("135 元/瓶","经销商永久批发价",GOLD),
-         ("63%","基础档销售毛利率",GOLD),
+         ("25–85 元","真实单瓶利润空间",GOLD),
          ("3 级","清晰可量化的进阶通道",GOLD)]
 x = Inches(0.7); w = Inches(2.85); gap = Inches(0.25)
 for i,(big,small,c) in enumerate(stats):
@@ -147,7 +147,31 @@ txt(s, Inches(9.4), Inches(2.25), Inches(3.1), Inches(3.7),
      ("3瓶档 220 → 经销 135", 12.5, LIGHT, False, 5),
      ("  单瓶赚 85 元", 12.5, LGOLD, True, 10)])
 
-# ===== Slide 5: 三级进阶路径 =====
+# ===== Slide 5: 传销辨析 =====
+s = prs.slides.add_slide(BLANK); bg(s, DARK); title(s, "正规经销 vs 传销 · 一图看清", "我们卖产品赚差价，不是拉人头分钱")
+# two columns
+box(s, Inches(0.7), Inches(1.5), Inches(5.85), Inches(4.7), fill=CARD, line=RGBColor(0x8B,0x3A,0x3A), line_w=Pt(1.5))
+txt(s, Inches(0.95), Inches(1.65), Inches(5.4), Inches(0.5), [("✗ 传销的特征（我们不是）", 15, RGBColor(0xE8,0x8A,0x8A), True)])
+txt(s, Inches(0.95), Inches(2.25), Inches(5.4), Inches(3.8),
+    [("• 靠拉人头、交入门费赚钱", 13.5, LIGHT, False, 9),
+     ("• 没有真实产品 / 产品只是道具", 13.5, LIGHT, False, 9),
+     ("• 承诺躺赚、静态返利", 13.5, LIGHT, False, 9),
+     ("• 多级抽成、无退货保障", 13.5, LIGHT, False, 9),
+     ("• 收入来自下线人头，不靠卖货", 13.5, LIGHT, False, 9)])
+box(s, Inches(6.75), Inches(1.5), Inches(5.85), Inches(4.7), fill=CARD, line=GOLD, line_w=Pt(1.5))
+txt(s, Inches(7.0), Inches(1.65), Inches(5.4), Inches(0.5), [("✓ 我们的模式（正规经销）", 15, LGOLD, True)])
+txt(s, Inches(7.0), Inches(2.25), Inches(5.4), Inches(3.8),
+    [("• 进货真实产品，靠卖差价获利", 13.5, LIGHT, False, 9),
+     ("• 产品可自用 / 复购 / 真实消费", 13.5, LIGHT, False, 9),
+     ("• 首次进货 1 月内可无条件退", 13.5, LIGHT, False, 9),
+     ("• 收益来自销售与服务，多劳多得", 13.5, LIGHT, False, 9),
+     ("• 需注册公司、对公纳税（总经销）", 13.5, LIGHT, False, 9)])
+box(s, Inches(0.7), Inches(6.35), Inches(11.9), Inches(0.7), fill=DEEP, line=GOLD, line_w=Pt(1))
+txt(s, Inches(0.9), Inches(6.4), Inches(11.5), Inches(0.6),
+    [("一句话：你赚的每一分钱，都来自真实的产品销售与售后服务，不是下线的人头费。", 13.5, LGOLD, True)],
+    anchor=MSO_ANCHOR.MIDDLE)
+
+# ===== Slide 6: 三级进阶路径 =====
 s = prs.slides.add_slide(BLANK); bg(s, DARK); title(s, "三级进阶路径 · 清晰可量化", "每升一级，批发价下降、单瓶利润放大")
 tiers=[("① 基础经销商","一次性 3 箱 144 瓶","19440 元","135 元/瓶"),
        ("② 大经销商","当月团队累计 18 箱","864 瓶","115 元/瓶"),
@@ -170,7 +194,7 @@ txt(s, Inches(0.9), Inches(5.4), Inches(11.5), Inches(0.9),
 # ===== Slide 6: 收益模型 =====
 s = prs.slides.add_slide(BLANK); bg(s, DARK); title(s, "收益模型 · 每一级能赚多少", "收益 = 差价 + 服务费 + 进货补贴 + 年度分红（多劳多得）")
 cols=[("基础经销商","135 元/瓶 进货",
-       ["售 144 瓶可赚 12240 元","毛利率约 63%","服务费 8 元/瓶（下级进货）","进货补贴 3%–23%"],GOLD),
+       ["售 144 瓶（按零售价）可赚 12240 元","对应毛利率约 63%","实际按会员/小批量档单瓶赚 25–85 元","服务费 8 元/瓶（下级进货）","进货补贴 3%–23%"],GOLD),
       ("大经销商","115 元/瓶 进货",
        ["对比会员价单瓶赚 45 元","对比零售价单瓶赚 171 元","服务费 8 元/瓶","进货补贴 3%–23%"],GOLD),
       ("总经销商","95 元/瓶 进货",
@@ -188,7 +212,25 @@ txt(s, Inches(0.9), Inches(6.4), Inches(11.5), Inches(0.6),
     [("案例：总经销团队月销售额 2000 万（约 20 万瓶）→ 服务费 200 万 + 进货补贴 120 万 + 年度分红 80 万 ≈ 400 万元/月", 13, LGOLD, True)],
     anchor=MSO_ANCHOR.MIDDLE)
 
-# ===== Slide 7: 赋能体系 =====
+# ===== Slide 8: 新人 90 天真实路径 =====
+s = prs.slides.add_slide(BLANK); bg(s, DARK); title(s, "新人前 90 天 · 真实路径", "不画大饼——回本 + 微利，是第一步目标")
+months=[("第 1 月","自用好 + 送 10 位精准亲友体验","转化 5 个复购客户，练熟产品话术",GOLD),
+        ("第 2 月","老客转介绍 + 社群真实分享","累计 24 个精准客户，完成铺货动作",GOLD),
+        ("第 3 月","带出 1–2 个同频伙伴","开始有服务费收入，团队起量",GOLD)]
+x=Inches(0.7); w=Inches(3.85); gap=Inches(0.3)
+for i,(m,a,b,c) in enumerate(months):
+    bx=x+i*(w+gap)
+    box(s, bx, Inches(1.6), w, Inches(3.4), fill=CARD, line=GOLD, line_w=Pt(1.5))
+    txt(s, bx, Inches(1.8), w, Inches(0.6), [(m,18,c,True)], align=PP_ALIGN.CENTER)
+    txt(s, bx+Inches(0.25), Inches(2.6), w-Inches(0.5), Inches(2.2),
+        [("• "+a, 13, LIGHT, False, 8),("• "+b, 13, LIGHT, False, 8)])
+box(s, Inches(0.7), Inches(5.3), Inches(11.9), Inches(1.1), fill=CARD2, line=GOLD, line_w=Pt(1))
+txt(s, Inches(0.9), Inches(5.4), Inches(11.5), Inches(0.9),
+    [("现实预期：前 3 个月以「回本 + 微利」为主，团队与被动收入从第 3 月起逐步起量。", 14, LGOLD, True, 4),
+     ("稳扎稳打，好过一夜暴富——400 万/月的案例是塔尖，不是起点。", 12.5, LIGHT, False)],
+    align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+
+# ===== Slide 9: 赋能体系 =====
 s = prs.slides.add_slide(BLANK); bg(s, DARK); title(s, "赋能体系 · 你不是一个人", "从培训到售后，标准化流程兜底")
 items=[("系统培训","产品知识 · 铺货技巧 · 回款话术 · 调理反应应对"),
        ("标准售后","7 天体验打卡 + 1 个月跟踪 + 3 个月回访"),
