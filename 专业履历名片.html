@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frankie Tsang 专业履历名片</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#1a1a2e;padding:30px 16px;display:flex;flex-direction:column;align-items:center;}
+
+/* 竖版名片 - 宽高比约 9:16 */
+.card{width:400px;background:linear-gradient(170deg,#0f3954,#16213e);border-radius:18px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.5);position:relative;margin:0 auto;}
+
+/* 顶部:名字区 */
+.header{padding:32px 28px 20px;text-align:center;border-bottom:2px solid rgba(201,168,76,.3);}
+.avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#c9a84c,#f4d06f);display:flex;align-items:center;justify-content:center;font-size:2rem;color:#0f3954;font-weight:bold;margin:0 auto 14px;border:3px solid rgba(255,255,255,.2);}
+.name{font-size:1.8rem;font-weight:700;color:#fff;letter-spacing:1px;}
+.name-en{font-size:0.8rem;color:#94a3b8;letter-spacing:3px;margin-top:4px;}
+.title{font-size:0.9rem;color:#f4d06f;margin-top:8px;letter-spacing:1px;}
+.slogan{font-size:0.78rem;color:#e2e8f0;margin-top:6px;}
+
+/* 内容区 */
+.body{padding:20px 26px 30px;}
+
+.section-title{font-size:0.9rem;color:#f4d06f;font-weight:700;letter-spacing:2px;margin:18px 0 10px;padding-left:10px;border-left:3px solid #c9a84c;}
+
+/* 擅长领域 chips */
+.tags{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:6px 0 4px;padding-bottom:6px;border-bottom:1px dashed rgba(201,168,76,.2);}
+.tag{background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.4);color:#f4d06f;font-size:.7rem;padding:3px 10px;border-radius:14px;letter-spacing:.5px;}
+
+/* 资格列表 */
+.cred-item{display:flex;align-items:flex-start;gap:8px;padding:5px 0;font-size:0.8rem;color:#e2e8f0;line-height:1.5;}
+.cred-item .dot{color:#c9a84c;font-weight:700;flex-shrink:0;margin-top:1px;}
+
+/* 抑郁症板块 */
+.depression-box{background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.25);border-radius:12px;padding:14px 16px;margin-top:8px;}
+.depression-box .dep-title{font-size:0.95rem;color:#f4d06f;font-weight:700;text-align:center;margin-bottom:6px;letter-spacing:1px;}
+.dep-sub{font-size:.7rem;color:#94a3b8;text-align:center;font-style:italic;margin-bottom:10px;letter-spacing:.5px;}
+.dep-item{font-size:0.78rem;color:#e2e8f0;line-height:1.6;padding:3px 0;}
+.dep-item strong{color:#f4d06f;}
+
+/* 底部 */
+.footer{text-align:center;padding:14px;border-top:1px solid rgba(255,255,255,.08);font-size:0.68rem;color:#64748b;letter-spacing:1px;}
+
+/* 说明 */
+.note{max-width:400px;margin:20px auto 0;background:#fff;border-radius:12px;padding:16px 20px;font-size:.8rem;color:#555;line-height:1.8;}
+.note strong{color:#c9a84c;}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <!-- 顶部:姓名 -->
+  <div class="header">
+    <div class="avatar">FT</div>
+    <div class="name">Frankie Tsang</div>
+    <div class="name-en">FRANKIE TSANG</div>
+    <div class="title">心理咨询师 · 企业培训师 · 长者心理专家</div>
+    <div class="slogan">半世纪人生智慧 · 悠悠心路伴你行</div>
+  </div>
+
+  <!-- 内容 -->
+  <div class="body">
+    <!-- 擅长领域 -->
+    <div class="tags">
+      <span class="tag">亲子关系</span>
+      <span class="tag">婚姻家庭</span>
+      <span class="tag">长者关爱</span>
+      <span class="tag">心理学</span>
+      <span class="tag">沟通学</span>
+      <span class="tag">哲学</span>
+      <span class="tag">催眠</span>
+      <span class="tag">个人成长</span>
+      <span class="tag">个人辅导</span>
+    </div>
+
+    <!-- 专业职务与头衔 (18项,镜像图左列) -->
+    <div class="section-title">专业职务与头衔</div>
+    <div class="cred-item"><span class="dot">◆</span><span>"小心逆逆"课程创始人及品牌专利拥有人</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>深圳曾仕昭时尚教育科技有限公司首席执行官</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>英国TQUK中国地区核准发证中心</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>暨南大学香港校友会第十四届理事会会长</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>暨南大学香港法学同学会会长(第2、3届)</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>暨南大学香港法学同学会荣誉会长</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>暨南大学法学学士</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>暨南大学法律硕士专业学位研究生实践指导教师(2015-18)</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>香港岭南大学实践哲学同学会创会会员</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>香港岭南大学研究生校友会员</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>香港岭南大学哲学文学硕士</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>香港岭南大学硕士研究生职业指导导师</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>香港管理专业协会会员</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>香港课程发展协会荣誉顾问</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>香港工联会专业人员培训总会法律及调解委员会副主任(2014)</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>香港管理专业协会专业经理</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>香港调解发展研究总会事务主席</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>香港校董学会永久会员</span></div>
+
+    <!-- 专业资格认证 (18项,镜像图中列) -->
+    <div class="section-title">专业资格认证</div>
+    <div class="cred-item"><span class="dot">◆</span><span>EverythingDiSC®国际认证顾问</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>EverythingDiSC®认证讲师</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>美国NGH认可催眠师发证导师</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>美国心理学会APA会员</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>Points of You 教练</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>国家二级心理咨询师</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>屋、树、人心理画研究分析</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>广东省法学会理事(2007-09)</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>澳门国际培训师协会第一届会长</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>惠州市心理健康文化协会客座讲师(2015-17)</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>中国教育学会会员</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>感觉统合导师</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>国家高级营养师</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>NLP高级执行师</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>升学留学策划顾问</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>小博士俱乐部首席讲师</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>使命教练照片疗法</span></div>
+
+    <!-- 心理学专题进修 (17项,镜像图右列) -->
+    <div class="section-title">心理学专题进修</div>
+    <div class="cred-item"><span class="dot">◆</span><span>以诺高咨询顾问 董事</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>MOOC爱情心理学优秀证书</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>MOOC走近孩子内心世界证书</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>MOOC抑郁症心理辅导证书</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>MOOC犯罪心理学证书</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>MOOC营养与健康优秀证书</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>MOOC学生心理辅导证书</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>MOOC异常心理与危机干预优秀证书</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>MOOC教育心理学证书</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>MOOC保险学概论优秀证书</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>MOOC音乐心理学</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>基础儿童成长障碍课程证书</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>当代游戏治疗的疗愈力量与处方游戏治疗</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>北京大学互联网自助情绪管理正念课程</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>荣光康华(深圳)健康管理科技有限公司 战略合作市场推广</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>荣光健康集团183基因管理学院联合院长</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>壹心理学堂《社区心理服务必备技能40讲》培训证书</span></div>
+    <div class="cred-item"><span class="dot">◆</span><span>壹心理学堂《抑郁症的临床诊断和5大实用疗法》121课时结业证书（2026.08）</span></div>
+
+    <!-- 抑郁症板块 -->
+    <div class="section-title">专业专题</div>
+    <div class="depression-box">
+      <div class="dep-title">抑郁症的临床诊断及5大实用疗法</div>
+      <div class="dep-sub">已获壹心理学堂121课时专业认证（2026.08）</div>
+      <div class="dep-item"><strong>① 临床诊断：</strong>依据DSM-5标准，持续2周以上情绪低落、兴趣丧失、精力减退为核心症状</div>
+      <div class="dep-item"><strong>② 认知行为疗法（CBT）：</strong>识别并重建负面认知模式，打破情绪恶性循环</div>
+      <div class="dep-item"><strong>③ 人际心理辅导：</strong>改善人际冲突与社交支持，缓解关系性抑郁</div>
+      <div class="dep-item"><strong>④ 正念与放松训练：</strong>冥想、呼吸调节、身体扫描，降低焦虑与躯体化症状</div>
+      <div class="dep-item"><strong>⑤ 家庭与社群支持：</strong>家庭辅导+同伴陪伴，构建长期复原力系统</div>
+    </div>
+  </div>
+
+  <!-- 底部 -->
+  <div class="footer">
+    香港以諾高顧問公司 · 深圳曾仕昭时尚教育科技有限公司<br>
+    法学 · 哲学 · 心理学 · 三学融通
+  </div>
+</div>
+
+<div class="note">
+<strong>使用说明</strong><br>
+• 这是电子名片，可截图保存或发微信<br>
+• 每考上一个新资格，告诉我，我加在"专业资格与履历"列表最后<br>
+• 抑郁症板块如需展开成完整长文，可做成公众号文章
+</div>
+
+</body>
+</html>
