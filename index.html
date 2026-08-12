@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UncleFrankie 工作台</title>
+<title>Frankie Tsang 工作台</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#667eea,#764ba2);min-height:100vh;padding:20px 16px 40px;color:#333;}
@@ -82,30 +82,13 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
   .section-label{max-width:900px;font-size:1rem;}
 }
 </style>
-
-<!-- PWA -->
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#667eea">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Frankie 工作台">
-<link rel="apple-touch-icon" href="icon-192.png">
-<script>
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./service-worker.js')
-      .then(reg => console.log('SW registered:', reg.scope))
-      .catch(err => console.log('SW registration failed:', err));
-  });
-}
-</script>
 </head>
 <body>
 
 <!-- 顶部个人标识 -->
 <div class="header">
   <div class="avatar">FT</div>
-  <h1>UncleFrankie</h1>
+  <h1>Frankie Tsang 曾仕昭</h1>
   <div class="subtitle">亲子教育顾问 · 企业培训讲师 · 心理咨询师</div>
   <div class="company">Shenzhen Frankie Z Style Education Technology Co., Ltd.</div>
 </div>
@@ -116,7 +99,7 @@ if ('serviceWorker' in navigator) {
     <div class="card-icon" style="background:rgba(255,255,255,.15);color:#fff;">📂</div>
     <div class="card-body">
       <div class="card-title" style="color:#fff;">文件目录</div>
-      <div class="card-desc" style="color:rgba(255,255,255,.6);">15个文件 · 3大主题 · 编号管理 · 快速查找</div>
+      <div class="card-desc" style="color:rgba(255,255,255,.6);">14个文件 · 3大主题 · 编号管理 · 快速查找</div>
     </div>
     <div class="card-arrow" style="color:rgba(255,255,255,.4);">→</div>
   </a>
@@ -160,18 +143,49 @@ if ('serviceWorker' in navigator) {
     </div>
     <div class="card-arrow">→</div>
   </a>
+</div>
 
-  <a href="personal-ip-strategy.html" class="card">
-    <div class="card-icon bg-rose">🎯</div>
+<!-- 第二区：小四油·招商推介 -->
+<div class="section-label">🫒 小四油 · 招商推介</div>
+<div class="grid">
+  <a href="pitch-slides.html" class="card">
+    <div class="card-icon bg-gold">🎯</div>
     <div class="card-body">
-      <div class="card-title">个人IP打造方案</div>
-      <div class="card-desc">公众号重启 · 内容选题 · 变现路径</div>
+      <div class="card-title">招商推介（幻灯片）</div>
+      <div class="card-desc">13页在线翻页 · 电脑手机都能看</div>
+    </div>
+    <div class="card-arrow">→</div>
+  </a>
+
+  <a href="小四油招商推介-书版.html" class="card">
+    <div class="card-icon bg-gold">📱</div>
+    <div class="card-body">
+      <div class="card-title">招商推介（书版）</div>
+      <div class="card-desc">手机滚动长图 · 一页到底</div>
+    </div>
+    <div class="card-arrow">→</div>
+  </a>
+
+  <a href="小四油十大标准-手机版.html" class="card">
+    <div class="card-icon bg-gold">⭐</div>
+    <div class="card-body">
+      <div class="card-title">好生意十大标准</div>
+      <div class="card-desc">硬件6点 + 软件4点 · 手机版</div>
+    </div>
+    <div class="card-arrow">→</div>
+  </a>
+
+  <a href="专业履历名片.html" class="card">
+    <div class="card-icon bg-gold">💼</div>
+    <div class="card-body">
+      <div class="card-title">专业履历名片</div>
+      <div class="card-desc">Frankie 老师 · 专业档案</div>
     </div>
     <div class="card-arrow">→</div>
   </a>
 </div>
 
-<!-- 第二区：营养健康 -->
+<!-- 第三区：营养健康 -->
 <div class="section-label">🌱 营养健康</div>
 <div class="grid">
   <a href="why-four-seed-oil-view.html" class="card">
@@ -193,7 +207,87 @@ if ('serviceWorker' in navigator) {
   </a>
 </div>
 
-<!-- 第三区：英语学习 -->
+<!-- 第四区：亲子教育 -->
+<div class="section-label">👨‍👩‍👧 亲子教育</div>
+<div class="grid">
+  <a href="parents-six-dilemmas-view.html" class="card">
+    <div class="card-icon bg-rose">🧠</div>
+    <div class="card-body">
+      <div class="card-title">现代家长六大困境</div>
+      <div class="card-desc">在线看 · 深度解析</div>
+    </div>
+    <div class="card-arrow">→</div>
+  </a>
+
+  <a href="kids-excellence-view.html" class="card">
+    <div class="card-icon bg-pink">🌟</div>
+    <div class="card-body">
+      <div class="card-title">孩子优秀不是梦</div>
+      <div class="card-desc">在线看 · 教育理念</div>
+    </div>
+    <div class="card-arrow">→</div>
+  </a>
+
+  <a href="21st-century-skills-view.html" class="card">
+    <div class="card-icon bg-indigo">🎓</div>
+    <div class="card-body">
+      <div class="card-title">21世纪技能</div>
+      <div class="card-desc">未来人才核心素养</div>
+    </div>
+    <div class="card-arrow">→</div>
+  </a>
+
+  <a href="crisis-plan.html" class="card">
+    <div class="card-icon bg-orange">🆘</div>
+    <div class="card-body">
+      <div class="card-title">危机应对方案</div>
+      <div class="card-desc">家庭教育 · 应急预案</div>
+    </div>
+    <div class="card-arrow">→</div>
+  </a>
+</div>
+
+<!-- 第五区：销售培训 -->
+<div class="section-label">💪 销售培训</div>
+<div class="grid">
+  <a href="sales-training.html" class="card">
+    <div class="card-icon bg-blue">📈</div>
+    <div class="card-body">
+      <div class="card-title">销售培训</div>
+      <div class="card-desc">系统课程 · 在线看</div>
+    </div>
+    <div class="card-arrow">→</div>
+  </a>
+
+  <a href="universal-sales-training.html" class="card">
+    <div class="card-icon bg-purple">🌐</div>
+    <div class="card-body">
+      <div class="card-title">通用销售培训</div>
+      <div class="card-desc">全行业适用 · 在线看</div>
+    </div>
+    <div class="card-arrow">→</div>
+  </a>
+
+  <a href="expert-team.html" class="card">
+    <div class="card-icon bg-teal">👥</div>
+    <div class="card-body">
+      <div class="card-title">专家团队</div>
+      <div class="card-desc">团队介绍 · 专业背景</div>
+    </div>
+    <div class="card-arrow">→</div>
+  </a>
+
+  <a href="personal-ip-strategy.html" class="card">
+    <div class="card-icon bg-gold">✨</div>
+    <div class="card-body">
+      <div class="card-title">个人IP策略</div>
+      <div class="card-desc">品牌打造 · 内容规划</div>
+    </div>
+    <div class="card-arrow">→</div>
+  </a>
+</div>
+
+<!-- 第六区：英语学习 -->
 <div class="section-label">📖 英语学习</div>
 <div class="grid">
   <a href="english-course-market-research.html" class="card">
@@ -233,8 +327,8 @@ if ('serviceWorker' in navigator) {
   </a>
 </div>
 
-<!-- 第四区：图书馆 -->
-<div class="section-label">🌍 多语资源</div>
+<!-- 第七区：多语资源 & 下载 -->
+<div class="section-label">🌍 多语资源 · 下载中心</div>
 <div class="grid">
   <a href="library-en.html" class="card">
     <div class="card-icon bg-teal">🇬🇧</div>
@@ -244,11 +338,20 @@ if ('serviceWorker' in navigator) {
     </div>
     <div class="card-arrow">→</div>
   </a>
+
+  <a href="downloads.html" class="card">
+    <div class="card-icon bg-orange">📦</div>
+    <div class="card-body">
+      <div class="card-title">下载中心</div>
+      <div class="card-desc">PPT/视频/文档 · 一键下载</div>
+    </div>
+    <div class="card-arrow">→</div>
+  </a>
 </div>
 
 <!-- 底部 -->
 <div class="footer">
-  UncleFrankie · 个人工作台<br>
+  Frankie Tsang 曾仕昭 · 个人工作台<br>
   Shenzhen Frankie Z Style Education Technology Co., Ltd. · 2026
 </div>
 
